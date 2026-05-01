@@ -219,14 +219,14 @@
         </p>
         <form action="{{route('quiz.evaluate')}}" method="POST">
           @csrf
-          <p>Untuk lebih paham mengetahui nilai 𝑐, ayoo kita kerjakan contoh dan latihan soal berikut yaa!</p>
+          <p>Untuk lebih paham mengetahui nilai 𝑐, ayoo kita kerjakan contoh dan latihan soal berikut ya!</p>
           <span class="border border-primary p-2 my-2 rounded">Contoh Soal: </span>
           <div class="py-2 mt-3">
             <p>1. \( f(x)=x^2-2x-2 \). Tentukan titik potong dengan sumbu 𝑦 dan nilai 𝑐.</p>
           </div>
             <span class="border border-primary p-2 my-2 rounded">Jawab: </span>
             <div class="py-2 mt-3">
-              <p>Titik potong dengan sumbu \( y \) adalah \( 0, -2\) dan nilai \( c \) adalah <input type="text" name="contoh" placeholder="" style="width: 50px;"></p>
+              <p>Titik potong dengan sumbu \( y \) adalah \( (0, -2)\) dan nilai \( c \) adalah <input type="text" name="contoh" placeholder="" style="width: 50px;"></p>
             </div>
             <span class="border border-primary p-2 my-2 rounded">Latihan Soal: </span>
             <div class="py-2 mt-3">
@@ -243,7 +243,7 @@
                     <td>Nilai \( b \)</td>
                     <td>Nilai \( c \)</td>
                     <td>Grafik terbuka ke</td>
-                    <td>Nilai sumbu \( y \)</td>
+                    <td>Titik potong sumbu \( y \)</td>
                   </tr>
                 </thead>
                 <tbody>
@@ -253,7 +253,7 @@
                     <td><input type="text" name="fungsi_1_2" class="form-control" placeholder="" style="width: 50px;"></td>
                     <td><input type="text" name="fungsi_1_3" class="form-control" placeholder="" style="width: 50px;"></td>
                     <td><input type="text" name="fungsi_1_4" class="form-control" placeholder="" style="width: 100px;"></td>
-                    <td><input type="text" name="fungsi_1_5" class="form-control" placeholder="" style="width: 80px;"></td>
+                    <td><input type="text" name="fungsi_1_5" class="form-control" placeholder="" style="width: 100px;"></td>
                   </tr>
                   <tr>
                     <td>\( f(x)=-2x^2-2x+6 \)</td>
@@ -261,7 +261,7 @@
                     <td><input type="text" name="fungsi_2_2" class="form-control" placeholder="" style="width: 50px;"></td>
                     <td><input type="text" name="fungsi_2_3" class="form-control" placeholder="" style="width: 50px;"></td>
                     <td><input type="text" name="fungsi_2_4" class="form-control" placeholder="" style="width: 100px;"></td>
-                    <td><input type="text" name="fungsi_2_5" class="form-control" placeholder="" style="width: 80px;"></td>
+                    <td><input type="text" name="fungsi_2_5" class="form-control" placeholder="" style="width: 100px;"></td>
                   </tr>
                 </tbody>
               </table>
@@ -285,7 +285,7 @@
             Persamaan dari sumbu simteri adalah <mark> \( x=-\frac{b}{2a} \) </mark>. Sumbu simetri selalu melalui titik puncak, x = 1.
             Titik puncak (vertex) dari sebuah parabola yang berbentuk <mark> \( y=ax^2+bx+c \) </mark> terletak di koordinat (𝑥, 𝑦) dimana:
           </p>
-          <p>- Titik puncak fungsi kuadrat yaitu (𝑥𝑝 , 𝑦𝑝 ) dengan \( x_p=-\frac{b}{2a} \) dan \( y_p=-\frac{D}{4a} \) </p>
+          <p>- Titik puncak fungsi kuadrat yaitu \(x_p , y_p \) dengan \( x_p=-\frac{b}{2a} \) dan \( y_p=-\frac{D}{4a} \) </p>
           <p>- Koordinat 𝑦 dari titik puncak dapat ditemukan dengan memasukkan nilai 𝑥 tersebut ke dalam persamaan kuadrat.</p>
         </li>
         <p> Agar lebih jelas, ayoo kita pahami contoh soal dan latihan berikut ini! </p>
@@ -296,7 +296,7 @@
           <li>
             Menentukan titik puncak:
             <p>- Nilai 𝑎 = 2, 𝑏 = −4, dan 𝑐 = 1</p>
-            <p>- Koordinat 𝑥 dari titik puncak: \( 𝑥 = \frac{-b}{2a} = \frac{-4}{2(2)} = \frac{4}{4} = \) <input type="text" name="b1" placeholder="" style="width: 50px;"></p>
+            <p>- Koordinat 𝑥 dari titik puncak: \( 𝑥 = -\frac{b}{2a} = -\frac{(-4)}{2(2)} = \frac{4}{4} = \) <input type="text" name="b1" placeholder="" style="width: 50px;"></p>
             <p>- Koordinat 𝑦 dari titik puncak: \( y = 2(1)^2-4(1)+1 \) = <input type="text" name="b2" placeholder="" style="width: 50px;"> − <input type="text" name="b3" placeholder="" style="width: 50px;"> + <input type="text" name="b4" placeholder="" style="width: 50px;"> = <input type="text" name="b5" placeholder="" style="width: 50px;"></p>
             <p>- Jadi, titik puncak adalah (<input type="text" name="b6" placeholder="" style="width: 50px;">, <input type="text" name="b7" placeholder="" style="width: 50px;">).</p>
           </li>
@@ -327,22 +327,22 @@
 
                         <!-- Pecahan 1 -->
                         <div style="display: inline-grid; grid-template-rows: auto auto; text-align: center;">
-                          <input type="text" name="b_lat_4" id="user_x_num_step1" placeholder="..." style="width: 40px;">
+                          <input type="text" name="b_lat_4" id="user_x_num_step1" placeholder="" style="width: 40px;">
                           <hr style="margin: 0;">
-                          <input type="text" name="b_lat_5" id="user_x_den_step1" placeholder="..." style="width: 40px;">
+                          <input type="text" name="b_lat_5" id="user_x_den_step1" placeholder="" style="width: 40px;">
                         </div>
                         <span>=</span>
 
                         <!-- Pecahan 2 -->
                         <div style="display: inline-grid; grid-template-rows: auto auto; text-align: center;">
-                          <input type="text" name="b_lat_6" id="user_x_num_step2" placeholder="..." style="width: 40px;">
+                          <input type="text" name="b_lat_6" id="user_x_num_step2" placeholder="" style="width: 40px;">
                           <hr style="margin: 0;">
-                          <input type="text" name="b_lat_7" id="user_x_den_step2" placeholder="..." style="width: 40px;">
+                          <input type="text" name="b_lat_7" id="user_x_den_step2" placeholder="" style="width: 40px;">
                         </div>
                         <span>=</span>
 
                         <!-- Jawaban akhir -->
-                        <input type="text" name="b_lat_8" id="user_result_x" placeholder="..." style="width: 50px;">
+                        <input type="text" name="b_lat_8" id="user_result_x" placeholder="" style="width: 50px;">
                         <span></span>
                       </div>
                         <p>
@@ -383,24 +383,24 @@
 
                         <!-- Pecahan 1 -->
                         <div style="display: inline-grid; grid-template-rows: auto auto; text-align: center;">
-                          <input type="text" id="user_x_num_step1" name="b_lat_28" placeholder="..." style="width: 40px;">
+                          <input type="text" id="user_x_num_step1" name="b_lat_28" placeholder="" style="width: 40px;">
                           <hr style="margin: 0;">
-                          <input type="text" id="user_x_den_step1" name="b_lat_29" placeholder="..." style="width: 40px;">
+                          <input type="text" id="user_x_den_step1" name="b_lat_29" placeholder="" style="width: 40px;">
                         </div>
 
                         <span>=</span>
 
                         <!-- Pecahan 2 -->
                         <div style="display: inline-grid; grid-template-rows: auto auto; text-align: center;">
-                          <input type="text" id="user_x_num_step2" name="b_lat_30" placeholder="..." style="width: 40px;">
+                          <input type="text" id="user_x_num_step2" name="b_lat_30" placeholder="" style="width: 40px;">
                           <hr style="margin: 0;">
-                          <input type="text" id="user_x_den_step2" name="b_lat_31" placeholder="..." style="width: 40px;">
+                          <input type="text" id="user_x_den_step2" name="b_lat_31" placeholder="" style="width: 40px;">
                         </div>
 
                         <span>=</span>
 
                         <!-- Jawaban akhir -->
-                        <input type="text" id="user_result_x" name="b_lat_32" placeholder="..." style="width: 50px;">
+                        <input type="text" id="user_result_x" name="b_lat_32" placeholder="" style="width: 50px;">
 
                         <span></span>
                       </div>
@@ -713,9 +713,9 @@ const correctAnswers = {
     // --- Nilai c (Karakteristik 2) ---
     "input_1": "titik potong", "sumbu": "y", "sumbu_kedua": "y", "x": "0", "y": "c", "up_direction": "atas", "down_direction": "bawah",
     "c_1": "(0,5)", "c_2": "(0,8)", "c_3": "(0,-3)", "c_4": "(0,-6)", "c_5": "(0,-9)", "contoh": "-2",
-    "latihan_1_c": "0", "latihan_1_y": "0", "latihan_2_c": "3", "latihan_2_y": "0", "latihan_3_c": "3", "latihan_3_y": "0",
-    "fungsi_1_1": "2", "fungsi_1_2": "-1", "fungsi_1_3": "3", "fungsi_1_4": "atas", "fungsi_1_5": "0",
-    "fungsi_2_1": "-2", "fungsi_2_2": "-2", "fungsi_2_3": "6", "fungsi_2_4": "bawah", "fungsi_2_5": "0",
+    "latihan_1_c": "0", "latihan_1_y": "(0,0)", "latihan_2_c": "3", "latihan_2_y": "(0,3)", "latihan_3_c": "3", "latihan_3_y": "(0,3)",
+    "fungsi_1_1": "2", "fungsi_1_2": "-1", "fungsi_1_3": "3", "fungsi_1_4": "atas", "fungsi_1_5": "(0,3)",
+    "fungsi_2_1": "-2", "fungsi_2_2": "-2", "fungsi_2_3": "6", "fungsi_2_4": "bawah", "fungsi_2_5": "(0,6)",
 
     // --- Nilai b (Latihan b_lat) ---
     "b1": "1", "b2": "2", "b3": "4", "b4": "1", "b5": "-1", "b6": "1", "b7": "-1", "b8":  "atas", "b9": "1", "b10": "-1",

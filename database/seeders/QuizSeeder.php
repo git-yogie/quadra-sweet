@@ -60,12 +60,12 @@ class QuizSeeder extends Seeder
                 ],
                 [
                     'id' => 5,
-                    'question' => 'Diketahui 𝑓(𝑥) = 2𝑥² + 5𝑥 + 1, tentukan koordinat titik puncak!',
+                    'question' => 'Diketahui f(x) = x² - 4x + 3, tentukan koordinat titik puncaknya!',
                     'options' => [
-                        'a' => 'Titik puncak \\\\(\\\\left( -\\\\frac{5}{4}, -\\\\frac{17}{8} \\\\right)\\\\)', 
-                        'b' => 'Titik puncak \\\\(\\\\left( \\\\frac{5}{4}, -\\\\frac{17}{8} \\\\right)\\\\)', 
-                        'c' => 'Titik puncak \\\\(\\\\left( -\\\\frac{5}{4}, \\\\frac{17}{8} \\\\right)\\\\)', 
-                        'd' => 'Titik puncak \\\\(\\\\left( \\\\frac{5}{4}, \\\\frac{17}{8} \\\\right)\\\\)', 
+                        'a' => '(2, -1)',
+                        'b' => '(-2, 1)', 
+                        'c' => '(2, 1)', 
+                        'd' => '(-2, -1)', 
                     ],
                     'correct_answer' => 'a',
                 ],
@@ -275,7 +275,7 @@ class QuizSeeder extends Seeder
         ],
         [
             'id' => 3,
-            'question' => 'Sebuah kawat yang panjangnya 20 cm akan dibentuk menjadi persegi panjang. Tentukan ukuran persegi panjang tersebut agar luasnya maksimum, serta tentukan luas maksimumnya!.',
+            'question' => 'Sebuah kawat yang panjangnya 20 cm akan dibentuk menjadi persegi panjang. Tentukan ukuran persegi panjang tersebut agar luasnya maksimum, serta tentukan luas maksimumnya!',
             'options' => [
                 'a' => '36 cm²',
                 'b' => '25 cm²',
@@ -358,7 +358,7 @@ class QuizSeeder extends Seeder
                 'a' => 'Waktu: 3 detik, Tinggi: 35 m',
                 'b' => 'Waktu: 2 detik, Tinggi: 35 m',
                 'c' => 'Waktu: 1 detik, Tinggi: 25 m',
-                'd' => 'Waktu: 1 detik, Tinggi: 25 m',
+                'd' => 'Waktu: 2 detik, Tinggi: 25 m',
             ],
             'correct_answer' => 'd',
         ],
@@ -392,7 +392,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'id' => 3,
-                'question' => 'Diketahui grafik fungsi kuadrat memiliki titik puncak (p, q) = (-2, -9). Tentukan koordinat titik potong grafik dengan sumbu x!',
+                'question' => 'Diketahui grafik fungsi kuadrat memiliki titik puncak (p, q) = (-2, -9). Tentukan koordinat titik potong grafik dengan sumbu \\( x \\)!',
                 'options' => [
                     'a' => '(-8,0) dan (2,0)',
                     'b' => '(-7,0) dan (2,0)',
@@ -425,7 +425,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'id' => 6,
-                'question' => 'Diketahui grafik fungsi \\(y = (m - 2)x^2 + 4x + (m - 5) \\) menyinggung sumbu x. Tentukan nilai m yang memenuhi!',
+                'question' => 'Diketahui grafik fungsi \\(y = (m - 2)x^2 + 4x + (m - 5) \\) menyinggung sumbu \\( x \\). Tentukan nilai m yang memenuhi!',
                 'options' => [
                     'a' => '2 atau 3',
                     'b' => '1 atau 6',
@@ -447,7 +447,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'id' => 8,
-                'question' => 'Persamaan grafik fungsi kuadrat yang menyinggung sumbu x di titik (2,0) dan melalui titik (0,-8) adalah…',
+                'question' => 'Persamaan grafik fungsi kuadrat yang menyinggung sumbu \\( x \\) di titik (2,0) dan melalui titik (0,-8) adalah…',
                 'options' => [
                     'a' => '\\(f(x) = 2x^2 + 8x + 8 \\)',
                     'b' => '\\(f(x) = 2x^2 - 8x - 8 \\)',
@@ -491,7 +491,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'id' => 12,
-                'question' => 'Diketahui fungsi kuadat \\(f(x) = 2x^2 - 8x + p \\) memiliki nilai minimum 20. Tentukan nilai \\(f(2) \\).',
+                'question' => 'Diketahui fungsi kuadat \\(f(x) = 2x^2 - 8x + p \\) memiliki nilai minimum 20. Tentukan nilai \\(f(2) \\)!',
                 'options' => [
                     'a' => '20',
                     'b' => '15',
@@ -546,7 +546,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'id' => 17,
-                'question' => 'Sebuah peluru ditembakkan ke atas dengan fungsi ketinggian terhadap waktu diberikan oleh \\( h(t) = -5t^2 + 10t + 20 \\), dengan \\( h \\) dalam meter dan \\( t \\) dalam detik. Tentukan tinggi maksimum yang dicapai peluru tersebut.',
+                'question' => 'Sebuah peluru ditembakkan ke atas. Tinggi peluru \\( h \\) dalam meter setelah \\( t \\) detik dinyatakan dengan fungsi \\( h(t) = -5t^2 + 10t + 20 \\). Berapakah tinggi maksimum yang dapat dicapai peluru tersebut?',
                 'options' => [
                     'a' => '35 m',
                     'b' => '25 m',
@@ -579,7 +579,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'id' => 20,
-                'question' => 'Diketahui grafik fungsi kuadrat \\(f(x) = -x^2 + 2x + p \\) melalui titik (3,9). Tentukan \\(p \\)!',
+                'question' => 'Diketahui grafik fungsi kuadrat \\(f(x) = -x^2 + 2x + p \\) melalui titik (3,9). Tentukan nilai \\(p \\)!',
                 'options' => [
                     'a' => '9',
                     'b' => '10',
@@ -593,24 +593,29 @@ class QuizSeeder extends Seeder
         ],
     ];
 
+        // Ubah bagian ini di QuizSeeder.php
         foreach ($quizzes as $key => $data) {
-            $quiz = \App\Models\Quiz::create([
-                'key' => $key,
-                'title' => $data['title'],
-            ]);
+            $quiz = \App\Models\Quiz::updateOrCreate(
+                ['key' => $key], // Cari berdasarkan key ini
+                ['title' => $data['title']] // Jika ada update judulnya, jika tidak ada buat baru
+            );
 
             foreach ($data['questions'] as $index => $question) {
-                QuizQuestion::create([
-                    'quiz_id' => $quiz->id,
-                    'question_number' => $index + 1,
-                    'question' => $question['question'],
-                    'option_a' => $question['options']['a'] ?? null,
-                    'option_b' => $question['options']['b'] ?? null,
-                    'option_c' => $question['options']['c'] ?? null,
-                    'option_d' => $question['options']['d'] ?? null,
-                    'correct_answer' => $question['correct_answer'],
-                    'image' => $question['image'] ?? null,
-                ]);
+                \App\Models\QuizQuestion::updateOrCreate(
+                    [
+                        'quiz_id' => $quiz->id,
+                        'question_number' => $index + 1
+                    ],
+                    [
+                        'question' => $question['question'],
+                        'option_a' => $question['options']['a'] ?? null,
+                        'option_b' => $question['options']['b'] ?? null,
+                        'option_c' => $question['options']['c'] ?? null,
+                        'option_d' => $question['options']['d'] ?? null,
+                        'correct_answer' => $question['correct_answer'],
+                        'image' => $question['image'] ?? null,
+                    ]
+                );
             }
         }
     }

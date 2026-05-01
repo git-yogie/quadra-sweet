@@ -64,7 +64,7 @@
         <button type="submit" class="btn btn-primary mt-3">Kirim Jawaban</button>
         <form action="{{route('quiz.evaluate')}}" method="POST">
           @csrf
-          <p>Untuk lebih paham mengetahui nilai 𝑐, ayoo kita kerjakan contoh dan latihan soal berikut yaa!</p>
+          <p>Untuk lebih paham mengetahui nilai 𝑐, ayoo kita kerjakan contoh dan latihan soal berikut ya!</p>
           <span class="border border-primary p-2 my-2 rounded">Contoh Soal: </span>
           <div class="py-2 mt-3">
             <p>1. \( f(x)=x^2-2x-2 \). Tentukan titik potong dengan sumbu 𝑦 dan nilai 𝑐.</p>

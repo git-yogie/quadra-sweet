@@ -64,6 +64,7 @@
   <div class="tab-pane fade" id="abc" role="tabpanel">
     <div class="p-3 rounded" style="border: 2px solid skyblue; background: #fef9f9;">
       <p>Menggunakan rumus kuadrat atau biasa dikenal dengan rumus abc:</p>
+      <p>Contoh:</p>
       <p>\( x^2+4x-12=0 \)</p>
       <p>\( a=1, b=4, c=-12 \)</p>
       <p>\( x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \)</p> 

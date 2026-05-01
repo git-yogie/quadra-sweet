@@ -1,9 +1,8 @@
 <div style="padding: 60px 30px 0 30px;" class="mb-5">
     <span class="border border-primary p-2 rounded">Contoh Soal: </span>
     <p class="mt-3">
-        Aisyah ingin menemukan waktu ketika bola yang dilempar ke udara mencapai
-        ketinggian maksimum. Aisyah tahu bahwa tinggi bola \( h(t) \) sebagai fungsi
-        waktu \( t \) sebagai berikut: \( h(t) = -4.9t^2 + 15t + 2.\)
+        Aisyah sedang mengamati gerak sebuah bola yang dilempar ke atas. Ia menemukan bahwa ketinggian bola setiap detiknya dapat dinyatakan dengan rumus: \( h(t) = -4.9t^2 + 15t + 2.\)
+        Berdasarkan rumus tersebut pada detik ke berapakah bola akan mencapai ketinggian maksimumnya?
     </p>
     <p>Jawab:</p>
     <ul>

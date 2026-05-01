@@ -5,5 +5,5 @@
         style="text-align: center"
         width="40%"
     />
-    <p style="text-align: center">Gambar 3 Peta Konsep Pembelajaran</p>
+    <p style="text-align: center">Gambar Peta Konsep Pembelajaran</p>
 </div>

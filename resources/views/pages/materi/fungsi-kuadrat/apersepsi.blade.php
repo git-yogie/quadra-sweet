@@ -26,7 +26,7 @@
         style="text-align: center"
         width="70%"
     />
-    <p style="text-align: center">Gambar 1 Lintasan Lompat Jauh</p>
+    <p style="text-align: center">Gambar Lintasan Lompat Jauh</p>
 </div>
 <p>
     &nbsp;&nbsp;&nbsp;&nbsp; Selain lompat jauh, penerapan fungsi kuadrat dalam
@@ -51,7 +51,7 @@
         style="text-align: center"
         width="40%"
     />
-    <p style="text-align: center">Gambar 2 Grafik Fungsi Kudrat</p>
+    <p style="text-align: center">Gambar Grafik Fungsi Kudrat</p>
 </div>
 <table class="table table-bordered mt-5">
     <tbody>
@@ -78,4 +78,4 @@
         </tr>
     </tbody>
 </table>
-<p style="text-align: center">Tabel 1 Kata Kunci Fungsi Kuadrat</p>
+<p style="text-align: center">Tabel Kata Kunci Fungsi Kuadrat</p>

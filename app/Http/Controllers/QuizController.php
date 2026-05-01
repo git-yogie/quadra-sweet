@@ -5,40 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\AnswerKey;
 use App\Models\Progress;
 use App\Models\Quiz;
-use App\Models\QuizQuestion;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
 class QuizController extends Controller
 {
     protected array $menus = [
-        [
-            'name' => 'Karakteristik',
-            'route' => 'dashboard.karakteristik',
-            'progress' => 0,
-            'key' => 'karakteristik',
-        ],
-        [
-            'name' => 'Rekonstruksi',
-            'route' => 'dashboard.rekonstruksi',
-            'progress' => 1,
-            'key' => 'rekonstruksi',
-        ],
-        [
-            'name' => 'Menyelesaikan Masalah',
-            'route' => 'dashboard.masalah',
-            'progress' => 2,
-            'key' => 'masalah',
-        ],
-        [
-            'name' => 'Evaluasi',
-            'route' => 'dashboard.evaluasi',
-            'progress' => 3,
-            'key' => 'evaluasi',
-        ],
+        ['name' => 'Karakteristik', 'route' => 'dashboard.karakteristik', 'progress' => 0, 'key' => 'karakteristik'],
+        ['name' => 'Rekonstruksi', 'route' => 'dashboard.rekonstruksi', 'progress' => 1, 'key' => 'rekonstruksi'],
+        ['name' => 'Menyelesaikan Masalah', 'route' => 'dashboard.masalah', 'progress' => 2, 'key' => 'masalah'],
+        ['name' => 'Evaluasi', 'route' => 'dashboard.evaluasi', 'progress' => 3, 'key' => 'evaluasi'],
     ];
 
-   
     public function show($quizKey)
     {
         $progress = Progress::where('user_id', auth()->id())->first();
@@ -47,11 +25,13 @@ class QuizController extends Controller
             ->with(['questions' => function ($q) {
                 $q->orderBy('question_number');
             }])
-            ->first();
+            ->firstOrFail();
 
-        if (!$quiz) {
-            abort(404, 'Quiz tidak ditemukan');
-        }
+        // 🔥 Bersihkan & urutkan soal
+        $quiz->questions = $quiz->questions
+            ->unique('question_number')
+            ->sortBy('question_number')
+            ->values();
 
         return view('layouts.quiz', [
             'progress' => $progress,
@@ -66,26 +46,42 @@ class QuizController extends Controller
         $progress = Progress::where('user_id', auth()->id())->first();
 
         $quiz = Quiz::where('key', $quizKey)
-            ->with('questions')
-            ->first();
+            ->with(['questions' => function ($q) {
+                $q->orderBy('question_number');
+            }])
+            ->firstOrFail();
 
-        if (!$quiz) {
-            abort(404, 'Quiz tidak ditemukan');
-        }
+        // 🔥 Samakan dengan show()
+        $quiz->questions = $quiz->questions
+            ->unique('question_number')
+            ->sortBy('question_number')
+            ->values();
 
         $userAnswers = $request->except('_token');
+
+        // ✅ VALIDASI FINAL (ANTI ERROR)
+        $expectedFields = $quiz->questions
+            ->pluck('id')
+            ->map(fn($id) => 'question_' . $id)
+            ->toArray();
+
+        $submittedFields = array_keys($userAnswers);
+
+        $missing = array_diff($expectedFields, $submittedFields);
+
+        if (!empty($missing)) {
+            return back()
+                ->withErrors('Harap jawab semua pertanyaan!')
+                ->withInput();
+        }
+
+        // ✅ Hitung skor
         $score = 0;
         $results = [];
-        $allAnswered = true;
-        // dd($quiz, $quiz?->questions);
 
         foreach ($quiz->questions as $question) {
             $field = 'question_' . $question->id;
             $userAnswer = $userAnswers[$field] ?? null;
-
-            if ($userAnswer === null) {
-                $allAnswered = false;
-            }
 
             $isCorrect = $userAnswer === $question->correct_answer;
             $score += $isCorrect ? 1 : 0;
@@ -98,14 +94,7 @@ class QuizController extends Controller
             ];
         }
 
-        if (!$allAnswered) {
-            return redirect()
-                ->back()
-                ->withErrors('Harap jawab semua pertanyaan!')
-                ->withInput();
-        }
-
-        // 🚀 Update progress user
+        // 🚀 Update progress
         $menuKeys = array_column($this->menus, 'key');
         $currentProgress = array_search($quizKey, $menuKeys) + 1;
 
@@ -141,11 +130,15 @@ class QuizController extends Controller
         return response()->json(['message' => 'Semua jawaban benar!']);
     }
 
-    
     public function evaluasiView()
     {
         $progress = Progress::where('user_id', auth()->id())->first();
-        $quiz = Quiz::where('key', 'evaluasi')->with('questions')->firstOrFail();
+
+        $quiz = Quiz::where('key', 'evaluasi')
+            ->with(['questions' => function ($q) {
+                $q->orderBy('question_number');
+            }])
+            ->firstOrFail();
 
         return view('layouts.quiz', [
             'progress' => $progress,

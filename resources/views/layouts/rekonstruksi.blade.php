@@ -75,7 +75,7 @@
                 <li>
                   Diketahui titik potong dengan sumbu \( -x: (x_{1},0) \) dan \( (x_{2},0) \) dan satu titik
                   sebarang: \( (x_{3},y_{3}) \), dengan mengetahui dua titik potong dengan sumbu \(x\) dan
-                  satu titik lain, maka kita dapat menggunakan bentuk factor dari persamaan
+                  satu titik lain, maka kita dapat menggunakan bentuk faktor dari persamaan
                   kuadrat yaitu:
 
                   $$ \colorbox{#fff3b0}{$y = a(x - x_{1})(x - x_{2})$} $$

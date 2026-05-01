@@ -52,7 +52,7 @@
         </li>
         <li>
             Seorang petani ingin membuat pagar pesegi panjang di sepanjang perkebunan miliknya, menggunakan 120 meter pagar untuk ketiga sisinya
-            (sisi keempat adalah kebun). Tentukan dimensi maksimum dari petak tanah yang dapat dibuat adalah…
+            (sisi keempat adalah kebun). Tentukan dimensi maksimum dari petak tanah yang dapat dibuat!
             <div style="padding: 0 30px;" class="mt-3">
                 <span class="border border-primary p-2 rounded">Penyelesaian: </span>
                 <ul class="mt-3">
