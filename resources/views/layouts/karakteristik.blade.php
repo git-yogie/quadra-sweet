@@ -127,13 +127,19 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <?php
-                                $values = [-2, 3, -5, 2, -1];
+                              <?php 
+                              $values = [-2, 3, -5, 2, -1];
                                 foreach ($values as $value) {
-                                  echo "<tr>
-                                          <td class='text-center'>a = $value</td>
-                                          <td><input type='text' name='nilai[$value]' class='form-control text-center mx-auto'></td>
-                                        </tr>";
+                                    echo "<tr>
+                                            <td class='text-center'>a = $value</td>
+                                            <td>
+                                                <select name='nilai[$value]' class='form-control text-center mx-auto'>
+                                                    <option value=''></option>
+                                                    <option value='atas'>Atas</option>
+                                                    <option value='bawah'>Bawah</option>
+                                                </select>
+                                            </td>
+                                          </tr>";
                                 }
                               ?>
                             </tbody>

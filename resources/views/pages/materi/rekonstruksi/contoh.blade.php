@@ -128,7 +128,7 @@
                     <hr style="margin: 0;">
                     <input type="text" id="user_x_den_step1" name="isi47" placeholder="" style="width: 30px;">
                 </div>
-                <span>+ \( c \)</span>
+                <span>+ \( c \) = 2</span>
             </div>
             <span> \( c \) = <input type="text" name="isi48" placeholder="" style="width: 30px;"> </span>
         </li>

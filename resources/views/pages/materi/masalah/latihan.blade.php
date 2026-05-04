@@ -131,12 +131,12 @@ document.addEventListener("DOMContentLoaded", function() {
         "latih1": "-5", "latih2": "100", "latih3": "20", "latih4": "200", "latih5": "-5", 
         "latih6": "100", "latih7": "20", "latih8": "200", "latih9": "-5", "latih10": "80", 
         "latih11": "200", "latih12": "-5", "latih13": "80", "latih14": "200", "latih15": "80", 
-        "latih16": "-5", "latih17": "-80", "latih18": "-10", "latih19": "8", "latih20": "8", 
+        "latih16": "(-5)", "latih17": "80", "latih18": "10", "latih19": "8", "latih20": "8", 
         "latih21": "-5", "latih22": "8", "latih23": "80", "latih24": "8", "latih25": "200", 
         "latih26": "-320", "latih27": "640", "latih28": "200", "latih29": "120", "latih30": "120", "latih31": "8",
 
         // --- Soal 2: Pagar Petani ---
-        "latih32": "-0.5", "latih33": "60", "latih34": "60", "latih35": "-0.5", "latih36": "-60", 
+        "latih32": "-0.5", "latih33": "60", "latih34": "60", "latih35": "(-0.5)", "latih36": "-60", 
         "latih37": "-1", "latih38": "60", "latih39": "60", "latih40": "2", "latih41": "30", 
         "latih42": "60", "latih43": "30"
     };
