@@ -79,6 +79,60 @@ php artisan serve
 
 Open `http://localhost:8000` in your browser to access QuadraLearn.
 
+## Deployment
+
+Auto-deploy via GitHub Actions on every push to `main`.
+
+### Prerequisites
+
+Server must have:
+- Git, PHP 8.3, Composer, Node.js 20+, npm
+- Repo already cloned at deploy path
+- Web server (Nginx/Apache) pointing to `public/`
+
+### GitHub Secrets
+
+Add these in **Settings → Secrets and variables → Actions**:
+
+| Secret | Description |
+|---|---|
+| `SSH_HOST` | Server IP or domain |
+| `SSH_USER` | SSH username (e.g. `ubuntu`) |
+| `SSH_PRIVATE_KEY` | Private key content (`~/.ssh/id_rsa`) |
+| `SSH_PORT` | SSH port (default `22`) |
+| `DEPLOY_PATH` | Absolute path on server (e.g. `/var/www/quadra-sweet`) |
+
+### First-time Server Setup
+
+```shell
+# Clone repo
+git clone https://github.com/NurFitriYanti02/quadra-sweet.git /var/www/quadra
+cd /var/www/quadra
+
+# Setup environment
+cp .env.example .env
+php artisan key:generate
+
+# Install dependencies
+composer install --no-dev --optimize-autoloader
+npm ci && npm run build
+
+# Setup database & storage
+php artisan migrate
+php artisan storage:link
+```
+
+### Workflow
+
+The `.github/workflows/deploy.yml` will automatically:
+
+1. Build assets on CI runner
+2. SSH into server → `git pull`
+3. Install dependencies
+4. Run `php artisan migrate --force`
+5. Cache config, routes, views, events
+6. Restart queue worker
+
 ## Reference
 
 - [Susanto dkk. 2021. _Matematika untuk SMA/SMK Kelas X_. Pusat Kurikulum dan Perbukuan Badan Penelitian dan Pengembangan dan Perbukuan: Jakarta](https://static.buku.kemdikbud.go.id/content/pdf/bukuteks/kurikulum21/Matematika-BS-KLS-X.pdf)
