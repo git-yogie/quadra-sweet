@@ -49,12 +49,12 @@
             <p> <input type="text" placeholder="" name="isi28" style="width: 30px;"> \( a \) = <input type="text" placeholder="" name="isi29" style="width: 30px;"> </p>
             
             <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-                <span>\( a = \)</span>
+                <span>\( a = \) </span>
                 
                 <!-- Pecahan 1 -->
                 <div style="display: inline-grid; grid-template-rows: auto auto; text-align: center;">
                     <input type="text" id="user_x_num_step1" name="isi30" placeholder="" style="width: 30px;">
-                    <hr style="margin: 0;">
+                    <hr style="margin: 0.1rem 0; border: 1px solid black;">
                     <input type="text" id="user_x_den_step1" name="isi31" placeholder="" style="width: 30px;">
                 </div>
             </div>
@@ -67,7 +67,7 @@
                 <span>\( (\)</span>
                 <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                     <input type="text" id="user_x_num_step1" name="isi33" placeholder="" style="width: 30px;">
-                    <hr style="margin: 0;">
+                    <hr style="margin: 0.1rem 0; border: 1px solid black;">
                     <input type="text" id="user_x_den_step1" name="isi34" placeholder="" style="width: 30px;">
                 </div>
 
@@ -79,7 +79,7 @@
                 <!-- Bentuk: pecahan + b = [input] -->
                 <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                     <input type="text" id="user_x_num_step1" name="isi36" placeholder="" style="width: 30px;">
-                    <hr style="margin: 0;">
+                    <hr style="margin: 0.1rem 0; border: 1px solid black;">
                     <input type="text" id="user_x_den_step1" name="isi37" placeholder="" style="width: 30px;">
                 </div>
 
@@ -94,7 +94,7 @@
                 <span>\( - \)</span>
                 <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                     <input type="text" id="user_x_num_step1" name="isi40" placeholder="" style="width: 30px;">
-                    <hr style="margin: 0;">
+                    <hr style="margin: 0.1rem 0; border: 1px solid black;">
                     <input type="text" id="user_x_den_step1" name="isi41" placeholder="" style="width: 30px;">
                 </div>
             </div>
@@ -104,7 +104,7 @@
                 <span>\( b = - \)</span>
                 <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                     <input type="text" id="user_x_num_step1" name="isi42" placeholder="" style="width: 30px;">
-                    <hr style="margin: 0;">
+                    <hr style="margin: 0.1rem 0; border: 1px solid black;">
                     <input type="text" id="user_x_den_step1" name="isi43" placeholder="" style="width: 30px;">
                 </div>
             </div>
@@ -118,14 +118,14 @@
                 <!-- Pecahan 1 -->
                 <div style="display: inline-grid; grid-template-rows: auto auto; text-align: center;">
                     <input type="text" id="user_x_num_step1" name="isi44" placeholder="" style="width: 30px;">
-                    <hr style="margin: 0;">
+                    <hr style="margin: 0.1rem 0; border: 1px solid black;">
                     <input type="text" id="user_x_den_step1" name="isi45" placeholder="" style="width: 30px;">
                 </div>
                 <span>-</span>
                 <!-- Pecahan 2 -->
                 <div style="display: inline-grid; grid-template-rows: auto auto; text-align: center;">
                     <input type="text" id="user_x_num_step1" name="isi46" placeholder="" style="width: 30px;">
-                    <hr style="margin: 0;">
+                    <hr style="margin: 0.1rem 0; border: 1px solid black;">
                     <input type="text" id="user_x_den_step1" name="isi47" placeholder="" style="width: 30px;">
                 </div>
                 <span>+ \( c \) = 2</span>
@@ -140,7 +140,7 @@
                 <!-- pecahan 1 -->
                 <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                     <input type="text" id="user_x_num_step1" name="isi49" placeholder="" style="width: 30px;">
-                    <hr style="margin: 0;">
+                    <hr style="margin: 0.1rem 0; border: 1px solid black;">
                     <input type="text" id="user_x_den_step1" name="isi50" placeholder="" style="width: 30px;">
                 </div>
                 <p>\( x^2 - \)</p>
@@ -148,7 +148,7 @@
                 <!-- pecahan 2 -->
                 <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                     <input type="text" id="user_x_num_step1" name="isi51" placeholder="" style="width: 30px;">
-                    <hr style="margin: 0;">
+                    <hr style="margin: 0.1rem 0; border: 1px solid black;">
                     <input type="text" id="user_x_den_step1" name="isi52" placeholder="" style="width: 30px;">
                 </div>
                 <p>\( x + \)<input type="text" name="isi53" placeholder="" style="width: 30px;"></p>

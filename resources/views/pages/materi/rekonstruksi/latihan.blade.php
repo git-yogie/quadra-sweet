@@ -53,7 +53,7 @@
                     <span>\( a = \)</span>
                     <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                         <input type="text" name="lat47" id="user_x_num_step1" placeholder="" style="width: 30px;">
-                        <hr style="margin: 0;">
+                        <hr style="margin: 0.1rem 0; border: 1px solid black;">
                         <input type="text" name="lat48" id="user_x_den_step1" placeholder="" style="width: 30px;">
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                     <span style="padding-top: 8px;">\( 3 \)</span>
                     <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                         <input type="text" name="lat51" placeholder="" style="width: 30px;">
-                        <hr style="margin: 0;">
+                        <hr style="margin: 0.1rem 0; border: 1px solid black;">
                         <input type="text" name="lat52" placeholder="" style="width: 30px;">
                     </div>
                     <span>\( + b \) = </span>
@@ -79,7 +79,7 @@
                     <span style="padding-top: 8px;">\( b \) = </span>
                     <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                         <input type="text" name="lat54" placeholder="" style="width: 30px;">
-                        <hr style="margin: 0;">
+                        <hr style="margin: 0.1rem 0; border: 1px solid black;">
                         <input type="text" name="lat55" placeholder="" style="width: 30px;">
                     </div>
                 </div>
@@ -94,14 +94,14 @@
                     <!-- Nilai: a = ... -->
                     <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                         <input type="text" name="lat56" placeholder="" style="width: 30px;">
-                        <hr style="margin: 0;">
+                        <hr style="margin: 0.1rem 0; border: 1px solid black;">
                         <input type="text" name="lat57" placeholder="" style="width: 30px;">
                     </div>
                     <span> +  </span>
                     <!-- Nilai: b = ... -->
                     <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                         <input type="text" name="lat58" placeholder="" style="width: 30px;">
-                        <hr style="margin: 0;">
+                        <hr style="margin: 0.1rem 0; border: 1px solid black;">
                         <input type="text" name="lat59" placeholder="" style="width: 30px;">
                     </div>
                     <span>\( c = 2 \) </span>
@@ -111,14 +111,14 @@
                     <!-- Nilai: a = ... -->
                     <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                         <input type="text" name="lat60" placeholder="" style="width: 30px;">
-                        <hr style="margin: 0;">
+                        <hr style="margin: 0.1rem 0; border: 1px solid black;">
                         <input type="text" name="lat61" placeholder="" style="width: 30px;">
                     </div>
                     <span> +  </span>
                     <!-- Nilai: b = ... -->
                     <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                         <input type="text" name="lat62" placeholder="" style="width: 30px;">
-                        <hr style="margin: 0;">
+                        <hr style="margin: 0.1rem 0; border: 1px solid black;">
                         <input type="text" name="lat63" placeholder="" style="width: 30px;">
                     </div>
                 </div>
@@ -131,27 +131,27 @@
                     <!-- Nilai: a = ... -->
                     <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                         <input type="text" name="lat64" placeholder="" style="width: 30px;">
-                        <hr style="margin: 0;">
+                        <hr style="margin: 0.1rem 0; border: 1px solid black;">
                         <input type="text" name="lat65" placeholder="" style="width: 30px;">
                     </div>
                     <span> +  </span>
                     <!-- Nilai: b = ... -->
                     <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                         <input type="text" name="lat66" placeholder="" style="width: 30px;">
-                        <hr style="margin: 0;">
+                        <hr style="margin: 0.1rem 0; border: 1px solid black;">
                         <input type="text" name="lat67" placeholder="" style="width: 30px;">
                     </div>
                     <span> +  </span>
                     <!-- Nilai: c = ... -->
                     <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                         <input type="text" name="lat68" placeholder="" style="width: 30px;">
-                        <hr style="margin: 0;">
+                        <hr style="margin: 0.1rem 0; border: 1px solid black;">
                         <input type="text" name="lat69" placeholder="" style="width: 30px;">
                     </div><span> + = </span>
                     <!-- Nilai: a + b + c = ... -->
                     <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                         <input type="text" name="lat70" placeholder="" style="width: 30px;">
-                        <hr style="margin: 0;">
+                        <hr style="margin: 0.1rem 0; border: 1px solid black;">
                         <input type="text" name="lat71" placeholder="" style="width: 30px;">
                     </div>
                 </div>  
@@ -163,21 +163,21 @@
                     <!-- Nilai: a = ... -->
                     <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                         <input type="text" name="lat72" placeholder="" style="width: 30px;">
-                        <hr style="margin: 0;">
+                        <hr style="margin: 0.1rem 0; border: 1px solid black;">
                         <input type="text" name="lat73" placeholder="" style="width: 30px;">
                     </div>
                     <span> \( x^2 \) + </span>
                     <!-- Nilai: b = ... -->
                     <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                         <input type="text" name="lat74" placeholder="" style="width: 30px;">
-                        <hr style="margin: 0;">
+                        <hr style="margin: 0.1rem 0; border: 1px solid black;">
                         <input type="text" name="lat75" placeholder="" style="width: 30px;">
                     </div>
                     <span> \( x \)+  </span>
                     <!-- Nilai: c = ... -->
                     <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                         <input type="text" name="lat76" placeholder="" style="width: 30px;">
-                        <hr style="margin: 0;">
+                        <hr style="margin: 0.1rem 0; border: 1px solid black;">
                         <input type="text" name="lat77" placeholder="" style="width: 30px;">
                     </div>
                 </div>
@@ -208,7 +208,7 @@
                         <span> \( a = \) </span>
                         <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                             <input type="text" name="lat94" placeholder="" style="width: 30px;">
-                            <hr style="margin: 0;">
+                            <hr style="margin: 0.1rem 0; border: 1px solid black;">
                             <input type="text" name="lat95" placeholder="" style="width: 30px;">
                         </div>
                         <span> = </span>
@@ -250,7 +250,7 @@
                         <span> \( a = \) </span>
                         <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                             <input type="text" name="lat132" placeholder="" style="width: 30px;">
-                            <hr style="margin: 0;">
+                            <hr style="margin: 0.1rem 0; border: 1px solid black;">
                             <input type="text" name="lat133" placeholder="" style="width: 30px;">
                         </div>
                         <span> = </span>

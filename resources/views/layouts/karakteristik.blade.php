@@ -159,9 +159,9 @@
                       Jika <b>a < 0</b>, parabola terbuka ke 
                       <input type="text" name="arah4" style="width: 70px;">.
                     </p>
-                    <p>Semakin besar nilai a → parabola semakin 
+                    <p>Semakin besar nilai a maka parabola semakin 
                       <input type="text" name="lebar1" style="width: 70px;">
-                      , semakin kecil nilai a → parabola semakin 
+                      , semakin kecil nilai a maka parabola semakin 
                       <input type="text" name="lebar2" style="width:50px;">.
                     </p>
                     <p>Nilai a juga menentukan kekonvexan grafik. Grafik dengan a > 0 adalah konkaf (cekung) ke atas
@@ -296,7 +296,7 @@
         </li>
         <p> Agar lebih jelas, ayoo kita pahami contoh soal dan latihan berikut ini! </p>
         <span class="border border-primary p-2 my-2 rounded">Contoh Soal: </span>
-        <p class="mt-3" style="padding: 0 30px;"> Fungsi kuadrat \( f(x)=2x^2-4x+1 \), tentukan titik puncak, sumbu simetri serta apakah titik puncak adalah maksimum atau minimum? </p>
+        <p class="mt-3" style="padding: 0 30px;"> Diketahui fungsi kuadrat \( f(x)=2x^2-4x+1 \). Tentukan titik puncak, sumbu simetri serta apakah titik puncak adalah titik maksimum atau titik minimum? </p>
         <span class="border border-primary p-2 my-2 rounded">Jawab: </span>
         <ol type="a" class="mt-3">
           <li>
@@ -311,7 +311,7 @@
             <p>- Sumbu simetri adalah garis vertical 𝑥 = 1</p>
           </li>
           <li>
-            Menentukan apakah titik puncak adalah maksimum atau minimum:
+            Menentukan apakah titik puncak adalah titik maksimum atau titik minimum:
             <p>- Karena 𝑎 = 2 (positif), parabola terbuka ke <input type="text" name="b8" placeholder="" style="width: 50px;">, sehingga titik puncak
               (<input type="text" name="b9" placeholder="" style="width: 50px;">, <input type="text" name="b10" placeholder="" style="width: 50px;">) adalah titik minimum.</p>
           </li>
@@ -320,7 +320,7 @@
             <li>
               <div> 
                 <div class="mt-3">
-                  Fungsi kuadrat \( y=2x^2+4x+4 \), tentukan titik puncak, sumbu simetri serta apakah titik puncak adalah maksimum atau minimum?
+                  Diketahui fungsi kuadrat \( y=2x^2+4x+4 \). Tentukan titik puncak, sumbu simetri serta apakah titik puncak adalah titik maksimum atau titik minimum?
                 </div>
                 <span class="border border-primary p-2 my-2 rounded">Jawab: </span>
                   <ol type="a" class="mt-3">
@@ -334,7 +334,7 @@
                         <!-- Pecahan 1 -->
                         <div style="display: inline-grid; grid-template-rows: auto auto; text-align: center;">
                           <input type="text" name="b_lat_4" id="user_x_num_step1" placeholder="" style="width: 40px;">
-                          <hr style="margin: 0;">
+                          <hr style="margin: 0.1rem 0; border: 1px solid black;">
                           <input type="text" name="b_lat_5" id="user_x_den_step1" placeholder="" style="width: 40px;">
                         </div>
                         <span>=</span>
@@ -342,7 +342,7 @@
                         <!-- Pecahan 2 -->
                         <div style="display: inline-grid; grid-template-rows: auto auto; text-align: center;">
                           <input type="text" name="b_lat_6" id="user_x_num_step2" placeholder="" style="width: 40px;">
-                          <hr style="margin: 0;">
+                          <hr style="margin: 0.1rem 0; border: 1px solid black;">
                           <input type="text" name="b_lat_7" id="user_x_den_step2" placeholder="" style="width: 40px;">
                         </div>
                         <span>=</span>
@@ -368,7 +368,7 @@
                         <p>- Sumbu simteri adalah garis vertical 𝑥 = <input type="text" name="b_lat_19" placeholder="" style="width: 50px;"></p>
                         </li>
                         <li>
-                        Menentukan apakah titik puncak adalah maksimum atau minimum:
+                        Menentukan apakah titik puncak adalah titik maksimum atau titik minimum:
                         <p>- Karena 𝑎 = <input type="text" name="b_lat_20" placeholder="" style="width: 50px;">, parabola tebuka ke <input type="text" name="b_lat_21" placeholder="" style="width: 50px;">, sehingga titik puncak
                           (<input type="text" name="b_lat_22" placeholder="" style="width: 50px;">, <input type="text" name="b_lat_23" placeholder="" style="width: 50px;">) adalah titik <input type="text" name="b_lat_24" placeholder="" style="width: 70px;"></p>
                         </li>
@@ -376,7 +376,7 @@
                     <li>
                     <div>
                     <div class="mt-3">
-                    Fungsi kuadrat \( y=-x^2+4x-4 \), tentukan titik puncak, sumbu simetri serta apakah titik puncak adalah maksimum atau minimum?
+                    Diketahui fungsi kuadrat \( y=-x^2+4x-4 \). Tentukan titik puncak, sumbu simetri serta apakah titik puncak adalah titik maksimum atau titik minimum?
                     </div>
                     <span class="border border-primary p-2 my-2 rounded">Penyelesaian: </span>
                     <ol type="a" class="mt-3">
@@ -390,7 +390,7 @@
                         <!-- Pecahan 1 -->
                         <div style="display: inline-grid; grid-template-rows: auto auto; text-align: center;">
                           <input type="text" id="user_x_num_step1" name="b_lat_28" placeholder="" style="width: 40px;">
-                          <hr style="margin: 0;">
+                          <hr style="margin: 0.1rem 0; border: 1px solid black;">
                           <input type="text" id="user_x_den_step1" name="b_lat_29" placeholder="" style="width: 40px;">
                         </div>
 
@@ -399,7 +399,7 @@
                         <!-- Pecahan 2 -->
                         <div style="display: inline-grid; grid-template-rows: auto auto; text-align: center;">
                           <input type="text" id="user_x_num_step2" name="b_lat_30" placeholder="" style="width: 40px;">
-                          <hr style="margin: 0;">
+                          <hr style="margin: 0.1rem 0; border: 1px solid black;">
                           <input type="text" id="user_x_den_step2" name="b_lat_31" placeholder="" style="width: 40px;">
                         </div>
 
@@ -421,7 +421,7 @@
                       <p>- Sumbu simetri adalah garis vertical 𝑥 = <input type="text" name="b_lat_40" placeholder="" style="width: 50px;"></p>
                       </li>
                       <li>
-                      Menentukan apakah titik puncak adalah maksimum atau minimum:
+                      Menentukan apakah titik puncak adalah titik maksimum atau titik minimum:
                       <p>- Karena 𝑎 = <input type="text" name="b_lat_43" placeholder="" style="width: 50px;">, parabola tebuka ke <input type="text" name="b_lat_44" placeholder="" style="width: 60px;">, sehingga titik puncak
                         (<input type="text" name="b_lat_45" placeholder="" style="width: 50px;">, <input type="text" name="b_lat_46" placeholder="" style="width: 50px;">) adalah titik <input type="text" name="b_lat_47" placeholder="" style="width: 90px;">
                       </p>
@@ -458,20 +458,19 @@
     <div>
       Pada fungsi kuadrat berbentuk \( y=f(x)=ax^2+bx+c \), diskriminan diberikan oleh nilai
       \( D = b^2-4ac \) untuk menentukan jumlah titik potong dengan sumbu x.
-      <br>𝐷 > 0 maka ada dua titik potong dengan sumbu x.
-      <br>𝐷 = 0 maka ada satu titik potong dengan sumbu x.
-      <br>𝐷 < 0 maka tidak ada titik potong dengan sumbu x.
+      <br>𝐷 > 0 maka ada dua titik potong pada sumbu x.
+      <br>𝐷 = 0 maka ada satu titik potong pada sumbu x.
+      <br>𝐷 < 0 maka tidak ada titik potong pada sumbu x.
     </div>
   </div>
 
   <span class="border border-primary p-2 my-2 rounded mt-3 d-inline-block">Contoh Soal:</span>
   <div class="my-3">
-    Hitunglah nilai diskriminan dari \( f(x)=-x^2-x+2\) adalah?
+    Hitunglah nilai diskriminan dari fungsi \( f(x)=-x^2-x+2\) !
   </div>
 
   <span class="border border-primary p-2 my-2 rounded mt-3 d-inline-block">Penyelesaian:</span>
   <div class="mt-3">
-    Hitunglah nilai diskriminan dari \( f(x)=-x^2-x+2 \) adalah?
     <ol type="a">
       <li>
         Menentukan nilai 𝑎, 𝑏, dan 𝑐
@@ -489,7 +488,7 @@
           <input type="text" name="d6" style="width: 50px;"> =
           <input type="text" name="d7" style="width: 50px;">
         </p>
-        <p>- Jadi, nilai diskriminan adalah <input type="text" name="d8" style="width: 50px;"></p>
+        <p>- Jadi, nilai diskriminan adalah <input type="text" name="d8" style="width: 50px;"> artinya <input type="text" name="d41" style="width: 250px;"></p>
       </li>
     </ol>
   </div>
@@ -497,7 +496,7 @@
   <span class="border border-primary p-2 my-2 rounded mt-3 d-inline-block">Latihan Soal:</span>
 
   <div class="my-3">
-    1. Hitunglah nilai diskriminan dari \( f(x)=3x^2-9x-12 \) adalah?
+    1. Hitunglah nilai diskriminan dari fungsi \( f(x)=3x^2-9x-12 \) !
   </div>
 
   <span class="border border-primary p-2 my-2 rounded mt-3 d-inline-block">Penyelesaian:</span>
@@ -523,13 +522,13 @@
           <input type="text" name="d17" style="width: 50px;"> =
           <input type="text" name="d18" style="width: 50px;">
         </p>
-        <p>- Jadi, nilai diskriminan adalah <input type="text" name="d19" style="width: 50px;"></p>
+        <p>- Jadi, nilai diskriminan adalah <input type="text" name="d19" style="width: 50px;"> artinya <input type="text" name="d42" style="width: 250px;"></p>
       </li>
     </ol>
   </div>
 
   <div class="my-3">
-    2. Hitunglah nilai diskriminan dari \( f(x)=2x^2-x+3 \) adalah?
+    2. Hitunglah nilai diskriminan dari fungsi \( f(x)=2x^2-x+3 \) !
   </div>
 
   <span class="border border-primary p-2 my-2 rounded mt-3 d-inline-block">Penyelesaian:</span>
@@ -555,7 +554,7 @@
           <input type="text" name="d28" style="width: 50px;"> =
           <input type="text" name="d29" style="width: 50px;">
         </p>
-        <p>- Jadi, nilai diskriminan adalah <input type="text" name="d30" style="width: 50px;"></p>
+        <p>- Jadi, nilai diskriminan adalah <input type="text" name="d30" style="width: 50px;"> artinya <input type="text" name="d43" style="width: 280px;"></p>
       </li>
     </ol>
   </div>
@@ -741,7 +740,8 @@ const correctAnswers = {
     "d17": "144", "d18": "225", "d19": "225", "d20": "2", "d21": "-1", "d22": "3", "d23": "(-1)",
     "d24": "4", "d25": "2", "d26": "3", "d27": "1", "d28": "24", "d29": "-23", "d30": "-23",
     "d31": "2", "d32": "6", "d33": "6", "d34": "2", "d35": "-6", "d36": "(-2,2)", "d37": "(-1,6)",
-    "d38": "(0,6)", "d39": "(1,2)", "d40": "(2,-6)"
+    "d38": "(0,6)", "d39": "(1,2)", "d40": "(2,-6)", "d41": "ada dua titik potong pada sumbu x",
+    "d42": "ada dua titik potong pada sumbu x", "d43": "tidak ada titik potong pada sumbu x"
 };
 
 // ==========================================

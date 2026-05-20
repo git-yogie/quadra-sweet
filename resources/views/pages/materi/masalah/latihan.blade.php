@@ -6,7 +6,7 @@
             \(P\) dan biaya untuk servis per unit \(C\). Persamaan pendapatan \(R\) dan biaya total
             \(C\) dalam ribuan rupiah diberikan oleh \( R(x) = -5x^2 + 100x \) dan \(C(x) =
             20x + 200\) di mana \(x\) adalah jumlah unit yang di servis dan dijual. Tentukan
-            jumlah unit yang harus di servis dan dijual untuk memaksimalkan keuntungan …
+            jumlah unit yang harus di servis dan dijual untuk memaksimalkan keuntungan!
 
             <div style="padding: 0 30px;" class="mt-3">
                 <span class="border border-primary p-2 rounded">Penyelesaian: </span>
@@ -24,7 +24,7 @@
                         <span> \( x = \) - </span>
                         <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                             <input type="text" name="latih15" style="width: 30px;">
-                            <hr style="margin: 0;">
+                            <hr style="margin: 0.1rem 0; border: 1px solid black;">
                             <div style="display: flex; align-items: center; gap: 2px;">
                                 <span>2</span><input type="text" name="latih16" style="width: 30px;">
                             </div>
@@ -32,7 +32,7 @@
                         <span> = </span>
                         <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                             <input type="text" name="latih17" style="width: 30px;">
-                            <hr style="margin: 0;">
+                            <hr style="margin: 0.1rem 0; border: 1px solid black;">
                             <input type="text" name="latih18" style="width: 30px;">
                         </div>
                         <span> = </span>
@@ -78,7 +78,7 @@
                             <span>\( x = - \)</span>
                             <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                                 <input type="text" name="latih34" style="width: 35px;">
-                                <hr style="margin: 0;">
+                                <hr style="margin: 0.1rem 0; border: 1px solid black;">
                                 <div style="display: flex; align-items: center; gap: 2px;">
                                     <span>2</span><input type="text" name="latih35" style="width: 35px;">
                                 </div>
@@ -86,7 +86,7 @@
                             <span>=</span>
                             <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                                 <input type="text" name="latih36" style="width: 35px;">
-                                <hr style="margin: 0;">
+                                <hr style="margin: 0.1rem 0; border: 1px solid black;">
                                 <input type="text" name="latih37" style="width: 35px;">
                             </div>
                             <span>=</span>
@@ -100,7 +100,7 @@
                             <span>=</span>
                             <div style="display: grid; grid-template-rows: auto auto; text-align: center;">
                                 <input type="text" name="latih39" style="width: 30px;">
-                                <hr style="margin: 0;">
+                                <hr style="margin: 0.1rem 0; border: 1px solid black;">
                                 <input type="text" name="latih40" style="width: 30px;">
                             </div>
                             <span>=</span>

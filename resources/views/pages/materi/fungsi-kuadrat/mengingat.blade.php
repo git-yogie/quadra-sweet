@@ -35,7 +35,7 @@
       <p>$$ 0=x^2-5x+6 $$</p> 
       <p>$$ x^2-5x+6=0 $$</p> 
       <p>$$ (x-2)(x-3)=0 $$</p>
-      <p><span class="badge bg-success">Hasil:</span> \( x = 2 \) atau \( x = 3 \)</p>
+      <p><span class="badge bg-success">Akar-akar dari persamaan adalah</span> \( x = 2 \) atau \( x = 3 \)</p>
     </div>
   </div>
 
@@ -56,7 +56,7 @@
       <p>\( x+3=\pm 2 \)</p> 
       <P>Kemudian, untuk \( x+3=2 \), maka: \( x=2-3=-1 \)</p> 
       <p>Untuk \( x+3=-2 \), maka: \( x=-2-3=-5 \)</p>
-      <p><span class="badge bg-primary">Hasil:</span> \( x=-1 \) atau \( x=-5 \)</p>
+      <p><span class="badge bg-primary">Akar-akar dari persamaan adalah</span> \( x=-1 \) atau \( x=-5 \)</p>
     </div>
   </div>
 
@@ -73,7 +73,7 @@
       <p>\( x= \frac{-4 \pm \sqrt{64}}{2} \)</p> 
       <p>\( x= \frac{-4 \pm 8}{2} \)</p> 
       <p>\( x_{1}= \frac{-4 + 8}{2} = 2 \) atau \( x_{2}= \frac{-4 - 8}{2} = -6 \) </p>
-      <p><span class="badge bg-primary">Hasil:</span> \( x=2 \) atau \( x=-6 \)</p>
+      <p><span class="badge bg-primary">Akar-akar dari persamaan adalah</span> \( x=2 \) atau \( x=-6 \)</p>
     </div>
   </div>
 </div>

@@ -10,7 +10,7 @@
             <p>
                 Berdasarkan gambar di atas, grafik terbuka ke 
                 <input type="text" id="fungsi_terbuka1" name="fungsi_terbuka1" class="form-control d-inline w-auto" style="width: 80px !important;"> 
-                jika anak tersebut meluncurkan skateboard, maka nilai \( a \)
+                jika anak tersebut meluncurkan skateboard, maka nilai \( a \) adalah
                 <input type="text" id="nilai1" name="nilai1" class="form-control d-inline w-auto" style="width: 80px !important;">.
             </p>
         </li>
@@ -22,7 +22,7 @@
             <p>
                 Berdasarkan gambar di atas, grafik terbuka ke 
                 <input type="text" id="fungsi_terbuka2" name="fungsi_terbuka2" class="form-control d-inline w-auto" style="width: 80px !important;"> 
-                jika tali diayunkan ke bawah, maka nilai \( a \)
+                jika tali diayunkan ke bawah, maka nilai \( a \) adalah
                 <input type="text" id="nilai2" name="nilai2" class="form-control d-inline w-auto" style="width: 80px !important;">.
             </p>
         </li>
