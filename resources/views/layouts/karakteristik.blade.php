@@ -46,6 +46,7 @@
 
 <body>
 @extends('layouts.dashboard')
+@extends('layouts.app')
 
 @section('content')
 <div class="rounded-3">
@@ -92,7 +93,8 @@
               </p>
               <div class="text-center">
                 <img src="{{ asset('assets/img/app/karakteristik1.png') }}" 
-                     alt="Contoh grafik fungsi kuadrat" class="img-fluid">
+                alt="Contoh grafik fungsi kuadrat" class="img-fluid">
+                <p style="text-align: center">Gambar 4. Grafik Fungsi Kuadrat Terbuka Ke Atas Dan Ke Bawah</p>
               </div>
 
               <p class="mt-3" style="padding: 0 30px; text-align: justify; text-indent: 30px;">
@@ -121,8 +123,9 @@
                         <div class="table-responsive">
                           <table class="table table-bordered">
                             <thead class="bg-primary ">
+                              <p style="text-align: center">Tabel 2. Peran Nilai \(a\)</p>
                               <tr>
-                                <td class="text-center" style="color: white">Peran nilai a</td>
+                                <td class="text-center" style="color: white">Peran nilai \(a\)</td>
                                 <td class="text-center" style="color: white">Parabola terbuka ke atas / bawah</td>
                               </tr>
                             </thead>
@@ -131,7 +134,7 @@
                               $values = [-2, 3, -5, 2, -1];
                                 foreach ($values as $value) {
                                     echo "<tr>
-                                            <td class='text-center'>a = $value</td>
+                                            <td class='text-center'>\\( a = $value \\)</td>
                                             <td>
                                                 <select name='nilai[$value]' class='form-control text-center mx-auto'>
                                                     <option value=''></option>
@@ -197,8 +200,9 @@
                       <table class="table table-bordered text-center">
                         <thead class="bg-info text-white">
                           <tr>
-                            <td>Peran nilai c</td>
-                            <td>Titik potong sumbu y</td>
+                            <p style="text-align: center">Tabel 3. Peran Nilai \( c \)</p>
+                            <td>Peran nilai \( c \)</td>
+                            <td>Titik potong sumbu \( y \)</td>
                           </tr>
                         </thead>
                         <tbody>
@@ -243,6 +247,7 @@
             <div class="text-center">
               <table class="table table-bordered table-hover text-center" style="height: 50px">
                 <thead class="bg-info text-white">
+                  <p style="text-align: center">Tabel 4. Latihan Peran Nilai \( a, b \) dan \( c \)</p>
                   <tr>
                     <td>Persamaan Fungsi</td>
                     <td>Nilai \( a \)</td>
@@ -452,7 +457,7 @@
     <div class="text-center">
       <img src="{{ asset('assets/img/app/karakteristik11.png') }}"
            alt="Contoh grafik fungsi kuadrat berbentuk parabola" class="img-fluid">
-      <p>Gambar Titik Potong dengan Sumbu 𝑥</p>
+      <p>Gambar 8. Titik Potong dengan Sumbu 𝑥</p>
     </div>
 
     <div>
@@ -580,6 +585,7 @@
               <div class="table-responsive">
                 <table class="table table-bordered table-hover text-center">
                   <thead class="bg-info text-white">
+                    <p style="text-align: center">Tabel 5. Grafik fungsi \( f(x) = x^2 + 1 \)</p>
                     <tr><th colspan="2">𝑓(𝑥) = 𝑥² + 1</th></tr>
                   </thead>
                   <tbody>
@@ -623,6 +629,7 @@
               <div class="text-center">
                 <table class="table table-bordered table-hover text-center">
                   <thead class="bg-info text-white">
+                    <p style="text-align: center">Tabel 6. Grafik fungsi \( f(x)=-2x^2-2x+6 \)</p>
                     <tr><td colspan="2">\( f(x)=-2x^2-2x+6 \)</td></tr>
                   </thead>
                   <tbody>

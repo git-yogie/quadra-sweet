@@ -6,6 +6,7 @@
             Perhatikan gambar di bawah ini. Skatepark yang digunakan untuk bermain skateboard berbentuk lintasan parabola.
             <div class="text-center">
                 <img src="{{ asset('assets/img/app/karakteristik5.png') }}" alt="Contoh grafik fungsi kuadrat berbentuk parabola" class="img-fluid">
+                <p style="text-align: center">Gambar 6. Skateboard Yang Berbentuk Lintasan Parabola</p>
             </div>
             <p>
                 Berdasarkan gambar di atas, grafik terbuka ke 
@@ -18,6 +19,7 @@
             Perhatikan gambar di bawah ini. Ketika tali diayunkan ke atas maka membentuk parabola fungsi kuadrat.
             <div class="text-center">
                 <img src="{{ asset('assets/img/app/karakteristik6.png') }}" alt="Contoh grafik fungsi kuadrat berbentuk parabola" class="img-fluid">
+                <p style="text-align: center">Gambar 7. Tali Yang Diayunkan Membentuk Parabola</p>
             </div>
             <p>
                 Berdasarkan gambar di atas, grafik terbuka ke 

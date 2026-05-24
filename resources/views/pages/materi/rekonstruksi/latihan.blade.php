@@ -190,6 +190,7 @@
             di bawah ini:
             <div style="text-align: center; margin-top: 12px;">
                 <img src="/assets/img/app/graph-rekon-1.png" alt="graph">
+                <p style="text-align: center">Gambar 9. Fungsi Kuadrat Yang Melalui Titik Potong-x</p>
             </div>
             <div class="mt-3">
                 <span class="border border-primary p-2 rounded">Penyelesaian: </span>

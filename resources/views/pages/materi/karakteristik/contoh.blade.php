@@ -8,6 +8,7 @@
             <img src="{{ asset('assets/img/app/karakteristik3.png') }}" 
                 alt="Contoh grafik fungsi kuadrat berbentuk parabola" 
                 class="img-fluid">
+                <p style="text-align: center">Gambar 5. Lemparan Dua Bola Yang Berbentuk Parabola</p>
         </div>
 
         <!-- Soal di kanan -->

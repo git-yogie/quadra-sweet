@@ -166,7 +166,7 @@ class QuizSeeder extends Seeder
                 ],
                 [
                     'id' => 4,
-                    'question' => 'Persamaan fungsi kuadrat yang melalui titik-titik (1,2), (0,3) dan (3,2) adalah ....',
+                    'question' => 'Persamaan fungsi kuadrat yang melalui titik-titik (1, 2), (0, 3) dan (3, 2) adalah ....',
                     'options' => [
                         'a' => '\( f(x) = -\frac{1}{3}x^2 + \frac{4}{3}x + 3 \)',
                         'b' => '\( f(x) = -\frac{1}{3}x^2 - \frac{4}{3}x + 3 \)',
@@ -177,7 +177,7 @@ class QuizSeeder extends Seeder
                 ],
                 [
                     'id' => 5,
-                    'question' => 'Fungsi kuadrat yang memiliki nilai minimum \(-4\) pada \(x = 1\) dan melalui titik (0,0) adalah ....',
+                    'question' => 'Fungsi kuadrat yang memiliki nilai minimum \(-4\) pada \(x = 1\) dan melalui titik (0, 0) adalah ....',
                     'options' => [
                         'a' => '\( f(x) = 4x^2 - 8x \)',
                         'b' => '\( f(x) = -4x^2 - 8x \)',
@@ -224,7 +224,7 @@ class QuizSeeder extends Seeder
                 ],
                 [
                     'id' => 9,
-                    'question' => 'Fungsi kuadrat dengan titik puncak (2,6) dan melalui titik (1,7) adalah ....',
+                    'question' => 'Fungsi kuadrat dengan titik puncak (2, 6) dan melalui titik (1, 7) adalah ....',
                     'options' => [
                         'a' => '\( f(x) = x^2 - 4x - 10 \)',
                         'b' => '\( f(x) = 2x^2 + 4x + 10 \)',
@@ -235,7 +235,7 @@ class QuizSeeder extends Seeder
                 ],
                 [
                     'id' => 10,
-                    'question' => 'Fungsi kuadrat dengan titik balik (2,-1), seperti pada gambar di bawah ini adalah ....',
+                    'question' => 'Fungsi kuadrat dengan titik balik \(2, -1 \), seperti pada gambar di bawah ini adalah ....',
                     'options' => [
                         'a' => '\( f(x) = x^2 - 4x - 3 \)',
                         'b' => '\( f(x) = -x^2 - 4x - 3 \)',
@@ -299,10 +299,10 @@ class QuizSeeder extends Seeder
             'id' => 5,
             'question' => 'Diketahui keliling suatu persegi panjang adalah 36 cm. Ukuran-ukuran persegi panjang tersebut agar luasnya maksimum adalah ....',
             'options' => [
-                'a' => '\(9\) cm \( x 9\) cm',
-                'b' => '\(10\) cm \( x 3\) cm',
-                'c' => '\(11\) cm \( x 3\) cm',
-                'd' => '\(12\) cm \( x 4\) cm',
+                'a' => '\(9\) cm x \( 9\) cm',
+                'b' => '\(10\) cm x \( 3\) cm',
+                'c' => '\(11\) cm x \( 3\) cm',
+                'd' => '\(12\) cm x \( 4\) cm',
             ],
             'correct_answer' => 'a',
         ],
@@ -310,10 +310,10 @@ class QuizSeeder extends Seeder
             'id' => 6,
             'question' => 'Pendapatan dari hasil penjualan barang dinyatakan sebagai fungsi jumlah barang yang diproduksi \(q\): \(P(q) = -20q^2 + 3000q\). Pendapatan maksimal (optimal) dan jumlah barang \(q\) yang menghasilkan pendapatan tersebut adalah ....',
             'options' => [
-                'a' => 'Pendapatan maksimal: 114.500 dan Jumlah barang: 95 unit',
-                'b' => 'Pendapatan maksimal: 113.500 dan Jumlah barang: 85 unit',
-                'c' => 'Pendapatan maksimal: 112.500 dan Jumlah barang: 75 unit',
-                'd' => 'Pendapatan maksimal: 111.500 dan Jumlah barang: 65 unit',
+                'a' => 'Pendapatan maksimal adalah 114.500 dan Jumlah barang sebanyak 95 unit',
+                'b' => 'Pendapatan maksimal adalah 113.500 dan Jumlah barang sebanyak 85 unit',
+                'c' => 'Pendapatan maksimal adalah 112.500 dan Jumlah barang sebanyak 75 unit',
+                'd' => 'Pendapatan maksimal adalah 111.500 dan Jumlah barang sebanyak 65 unit',
             ],
             'correct_answer' => 'c',
         ],
@@ -371,10 +371,10 @@ class QuizSeeder extends Seeder
                 'id' => 1,
                 'question' => 'Diketahui \\( f(x) = 3x^2 + 2x + 1 \\), titik potong dengan sumbu y adalah ....',
                 'options' => [
-                    'a' => '(0,1)',
-                    'b' => '(1,0)',
-                    'c' => '(0,2)',
-                    'd' => '(-1,2)',
+                    'a' => '(0, 1)',
+                    'b' => '(1, 0)',
+                    'c' => '(0, 2)',
+                    'd' => '(-1, 2)',
                 ],
                 'correct_answer' => 'a',
             ],
@@ -394,10 +394,10 @@ class QuizSeeder extends Seeder
                 'id' => 3,
                 'question' => 'Diketahui grafik fungsi kuadrat memiliki titik puncak (p, q) = (-2, -9). Koordinat titik potong grafik dengan sumbu \\( x \\) adalah ....',
                 'options' => [
-                    'a' => '(-8,0) dan (2,0)',
-                    'b' => '(-7,0) dan (2,0)',
-                    'c' => '(-6,0) dan (2,0)',
-                    'd' => '(-5,0) dan (1,0)',
+                    'a' => '(-8, 0) dan (2, 0)',
+                    'b' => '(-7, 0) dan (2, 0)',
+                    'c' => '(-6, 0) dan (2, 0)',
+                    'd' => '(-5, 0) dan (1, 0)',
                 ],
                 'correct_answer' => 'c',
             ],
@@ -447,7 +447,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'id' => 8,
-                'question' => 'Persamaan grafik fungsi kuadrat yang menyinggung sumbu \\( x \\) di titik (2,0) dan melalui titik (0,-8) adalah ....',
+                'question' => 'Persamaan grafik fungsi kuadrat yang menyinggung sumbu \\( x \\) di titik (2, 0) dan melalui titik (0, -8) adalah ....',
                 'options' => [
                     'a' => '\\(f(x) = 2x^2 + 8x + 8 \\)',
                     'b' => '\\(f(x) = 2x^2 - 8x - 8 \\)',
@@ -458,7 +458,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'id' => 9,
-                'question' => 'Persamaan grafik fungsi kuadrat yang memiliki titik puncak di (4,4) dan melalui titik (0,-12) adalah …',
+                'question' => 'Persamaan grafik fungsi kuadrat yang memiliki titik puncak di (4, 4) dan melalui titik (0, -12) adalah …',
                 'options' => [
                     'a' => '\\(f(x) = -x^2 + 8x - 12 \\)',
                     'b' => '\\(f(x) = 2x^2 - 8x - 12 \\)',
@@ -469,7 +469,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'id' => 10,
-                'question' => 'Persamaan grafik fungsi kuadrat yang memotong sumbu x di titik (1,0) dan (5,0) serta melalui titik (0,5) adalah ....',
+                'question' => 'Persamaan grafik fungsi kuadrat yang memotong sumbu x di titik (1, 0) dan (5, 0) serta melalui titik (0, 5) adalah ....',
                 'options' => [
                     'a' => '\\(f(x) = -x^2 + 6x - 5 \\)',
                     'b' => '\\(f(x) = 2x^2 - 6x - 5 \\)',
@@ -480,7 +480,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'id' => 11,
-                'question' => 'Persamaan fungsi kuadrat yang melalui titik-titik (0,0), (4,0), dan (1,2) adalah ....',
+                'question' => 'Persamaan fungsi kuadrat yang melalui titik-titik (0, 0), (4, 0), dan (1, 2) adalah ....',
                 'options' => [
                     'a' => '\\(f(x) = \\frac{2}{3}x^2 - \\frac{8}{3}x \\)',
                     'b' => '\\(f(x) = \\frac{-2}{3}x^2 - \\frac{8}{3}x \\)',
@@ -491,7 +491,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'id' => 12,
-                'question' => 'Diketahui fungsi kuadat \\(f(x) = 2x^2 - 8x + p \\) memiliki nilai minimum 20. nilai \\(f(2) \\) adalah ....',
+                'question' => 'Diketahui fungsi kuadat \\(f(x) = 2x^2 - 8x + p \\) memiliki nilai minimum 20. Nilai \\(f(2) \\) adalah ....',
                 'options' => [
                     'a' => '20',
                     'b' => '15',
@@ -557,7 +557,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'id' => 18,
-                'question' => 'Persamaan fungsi kuadrat yang memiliki titik puncak di (1,3) dan melalui titik (0,0) adalah ....',
+                'question' => 'Persamaan fungsi kuadrat yang memiliki titik puncak di (1, 3) dan melalui titik (0, 0) adalah ....',
                 'options' => [
                     'a' => '\\(f(x) = -3x^2 + 6x \\)',
                     'b' => '\\(f(x) = 3x^2 + 6x \\)',
@@ -579,7 +579,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'id' => 20,
-                'question' => 'Diketahui grafik fungsi kuadrat \\(f(x) = -x^2 + 2x + p \\) melalui titik (3,9). nilai \\(p \\) adalah ....',
+                'question' => 'Diketahui grafik fungsi kuadrat \\(f(x) = -x^2 + 2x + p \\) melalui titik (3, 9). Nilai \\(p \\) adalah ....',
                 'options' => [
                     'a' => '9',
                     'b' => '10',
