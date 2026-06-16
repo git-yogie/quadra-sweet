@@ -7,7 +7,6 @@
 
     <title>QuadraLearn</title>
 
-
     <meta name="description" content="Media Pembelajaran Interaktif Berbasis Web pada Materi Fungsi Kuadrat Kelas X dengan Metode Tutorial" />
     <meta name="keywords" content="quadralearn, fungsi kuadrat, media pembelajaran interaktif, 404 Not Found Indonesia">
 
@@ -32,17 +31,92 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/swiper/swiper.css') }}" />
 
     <!-- Page CSS -->
-
     <link rel="stylesheet" href="{{ asset('assets/vendor/css/pages/front-page-landing.css') }}" />
 
     <!-- Helpers -->
     <script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
     <script src="{{ asset('assets/vendor/js/template-customizer.js') }}"></script>
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('assets/js/front-config.js') }}"></script>
 
+    <!-- STYLING KHUSUS NUANSA MATEMATIKA -->
+    <style>
+      /* Background Grid Matematika (Kartesius) */
+      .landing-hero {
+        background-color: #f7f8fc;
+        background-image: 
+          linear-gradient(rgba(108, 92, 231, 0.05) 1.5px, transparent 1.5px),
+          linear-gradient(90deg, rgba(108, 92, 231, 0.05) 1.5px, transparent 1.5px);
+        background-size: 40px 40px;
+        background-position: center;
+        overflow: hidden;
+      }
+
+      /* Efek Melayang Lambat */
+      @keyframes floatAnimation {
+        0% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(3deg); }
+        100% { transform: translateY(0px) rotate(0deg); }
+      }
+
+      @keyframes floatReverseAnimation {
+        0% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(12px) rotate(-3deg); }
+        100% { transform: translateY(0px) rotate(0deg); }
+      }
+
+      /* Elemen Dekoratif Rumus Matematika */
+      .math-formula-overlay {
+        position: absolute;
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-weight: bold;
+        color: rgba(108, 92, 231, 0.08); /* Sangat samar agar estetik */
+        user-select: none;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .formula-left {
+        top: 25%;
+        left: 8%;
+        font-size: 3.5rem;
+        animation: floatAnimation 6s ease-in-out infinite;
+      }
+
+      .formula-right {
+        bottom: 25%;
+        right: 8%;
+        font-size: 3.5rem;
+        animation: floatReverseAnimation 7s ease-in-out infinite;
+      }
+
+      /* Hiasan Parabola SVG */
+      .parabola-decor {
+        position: absolute;
+        opacity: 0.12;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .parabola-decor-left {
+        left: 5%;
+        bottom: 15%;
+        animation: floatReverseAnimation 8s ease-in-out infinite;
+      }
+
+      .parabola-decor-right {
+        right: 5%;
+        top: 15%;
+        animation: floatAnimation 8s ease-in-out infinite;
+      }
+
+      /* Style Tambahan untuk Formula di Judul */
+      .math-title-inline {
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        white-space: nowrap;
+      }
+    </style>
 </head>
 
 <body>
@@ -63,7 +137,7 @@
         <!-- Mobile menu toggle: End-->
         <a href="#landingHero" class="app-brand-link">
           <span class="app-brand-logo demo">
-            <img src="{{ asset('fk.PNG') }}" alt="404 Not Found Indonesia" width="30" style="border-radius: 150px" srcset="">
+            <img src="{{ asset('fk.PNG') }}" alt="QuadraLearn Logo" width="30" style="border-radius: 150px" srcset="">
           </span>
           <span class="app-brand-text menu-text fw-bold ms-2 ps-1">QuadraLearn</span>
         </a>
@@ -86,7 +160,6 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="kompetensiDropdown">
               <li><a class="dropdown-item" href="{{ route('indikator') }}">Indikator Capaian</a></li>
-              <li><a class="dropdown-item" href="{{ route('tujuan') }}">Tujuan Pembelajaran</a></li>
             </ul>
           </li>
 
@@ -97,7 +170,6 @@
             <ul class="dropdown-menu" aria-labelledby="informasiDropdown">
               <li><a class="dropdown-item" href="{{ route('profil') }}">Profil</a></li>
               <li><a class="dropdown-item" href="{{ route('petunjuk') }}">Petunjuk Aplikasi</a></li>
-              <li><a class="dropdown-item" href="{{ route('dapus') }}">Daftar Pustaka</a></li>
             </ul>
           </li>
         </ul>
@@ -129,24 +201,58 @@
 
 <!-- Sections:Start -->
 
-
 <div data-bs-spy="scroll" class="scrollspy-example">
   <!-- Hero: Start -->
   <section id="hero-animation">
     <div id="landingHero" class="section-py landing-hero position-relative">
-      <div class="container">
+      
+      <!-- ELEMEN DEKORATIF MATEMATIKA (SAMAR) -->
+      <div class="math-formula-overlay formula-left d-none d-md-block">
+        y = ax² + bx + c
+      </div>
+      <div class="math-formula-overlay formula-right d-none d-md-block">
+        D = b² - 4ac
+      </div>
+
+      <!-- DEKORASI KURVA PARABOLA (KIRI - TERBUKA KE ATAS) -->
+      <div class="parabola-decor parabola-decor-left d-none d-md-block">
+        <svg width="120" height="120" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 20 Q50 90 90 20" stroke="#6c5ce7" stroke-width="4" stroke-linecap="round"/>
+          <line x1="50" y1="10" x2="50" y2="90" stroke="#6c5ce7" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <line x1="10" y1="55" x2="90" y2="55" stroke="#6c5ce7" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <text x="53" y="18" fill="#6c5ce7" font-size="10" font-family="Times New Roman" font-style="italic">y</text>
+          <text x="88" y="52" fill="#6c5ce7" font-size="10" font-family="Times New Roman" font-style="italic">x</text>
+          <text x="35" y="98" fill="#6c5ce7" font-size="9" font-family="sans-serif">a > 0</text>
+        </svg>
+      </div>
+
+      <!-- DEKORASI KURVA PARABOLA (KANAN - TERBUKA KE BAWAH) -->
+      <div class="parabola-decor parabola-decor-right d-none d-md-block">
+        <svg width="120" height="120" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 80 Q50 10 90 80" stroke="#e17055" stroke-width="4" stroke-linecap="round"/>
+          <line x1="50" y1="10" x2="50" y2="90" stroke="#e17055" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <line x1="10" y1="45" x2="90" y2="45" stroke="#e17055" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <text x="53" y="18" fill="#e17055" font-size="10" font-family="Times New Roman" font-style="italic">y</text>
+          <text x="88" y="42" fill="#e17055" font-size="10" font-family="Times New Roman" font-style="italic">x</text>
+          <text x="35" y="95" fill="#e17055" font-size="9" font-family="sans-serif">a < 0</text>
+        </svg>
+      </div>
+
+      <div class="container position-relative" style="z-index: 2;">
         <div class="hero-text-box text-center">
-          <h1 class="text-primary hero-title display-4 fw-bold">Belajar fungsi kuadrat dengan cermat</h1>
+          <!-- MODIFIKASI JUDUL DENGAN FORMULA TEKS MATEMATIS -->
+          <h1 class="text-primary hero-title display-4 fw-bold">
+            Belajar Fungsi Kuadrat <br class="d-md-none"> </span> <br class="d-md-none"> dengan Cermat
+          </h1>
           <h2 class="hero-sub-title h6 mb-4 pb-1">
             Media Pembelajaran Interaktif Berbasis Web <br class="d-none d-lg-block" /> Pada Materi Fungsi Kuadrat Kelas X Dengan Metode Tutorial
           </h2>
           <div class="landing-hero-btn d-inline-block position-relative">
-            
-            <a href="{{url('dashboard')}}" class="btn btn-primary">Mulai belajar!</a>
+            <a href="{{url('dashboard')}}" class="btn btn-primary btn-lg px-5 py-3 shadow rounded-pill">
+              Mulai belajar!
+            </a>
           </div>
         </div>
-      
-      
       </div>
     </div>
   </section>  
@@ -162,12 +268,9 @@
   <script src="{{ asset('assets/vendor/libs/swiper/swiper.js') }}"></script>
 
   <!-- Main JS -->
-  
   <script src="{{ asset('assets/js/front-main.js') }}"></script> 
 
-
   <!-- Page JS -->
-  
   <script src="{{ asset('assets/js/front-page-landing.js') }}"></script> 
   <script>
        function checkHash() {

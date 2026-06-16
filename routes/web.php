@@ -34,17 +34,9 @@ Route::get('/petunjuk', function () {
     return view('informasi.petunjuk');
 })->name('petunjuk');
 
-Route::get('/dapus', function() {
-    return view('informasi.dapus');
-})->name('dapus');
-
 Route::get('/indikator', function () {
     return view('kompetensi.indikator');
 })->name('indikator');
-
-Route::get('/tujuan', function () {
-    return view('kompetensi.tujuan');
-})->name('tujuan');
 
 // Rute-rute yang memerlukan autentikasi
 Route::middleware(['auth', 'check.progress'])->group(function() {
@@ -81,6 +73,11 @@ Route::middleware(['auth', 'check.progress'])->group(function() {
 
     // Rute-rute khusus untuk role 'teacher'
     Route::middleware(['role:teacher'])->group(function() {
+        // TAMBAHKAN 2 BARIS KODE BARU INI DI SINI:
+        Route::get('/students/export/excel', [StudentController::class, 'exportExcel'])->name('students.export.excel');
+        Route::get('/students/export/pdf', [StudentController::class, 'exportPdf'])->name('students.export.pdf');
+
+        // Kode bawaan asli Anda tetap biarkan berada di bawahnya:
         Route::get('/students', [StudentController::class, 'index'])->name('students.index');
         Route::patch('/students/{nis}/reset-password', [StudentController::class, 'resetPassword'])->name('students.reset-password');
         Route::delete('/students/{nis}', [StudentController::class, 'destroy'])->name('students.destroy');

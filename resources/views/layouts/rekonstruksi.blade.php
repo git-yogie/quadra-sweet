@@ -100,6 +100,19 @@
 
                 </li>
               </ol>
+              <div class="card border-0 shadow-sm mb-4" style="background: #f8f9ff;">
+                <div class="card-body">
+                  <p class="mb-2 fw-semibold">📌 Petunjuk Kegiatan:</p>
+                  <ol class="mb-0">
+                    <li>Pahamilah tiga kondisi dan rumus dasar rekonstruksi fungsi kuadrat di atas dengan teliti.</li>
+                    <li>Amati langkah-langkah pengerjaan pada bagian contoh soal rekonstruksi yang disediakan.</li>
+                    <li>Lengkapi bagian yang rumpang (kolom kosong) pada contoh soal untuk memahami alur perhitungannya.</li>
+                    <li>Terapkan konsep tersebut untuk menyelesaikan latihan soal rekonstruksi yang diberikan.</li>
+                    <li>Pastikan semua jawaban rumpang telah terisi dengan benar.</li>
+                    <li>Klik tombol kirim jawaban untuk menyelesaikan kegiatan.</li>
+                  </ol>
+                </div>
+              </div>
                 @include('pages.materi.rekonstruksi.contoh')
                 @include('pages.materi.rekonstruksi.latihan')
             </div>

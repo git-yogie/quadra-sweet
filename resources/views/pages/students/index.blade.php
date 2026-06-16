@@ -5,44 +5,76 @@
 
 <div class="card">
     <div class="card-body">
-        <form action="">
-            <div class="row">
-                <div class="col-12 col-md-8 col-lg-10 col-xl-11">
-                    <div class="input-group input-group-merge ">
-                        <span class="input-group-text" id="basic-addon-search31"><i class="bx bx-search"></i></span>
-                        <input value="{{ request()->query('q') ?? '' }}" type="text" class="form-control" placeholder="Cari..." aria-label="Cari..." name="q" aria-describedby="basic-addon-search31">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+            <form action="" class="flex-grow-1" style="max-width: 600px;">
+                <div class="row g-2">
+                    <div class="col-9 col-sm-10">
+                        <div class="input-group input-group-merge">
+                            <span class="input-group-text" id="basic-addon-search31"><i class="bx bx-search"></i></span>
+                            <input value="{{ request()->query('q') ?? '' }}" type="text" class="form-control" placeholder="Cari..." aria-label="Cari..." name="q" aria-describedby="basic-addon-search31">
+                        </div>
+                    </div>
+                    <div class="col-3 col-sm-2 d-grid">
+                        <button type="submit" class="btn btn-primary">Cari</button>
                     </div>
                 </div>
-                <div class=" col-12 col-md-4 col-lg-2 col-xl-1 d-grid gap-2">
-                    <button type="submit" class="btn btn-primary">Cari</button>
-                </div>
+            </form>
+
+            <div class="d-flex gap-2">
+                <a href="{{ route('students.export.excel') }}" class="btn btn-success">
+                    <i class="bx bx-spreadsheet me-1"></i> Excel
+                </a>
+                <a href="{{ route('students.export.pdf') }}" target="_blank" class="btn btn-danger">
+                    <i class="bx bx-file me-1"></i> PDF / Cetak
+                </a>
             </div>
-        </form>
+        </div>
     </div>
 
     <div class="table-responsive text-nowrap">
-      <table class="table table-hover">
+      <table class="table table-hover align-middle">
         <thead>
           <tr>
             <th>Nama</th>
-            <th>Materi Terakhir</th>
-            <th style="min-width: 250px">Progres</th>
+            <th class="text-center">Progres Belajar</th>
+            <th class="text-center">Kuis 1<br><small>(Karakteristik)</small></th>
+            <th class="text-center">Kuis 2<br><small>(Rekonstruksi)</small></th>
+            <th class="text-center">Kuis 3<br><small>(Masalah)</small></th>
+            <th class="text-center">Evaluasi Akhir</th>
             <th width="75px">Aksi</th>
           </tr>
         </thead>
         <tbody class="table-border-bottom-0">
             @foreach ($items as $item)
+            @php
+                // Mengambil data progress pertama untuk persentase bar
+                $progressData = $item->progress->first();
+                $progressPct = $progressData ? ($progressData->progress * 25) : 0;
+                if($progressPct > 100) $progressPct = 100;
+
+                // Membaca skor nilai kuis langsung dari koleksi tabel progress siswa
+                $kuis1 = $item->studentQuizzes->where('quiz_key', 'karakteristik')->first()->score ?? '-';
+                $kuis2 = $item->studentQuizzes->where('quiz_key', 'rekonstruksi')->first()->score ?? '-';
+                $kuis3 = $item->studentQuizzes->where('quiz_key', 'masalah')->first()->score ?? '-';
+                $evaluasi = $item->studentQuizzes->where('quiz_key', 'evaluasi')->first()->score ?? '-';
+            @endphp
             <tr>
                 <td>
                     <b>{{ $item->name }}</b>
-                    <div><small>NIS. {{ $item->nis }}</small></div>
+                    <div><small class="text-muted">NIS. {{ $item->nis }}</small></div>
                 </td>
-                <td><i>Last Progress</i></td>
                 <td>
-                    <div class="progress" style="height: 20px">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                    <div class="d-flex align-items-center gap-2" style="min-width: 150px;">
+                        <div class="progress flex-grow-1" style="height: 12px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: {{ $progressPct }}%" aria-valuenow="{{ $progressPct }}" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <small class="fw-semibold">{{ $progressPct }}%</small>
                     </div>
                 </td>
+                <td class="text-center fw-bold text-secondary">{{ $kuis1 }}</td>
+                <td class="text-center fw-bold text-secondary">{{ $kuis2 }}</td>
+                <td class="text-center fw-bold text-secondary">{{ $kuis3 }}</td>
+                <td class="text-center fw-bold text-primary">{{ $evaluasi }}</td>
                 <td>
                 <div class="dropdown">
                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -71,5 +103,4 @@
         {!! $items->links() !!}
     </div>
 </div>
-
 @endsection

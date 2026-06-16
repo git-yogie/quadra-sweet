@@ -24,10 +24,14 @@
       </li>
       @endif
 
-      @if (auth()->user()->isStudent())
+      @if (auth()->check() && auth()->user()->isStudent())
          @foreach($menus as $menu)
             @php
-               $isLocked = $progress->progress < $menu['progress'];
+               // Jika progres kosong (null), kita anggap nilainya adalah 0
+               $currentProgress = $progress ? $progress->progress : 0;
+
+               // Bandingkan dengan syarat angka progres milik sub-menu tersebut
+               $isLocked = $currentProgress < $menu['progress'];
                $isActive = Route::is($menu['route']) || 
                            (Route::is('quiz.show') && request()->route('quizKey') === $menu['key']);
             @endphp
@@ -74,12 +78,12 @@
                         @if ($isLocked)
                            <div class="menu-link text-muted" style="cursor: not-allowed;">
                               <i class="bx bx-lock-alt me-2"></i>
-                              <div data-i18n="Quiz">Quiz (Terkunci)</div>
+                              <div data-i18n="Quiz">Kuis (Terkunci)</div>
                            </div>
                         @else
                            <a href="{{ route('quiz.show', ['quizKey' => $menu['key']]) }}" class="menu-link">
                               <i class="bx bx-edit me-2"></i>
-                              <div data-i18n="Quiz">Quiz</div>
+                              <div data-i18n="Quiz">Kuis</div>
                            </a>
                         @endif
                      </li>
@@ -88,17 +92,18 @@
             </li>
          @endforeach
       @else
-         <!-- Admin Section -->
-         <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Data Master</span>
-         </li>
+         @if(auth()->check())
+            <li class="menu-header small text-uppercase">
+               <span class="menu-header-text">Data Master</span>
+            </li>
 
-         <li class="menu-item {{ Route::is('students.*') ? 'active' : '' }}">
-            <a href="{{ route('students.index') }}" class="menu-link">
-               <i class="menu-icon tf-icons bx bx-user"></i>
-               <div data-i18n="Siswa">Siswa</div>
-            </a>
-         </li>
+            <li class="menu-item {{ Route::is('students.*') ? 'active' : '' }}">
+               <a href="{{ route('students.index') }}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bx-user"></i>
+                  <div data-i18n="Siswa">Siswa</div>
+               </a>
+            </li>
+         @endif
       @endif
    </ul>
 </aside>

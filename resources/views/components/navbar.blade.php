@@ -14,9 +14,10 @@
 
             <!-- User -->
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                @auth
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                        <img src="{{ auth()->user()->avatar_url }}" alt class="w-px-40 h-px-40 rounded-circle" />
+                        <img src="{{ auth()->user()->avatar_url ?? asset('fk.PNG') }}" alt class="w-px-40 h-px-40 rounded-circle" />
                     </div>
                     <span>Profile</span>
                 </a>
@@ -26,7 +27,7 @@
                             <div class="d-flex">
                                 <div class="flex-shrink-0 me-3">
                                     <div class="avatar avatar-online">
-                                        <img src="{{ auth()->user()->avatar_url }}" alt class="w-px-40 h-px-40 rounded-circle" />
+                                        <img src="{{ auth()->user()->avatar_url ?? asset('fk.PNG') }}" alt class="w-px-40 h-px-40 rounded-circle" />
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
@@ -62,6 +63,21 @@
                         </a>
                     </li>
                 </ul>
+                @else
+                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <div class="avatar">
+                        <img src="{{ asset('fk.PNG') }}" alt class="w-px-40 h-px-40 rounded-circle" />
+                    </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                        <a class="dropdown-item" href="{{ route('welcome') }}">
+                            <i class="bx bx-log-in me-2"></i>
+                            <span class="align-middle">Masuk Akun</span>
+                        </a>
+                    </li>
+                </ul>
+                @endauth
             </li>
             <!--/ User -->
         </ul>
