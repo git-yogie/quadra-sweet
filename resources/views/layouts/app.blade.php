@@ -13,7 +13,7 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
         />
-        <link rel="icon" type="image/png" href="{{ asset('fk.PNG') }}?v=1.1">
+        <link rel="icon" type="image/png" href="{{ asset('fk.png') }}?v=1.1">
 
         <title>@yield('title', 'Quadra Learn')</title>
 
