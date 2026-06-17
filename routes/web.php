@@ -59,7 +59,7 @@ Route::middleware(['auth', 'check.progress'])->group(function() {
         Route::get('/masalah', [DashboardController::class, 'masalah'])->name('dashboard.masalah');
         Route::get('/evaluasi', [QuizController::class, 'evaluasiView'])->name('dashboard.evaluasi');
         Route::get('/evaluasi/result', [DashboardController::class, 'evaluasi'])->name('dashboard.evaluasi.result');
-        Route::post('/evaluasi/result', [DashboardController::class, 'resultEval'])->name('dashboard.evaluasi.result');
+        Route::post('/evaluasi/result', [DashboardController::class, 'resultEval'])->name('dashboard.evaluasi.result.post');
         Route::get('/quiz/{quizKey}', [QuizController::class, 'show'])->name('quiz.show');
         Route::post('/quiz/{quizKey}/result', [QuizController::class, 'result'])->name('quiz.result');
         Route::get('/karakteristik', [DashboardController::class, 'karakteristik'])->name('dashboard.karakteristik');
