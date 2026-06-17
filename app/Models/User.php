@@ -95,6 +95,12 @@ class User extends Authenticatable
 
     public function progress()
     {
-        return $this->hasMany(Progress::class);
+        return $this->hasMany(Progress::class, 'user_id', 'id');
+    }
+
+    // GANTI FUNGSI QUIZZES MENJADI SEPERTI INI:
+    public function studentQuizzes()
+    {
+        return $this->hasMany(StudentQuiz::class, 'user_id', 'id');
     }
 }

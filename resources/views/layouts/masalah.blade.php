@@ -81,6 +81,20 @@
                   suatu bentuk, serta jarak terpendek antar dua titik pada kurva parabola.
                 </li>
               </ol>
+              <div class="card border-0 shadow-sm mb-4" style="background: #f8f9ff;">
+                <div class="card-body">
+                  <p class="mb-2 fw-semibold">📌 Petunjuk Kegiatan:</p>
+                  <ol class="mb-0">
+                    <li>Pahamilah konsep pemodelan fungsi kuadrat dan rumus mencari nilai optimum (maksimum/minimum) di atas dengan teliti.</li>
+                    <li>Amati langkah-langkah pemecahan masalah kontekstual pada bagian contoh soal cerita yang disediakan.</li>
+                    <li>Lengkapi bagian yang rumpang (kolom kosong) pada contoh soal untuk memahami alur penerapan rumusnya.</li>
+                    <li>Terapkan strategi pemodelan tersebut untuk menyelesaikan latihan soal cerita kontekstual yang diberikan.</li>
+                    <li>Isilah nilai variabel, hasil perhitungan, atau kesimpulan cerita pada kolom jawaban berdasarkan hasil analisis mandirimu.</li>
+                    <li>Pastikan semua jawaban rumpang telah terisi dengan benar.</li>
+                    <li>Klik tombol kirim jawaban untuk menyelesaikan kegiatan pembelajaran.</li>
+                  </ol>
+                </div>
+              </div>
               @include('pages.materi.masalah.contoh')
               @include('pages.materi.masalah.latihan')
             </div>

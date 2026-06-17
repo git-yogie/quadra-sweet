@@ -29,7 +29,7 @@
 @section('content')
 <div class="rounded-3">
     <div class="w-100">
-        <main role="main" class="container-fluid mt-4">
+        <main role="main" class="mt-4">
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul class="mb-0">
@@ -40,7 +40,25 @@
                 </div>
             @endif
 
-            <h2 class="fw-bold text-center mb-4">Quiz {{ $quiz->title }}</h2>
+            <div class="card border-0 shadow-sm mb-4" style="background: #f8f9ff;">
+                <div class="card-body">
+                    <p class="mb-2 fw-semibold">📌 Petunjuk Kuis:</p>
+                    <ol class="mb-0">
+                        <li>Bacalah setiap soal dengan teliti sebelum menjawab.</li>
+                        <li>Pilihlah satu jawaban yang paling tepat pada setiap soal.</li>
+                        <li>Waktu pengerjaan kuis terbatas, perhatikan timer yang tersedia.</li>
+                        <li>Jika waktu habis, jawaban akan otomatis dikumpulkan.</li>
+                        <li>Pastikan semua soal telah dijawab sebelum menekan tombol kirim.</li>
+                        <li>Periksa kembali jawaban Anda sebelum dikirim.</li>
+                        <li>Klik tombol <b>"Kirim Jawaban"</b> untuk menyelesaikan kuis.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <h2 class="fw-bold text-center mb-4">Kuis {{ $quiz->title }}</h2>
+            <div class="alert alert-warning text-center">
+                ⏱ Waktu tersisa: <span id="timer">60:00</span>
+            </div>
 
             <div id="quizProgressWrapper" class="quiz-progress-wrapper shadow-sm bg-white p-2 rounded d-none">
                 <div class="quiz-progress" style="height: 18px;">
@@ -126,5 +144,33 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
+let timeLeft = 3600; // 60 menit
+
+    const timerElement = document.getElementById("timer");
+
+    const countdown = setInterval(function () {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        timerElement.innerHTML = minutes + ":" + seconds;
+
+        timeLeft--;
+
+        // 🔴 Jika sisa waktu 1 menit
+        if (timeLeft <= 60) {
+            timerElement.style.color = "red";
+        }
+
+        // ⏰ Jika waktu habis
+        if (timeLeft < 0) {
+            clearInterval(countdown);
+            alert("Waktu habis! Jawaban akan dikirim otomatis.");
+            document.getElementById("quizForm").submit();
+        }
+
+    }, 1000);
 </script>
 @endpush

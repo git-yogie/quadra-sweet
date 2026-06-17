@@ -76,32 +76,71 @@ class QuizController extends Controller
         }
 
         // ✅ Hitung skor
-        $score = 0;
+        $correct = 0;
         $results = [];
 
         foreach ($quiz->questions as $question) {
             $field = 'question_' . $question->id;
-            $userAnswer = $userAnswers[$field] ?? null;
 
-            $isCorrect = $userAnswer === $question->correct_answer;
-            $score += $isCorrect ? 1 : 0;
+            // ambil dari request
+            $userAnswer = $request->input($field);
+
+            $isCorrect = $userAnswer !== null && $userAnswer === $question->correct_answer;
+
+            if ($isCorrect) {
+                $correct++;
+            }
 
             $results[] = [
                 'question' => $question->question,
+                'options' => [
+                    'a' => $question->option_a,
+                    'b' => $question->option_b,
+                    'c' => $question->option_c,
+                    'd' => $question->option_d,
+                ],
                 'user_answer' => $userAnswer,
                 'correct_answer' => $question->correct_answer,
                 'is_correct' => $isCorrect,
             ];
         }
 
+        // hitung nilai
+        $total = count($quiz->questions);
+        $score = round(($correct / $total) * 100);
+
         // 🚀 Update progress
+        // 🚀 Update progress
+        // 🚀 Hitung tingkatan progress berdasarkan kuis yang diselesaikan
         $menuKeys = array_column($this->menus, 'key');
         $currentProgress = array_search($quizKey, $menuKeys) + 1;
 
-        if ($progress && $progress->progress < $currentProgress) {
-            $progress->progress = $currentProgress;
-            $progress->save();
-        }
+        // =========================================================
+        // FIX 1: UPDATE ATAU BUAT OTOMATIS PROGRESS JIKA BELUM ADA
+        // =========================================================
+        $progress = \App\Models\Progress::updateOrCreate(
+            [
+                'user_id'  => auth()->id(),
+            ],
+            [
+                // Progres hanya naik jika tingkatan kuis lebih tinggi dari progres saat ini
+                'progress' => max(($progress->progress ?? 0), $currentProgress)
+            ]
+        );
+
+        // =========================================================
+        // FIX 2: AUTO-SAVE NILAI KE DATABASE NYATA
+        // =========================================================
+        \App\Models\StudentQuiz::updateOrCreate(
+            [
+                'user_id'  => auth()->id(),
+                'quiz_key' => $quizKey,
+            ],
+            [
+                'score'    => $score
+            ]
+        );
+        // =========================================================
 
         return view('layouts.quizResult', [
             'quiz' => $quiz,
@@ -109,7 +148,7 @@ class QuizController extends Controller
             'results' => $results,
             'quizKey' => $quizKey,
             'menus' => $this->menus,
-            'progress' => $progress,
+            'progress' => $progress, // Variabel progress baru yang sudah ter-update
         ]);
     }
 

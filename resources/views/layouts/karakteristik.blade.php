@@ -111,7 +111,21 @@
                 <!-- STEP 1: Peran Nilai a -->
                 <div class="step-page active">
                   <h5><strong>A. </strong>Peran nilai 𝑎 dalam fungsi kuadrat</h5>
-                  <p>&nbsp;&nbsp;&nbsp;&nbsp; Untuk mengetahui peran tanda pada nilai 𝑎, silahkan eksplorasi geogebra berikut:</p>
+                  <div class="card border-0 shadow-sm mb-4" style="background: #f8f9ff;">
+                    <div class="card-body">
+                        <p class="mb-2 fw-semibold">📌 Petunjuk Kegiatan:</p>
+                        <ol class="mb-0">
+                          <li>Amatilah tampilan Geogebra yang disediakan.</li>
+                          <li>Geser slider nilai 𝑎 untuk melihat perubahan bentuk grafik fungsi kuadrat.</li>
+                          <li>Perhatikan arah terbukanya parabola berdasarkan nilai 𝑎.</li>
+                          <li>Isilah tabel berdasarkan hasil pengamatan yang dilakukan.</li>
+                          <li>Tuliskan kesimpulan pada bagian yang telah disediakan.</li>
+                          <li>Kerjakan soal latihan yang tersedia dengan teliti.</li>
+                          <li>Pastikan semua jawaban telah diisi dengan benar.</li>
+                          <li>Klik tombol kirim jawaban untuk menyelesaikan kegiatan.</li>
+                        </ol>
+                    </div>
+                  </div>
                   <div class="container-flex">
                     <div class="flex-item">
                       <iframe src="https://www.geogebra.org/calculator/yugqknmz" 
@@ -189,8 +203,24 @@
 
 
                 <div class="step-page">
-                  <h5><strong>B. </strong>Peran nilai c dalam fungsi kuadrat</h5>
-                  <p>Nilai c adalah konstanta (saat x=0, maka y=c). Eksplorasi peran c di Geogebra berikut:</p>
+                  <h5><strong>B. </strong>Peran nilai \(c\) dalam fungsi kuadrat</h5>
+                  <p>Nilai \(c\) adalah konstanta saat \(x=0\), maka \(y=c\).</p>
+                  <div class="card border-0 shadow-sm mb-4" style="background: #f8f9ff;">
+                    <div class="card-body">
+                        <p class="mb-2 fw-semibold">📌 Petunjuk Kegiatan:</p>
+                        <ol class="mb-0">
+                          <li>Amatilah tampilan Geogebra yang disediakan.</li>
+                          <li>Geser slider nilai \(c\) untuk melihat perubahan posisi grafik fungsi kuadrat.</li>
+                          <li>Perhatikan titik potong grafik dengan sumbu \(y\) untuk setiap perubahan nilai \(c\).</li>
+                          <li>Isilah tabel berdasarkan hasil pengamatan yang dilakukan.</li>
+                          <li>Tuliskan kesimpulan pada bagian yang telah disediakan.</li>
+                          <li>Kerjakan contoh soal yang diberikan.</li>
+                          <li>Kerjakan soal latihan yang tersedia dengan teliti.</li>
+                          <li>Pastikan semua jawaban telah diisi dengan benar.</li>
+                          <li>Klik tombol kirim jawaban untuk menyelesaikan kegiatan.</li>
+                        </ol>
+                    </div>
+                  </div>
                   <div class="container-flex">
                     <div class="flex-item">
                       <iframe src="https://www.geogebra.org/calculator/truxmykq" 
@@ -229,7 +259,6 @@
         </p>
         <form action="{{route('quiz.evaluate')}}" method="POST">
           @csrf
-          <p>Untuk lebih paham mengetahui nilai 𝑐, ayoo kita kerjakan contoh dan latihan soal berikut ya!</p>
           <span class="border border-primary p-2 my-2 rounded">Contoh Soal: </span>
           <div class="py-2 mt-3">
             <p>1. \( f(x)=x^2-2x-2 \). Tentukan titik potong dengan sumbu 𝑦 dan nilai 𝑐.</p>
@@ -293,13 +322,26 @@
             Nilai \( b \) disebut koefisien linier. Nilai \( b \) mempengaruhi letak sumbu simetri dan posisi puncak parabola.
             Nilai \( b \) juga menggeser puncak parabola ke kiri dan ke kanan.
             Sumbu simetri dari parabola adalah garis vertikal yang melewati titik puncak, sehingga membagi parabola menjadi dua bagian yang simetris.
-            Persamaan dari sumbu simteri adalah <mark> \( x=-\frac{b}{2a} \) </mark>. Sumbu simetri selalu melalui titik puncak, x = 1.
+            Persamaan dari sumbu simteri adalah <mark> \( x=-\frac{b}{2a} \) </mark>. Sumbu simetri selalu melalui titik puncak, \(x = 1\).
             Titik puncak (vertex) dari sebuah parabola yang berbentuk <mark> \( y=ax^2+bx+c \) </mark> terletak di koordinat (𝑥, 𝑦) dimana:
           </p>
           <p>- Titik puncak fungsi kuadrat yaitu \(x_p , y_p \) dengan \( x_p=-\frac{b}{2a} \) dan \( y_p=-\frac{D}{4a} \) </p>
           <p>- Koordinat 𝑦 dari titik puncak dapat ditemukan dengan memasukkan nilai 𝑥 tersebut ke dalam persamaan kuadrat.</p>
         </li>
-        <p> Agar lebih jelas, ayoo kita pahami contoh soal dan latihan berikut ini! </p>
+        <div class="card border-0 shadow-sm mb-4" style="background: #f8f9ff;">
+          <div class="card-body">
+            <p class="mb-2 fw-semibold">📌 Petunjuk Kegiatan:</p>
+            <ol class="mb-0">
+              <li>Bacalah contoh soal yang disediakan dengan teliti.</li>
+              <li>Perhatikan langkah-langkah penyelesaian pada contoh soal.</li>
+              <li>Pahamilah pengaruh nilai \(b\) terhadap grafik fungsi kuadrat.</li>
+              <li>Kerjakan contoh soal yang diberikan.</li>
+              <li>Kerjakan soal latihan yang tersedia dengan teliti.</li>
+              <li>Pastikan semua jawaban telah diisi dengan benar.</li>
+              <li>Klik tombol kirim jawaban untuk menyelesaikan kegiatan.</li>
+            </ol>
+          </div>
+        </div>
         <span class="border border-primary p-2 my-2 rounded">Contoh Soal: </span>
         <p class="mt-3" style="padding: 0 30px;"> Diketahui fungsi kuadrat \( f(x)=2x^2-4x+1 \). Tentukan titik puncak, sumbu simetri serta apakah titik puncak adalah titik maksimum atau titik minimum? </p>
         <span class="border border-primary p-2 my-2 rounded">Jawab: </span>
@@ -468,7 +510,23 @@
       <br>𝐷 < 0 maka tidak ada titik potong pada sumbu x.
     </div>
   </div>
-
+  <div class="card border-0 shadow-sm mb-4" style="background: #f8f9ff;">
+    <div class="card-body">
+      <p class="mb-2 fw-semibold">📌 Petunjuk Kegiatan:</p>
+      <ol class="mb-0">
+        <li>Bacalah penjelasan tentang nilai diskriminan dengan teliti.</li>
+        <li>Amatilah contoh grafik dan hubungan diskriminan dengan titik potong terhadap sumbu \(x\).</li>
+        <li>Kerjakan contoh soal dengan melengkapi langkah-langkah perhitungan yang tersedia.</li>
+        <li>Kerjakan soal latihan dengan menentukan nilai \(a\), \(b\), dan \(c\), kemudian hitung nilai diskriminannya.</li>
+        <li>Tentukan makna nilai diskriminan terhadap jumlah titik potong grafik dengan sumbu \(x\).</li>
+        <li>Pada bagian <b>Ayo Mencoba</b>, lengkapilah tabel nilai fungsi yang diberikan.</li>
+        <li>Gunakan GeoGebra untuk membantu memvisualisasikan grafik fungsi kuadrat.</li>
+        <li>Plot titik-titik yang diperoleh ke dalam sistem koordinat, kemudian hubungkan hingga membentuk grafik.</li>
+        <li>Pastikan semua jawaban telah diisi dengan benar.</li>
+        <li>Klik tombol kirim jawaban untuk menyelesaikan kegiatan.</li>
+      </ol>
+    </div>
+  </div>
   <span class="border border-primary p-2 my-2 rounded mt-3 d-inline-block">Contoh Soal:</span>
   <div class="my-3">
     Hitunglah nilai diskriminan dari fungsi \( f(x)=-x^2-x+2\) !
