@@ -70,7 +70,7 @@
         font-family: 'Times New Roman', Times, serif;
         font-style: italic;
         font-weight: bold;
-        color: rgba(108, 92, 231, 0.08); /* Sangat samar agar estetik */
+        color: rgba(108, 92, 231, 0.55); /* Sangat samar agar estetik */
         user-select: none;
         pointer-events: none;
         z-index: 1;
@@ -93,7 +93,7 @@
       /* Hiasan Parabola SVG */
       .parabola-decor {
         position: absolute;
-        opacity: 0.12;
+        opacity: 0.70;
         pointer-events: none;
         z-index: 1;
       }
