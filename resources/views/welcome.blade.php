@@ -245,7 +245,7 @@
             Belajar Fungsi Kuadrat <br class="d-md-none"> </span> <br class="d-md-none"> dengan Cermat
           </h1>
           <h2 class="hero-sub-title h6 mb-4 pb-1">
-            Media Pembelajaran Interaktif Berbasis Web <br class="d-none d-lg-block" /> Pada Materi Fungsi Kuadrat Kelas X Dengan Metode Tutorial
+            Media Pembelajaran Interaktif Berbasis Web <br class="d-none d-lg-block" /> Pada Materi Fungsi Kuadrat Kelas X Dengan Model Tutorial
           </h2>
           <div class="landing-hero-btn d-inline-block position-relative">
             <a href="{{url('dashboard')}}" class="btn btn-primary btn-lg px-5 py-3 shadow rounded-pill">

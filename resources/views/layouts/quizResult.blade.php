@@ -66,28 +66,34 @@
                 </ul>
                 <div class="mb-5">
 
-                    @if($quizKey == 'karakteristik')
-                        <a href="{{ route('dashboard.karakteristik') }}" class="btn btn-primary mt-3">
-                            📘 Kembali ke Materi
+                    <!-- JIKA NILAI DI BAWAH KKM (REMEDIAL) -->
+                    @if($score < 75)
+                        <!-- Tombol Kembali ke Materi Saat Ini -->
+                        @if($quizKey == 'karakteristik')
+                            <a href="{{ route('dashboard.karakteristik') }}" class="btn btn-primary mt-3">
+                                📘 Kembali ke Materi
+                            </a>
+                        @elseif($quizKey == 'rekonstruksi')
+                            <a href="{{ route('dashboard.rekonstruksi') }}" class="btn btn-primary mt-3">
+                                📘 Kembali ke Materi
+                            </a>
+                        @elseif($quizKey == 'masalah')
+                            <a href="{{ route('dashboard.masalah') }}" class="btn btn-primary mt-3">
+                                📘 Kembali ke Materi
+                            </a>
+                        @endif
+
+                        <!-- Tombol Mengulang Kuis Saat Ini -->
+                        <a href="{{ route('quiz.show', ['quizKey' => $quizKey]) }}" class="btn btn-warning mt-3 text-white ms-2">
+                            🔄 Mengulang Kuis
                         </a>
 
-                    @elseif($quizKey == 'rekonstruksi')
-                        <a href="{{ route('dashboard.rekonstruksi') }}" class="btn btn-primary mt-3">
-                            📘 Kembali ke Materi
+                    <!-- JIKA NILAI LULUS KKM (LANGSUNG KE MATERI SELANJUTNYA) -->
+                    @else
+                        <a href="{{ isset($menus[array_search($quizKey, array_column($menus, 'key')) + 1]['route']) ? route($menus[array_search($quizKey, array_column($menus, 'key')) + 1]['route']) : '#' }}" 
+                            class="btn btn-success mt-3">
+                            ➡️ Lanjutkan ke Materi Selanjutnya
                         </a>
-
-                    @elseif($quizKey == 'masalah')
-                        <a href="{{ route('dashboard.masalah') }}" class="btn btn-primary mt-3">
-                            📘 Kembali ke Materi
-                        </a>
-                    @endif
-
-                    <!-- Tombol Lanjutkan -->
-                    @if($score >= 75)
-                    <a href="{{ isset($menus[array_search($quizKey, array_column($menus, 'key')) + 1]['route']) ? route($menus[array_search($quizKey, array_column($menus, 'key')) + 1]['route']) : '#' }}" 
-                        class="btn btn-success mt-3">
-                        ➡️ Lanjutkan
-                    </a>
                     @endif
 
                 </div>
