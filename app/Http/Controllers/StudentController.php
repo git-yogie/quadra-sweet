@@ -28,52 +28,61 @@ class StudentController extends Controller
         return view('pages.students.index', $data);
     }
 
-    // 2. Fitur Ekspor ke Excel Data Asli
-    public function exportExcel(Request $request): StreamedResponse {
+    // 2. Fitur Ekspor ke Excel Menggunakan Format Spreadsheet Asli
+    public function exportExcel(Request $request) {
         $students = User::student()->with(['progress', 'studentQuizzes'])->get();
 
-        $callback = function() use ($students) {
-            $file = fopen('php://output', 'w');
-            fprintf($file, chr(0xEF).chr(0xBB).chr(0xBF));
+        // Nama file diatur menggunakan ekstensi .xls
+        $filename = "Laporan_Nilai_Siswa_QuadraLearn.xls";
 
-            fputcsv($file, [
-                'No', 'NIS', 'Nama Siswa', 'Progress Belajar', 
-                'Kuis 1 (Karakteristik)', 'Kuis 2 (Rekonstruksi)', 
-                'Kuis 3 (Masalah)', 'Evaluasi Akhir'
-            ], ';');
+        // Atur Header agar browser mendownloadnya sebagai file Excel resmi
+        header("Content-Type: application/vnd.ms-excel; charset=utf-8");
+        header("Content-Disposition: attachment; filename=\"$filename\"");
+        header("Pragma: no-cache");
+        header("Expires: 0");
 
-            foreach ($students as $index => $student) {
-                $progressData = $student->progress->first();
-                $progressPct = $progressData ? ($progressData->progress * 25) : 0;
-                if($progressPct > 100) $progressPct = 100;
+        // Membuat struktur tabel HTML yang otomatis dikonversi rapi oleh Excel
+        echo '<table border="1">';
+        echo '<thead>';
+        echo '<tr>';
+        echo '<th style="background-color: #4CAF50; color: white;">No</th>';
+        echo '<th style="background-color: #4CAF50; color: white;">NIS</th>';
+        echo '<th style="background-color: #4CAF50; color: white;">Nama Siswa</th>';
+        echo '<th style="background-color: #4CAF50; color: white;">Progress Belajar</th>';
+        echo '<th style="background-color: #4CAF50; color: white;">Kuis 1 (Karakteristik)</th>';
+        echo '<th style="background-color: #4CAF50; color: white;">Kuis 2 (Rekonstruksi)</th>';
+        echo '<th style="background-color: #4CAF50; color: white;">Kuis 3 (Masalah)</th>';
+        echo '<th style="background-color: #4CAF50; color: white;">Evaluasi Akhir</th>';
+        echo '</tr>';
+        echo '</thead>';
+        echo '<tbody>';
 
-                // Mengambil nilai asli dari database student_quizzes Anda
-                $kuis1 = $student->studentQuizzes->where('quiz_key', 'karakteristik')->first()->score ?? '-';
-                $kuis2 = $student->studentQuizzes->where('quiz_key', 'rekonstruksi')->first()->score ?? '-';
-                $kuis3 = $student->studentQuizzes->where('quiz_key', 'masalah')->first()->score ?? '-';
-                $evaluasi = $student->studentQuizzes->where('quiz_key', 'evaluasi')->first()->score ?? '-';
+        foreach ($students as $index => $student) {
+            $progressData = $student->progress->first();
+            $progressPct = $progressData ? ($progressData->progress * 25) : 0;
+            if($progressPct > 100) $progressPct = 100;
 
-                fputcsv($file, [
-                    $index + 1,
-                    $student->nis,
-                    $student->name,
-                    $progressPct . '%',
-                    $kuis1,
-                    $kuis2,
-                    $kuis3,
-                    $evaluasi
-                ], ';');
-            }
+            $kuis1 = $student->studentQuizzes->where('quiz_key', 'karakteristik')->first()->score ?? '-';
+            $kuis2 = $student->studentQuizzes->where('quiz_key', 'rekonstruksi')->first()->score ?? '-';
+            $kuis3 = $student->studentQuizzes->where('quiz_key', 'masalah')->first()->score ?? '-';
+            $evaluasi = $student->studentQuizzes->where('quiz_key', 'evaluasi')->first()->score ?? '-';
 
-            fclose($file);
-        };
+            echo '<tr>';
+            echo '<td>' . ($index + 1) . '</td>';
+            // Menambahkan tanda kutip tunggal agar NIS bertipe string dan angka nol (0) di depan NIS tidak hilang
+            echo '<td style="vnd.ms-excel.numberformat:@">' . $student->nis . '</td>';
+            echo '<td>' . $student->name . '</td>';
+            echo '<td>' . $progressPct . '%</td>';
+            echo '<td>' . $kuis1 . '</td>';
+            echo '<td>' . $kuis2 . '</td>';
+            echo '<td>' . $kuis3 . '</td>';
+            echo '<td>' . $evaluasi . '</td>';
+            echo '</tr>';
+        }
 
-        $headers = [
-            'Content-Type' => 'text/csv; charset=UTF-8',
-            'Content-Disposition' => 'attachment; filename="Laporan_Nilai_Siswa_QuadraLearn.csv"',
-        ];
-
-        return response()->stream($callback, 200, $headers);
+        echo '</tbody>';
+        echo '</table>';
+        exit;
     }
 
     // 3. Fitur Cetak PDF Data Asli

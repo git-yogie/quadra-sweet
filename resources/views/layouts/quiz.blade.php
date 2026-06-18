@@ -5,24 +5,49 @@
 @push('style')
     <link href="{{ asset('css/utama.css') }}" rel="stylesheet">
     <style>
-        /* CSS Progress Bar tetap dipertahankan sesuai kode asli kamu */
-        .quiz-progress-wrapper {
-            position: sticky;
-            top: 20px;
-            z-index: 1050;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 10px 20px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease-in-out;
-            opacity: 0;
-        }
-        .quiz-progress-wrapper.active { opacity: 1; top: 30px; }
-        .quiz-progress { background-color: #e9ecef; border-radius: 10px; overflow: hidden; height: 30px; display: flex; align-items: center; }
-        .quiz-progress-bar { height: 100%; width: 0%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.3px; border-radius: 10px; transition: width 0.4s ease, background-color 0.3s ease; }
+    /* 1. Kotak Putih Utama (Sticky Header) */
+    .quiz-progress-wrapper {
+        position: sticky;
+        top: 75px;          /* Jarak melayang di bawah navbar utama saat di-scroll */
+        z-index: 1050;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto 25px auto;
+        padding: 15px 20px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e1e5f2;
+        opacity: 1 !important;        
+        display: block !important;    
+        transition: all 0.4s ease;
+    }
+
+    /* 2. Latar Belakang Progress Bar (Kotak Kapsul Abu-abu) */
+    .quiz-progress { 
+        background-color: #f1f3f9 !important; /* Warna abu-abu background kapsul */
+        border: 1px solid #e2e8f0;          /* Garis pinggir tipis agar makin tegas */
+        border-radius: 30px !important;     /* Membuat ujungnya melengkung bulat (kapsul) */
+        overflow: hidden; 
+        height: 24px !important;            /* Mengatur tinggi kotak kapsul */
+        display: flex; 
+        align-items: center; 
+    }
+
+    /* 3. Isi Progress Bar (Warna Hijau/Progress-nya) */
+    .quiz-progress-bar { 
+        height: 100%; 
+        width: 0%; 
+        display: flex !important; 
+        align-items: center !important; 
+        justify-content: center !important; 
+        color: #fff !important; 
+        background-color: #4cd137 !important; /* Mengunci warna hijau cerah yang estetik */
+        font-weight: 700; 
+        font-size: 0.85rem; 
+        border-radius: 30px !important;     /* Menyeimbangkan kelengkungan di dalam */
+        transition: width 0.4s ease; 
+    }
     </style>
 @endpush
 
@@ -55,18 +80,25 @@
                 </div>
             </div>
 
-            <h2 class="fw-bold text-center mb-4">Kuis {{ $quiz->title }}</h2>
-            <div class="alert alert-warning text-center">
-                ⏱ Waktu tersisa: <span id="timer">60:00</span>
-            </div>
+            <!-- GANTI BAGIAN SEBELUM FORM MULAI DARI H2 SAMPAI DIV WRAPPER MENJADI SEPERTI INI -->
 
-            <div id="quizProgressWrapper" class="quiz-progress-wrapper shadow-sm bg-white p-2 rounded d-none">
+            <div id="quizProgressWrapper" class="quiz-progress-wrapper shadow-sm bg-white p-3 rounded">
+                <!-- Judul Kuis ikut masuk ke kontainer melayang -->
+                <h4 class="fw-bold text-center mb-2" style="color: #333;">Kuis {{ $quiz->title }}</h4>
+                
+                <!-- Timer / Waktu tersisa ikut masuk ke kontainer melayang -->
+                <div class="alert alert-warning text-center py-1 px-3 mb-2 small fw-semibold" style="max-width: 300px; margin: 0 auto;">
+                    ⏱ Waktu tersisa: <span id="timer">60:00</span>
+                </div>
+
+                <!-- Progress Bar di bagian bawahnya -->
                 <div class="quiz-progress" style="height: 18px;">
                     <div id="quiz-progress-bar" class="quiz-progress-bar bg-primary" style="width: 0%;">0%</div>
                 </div>
             </div>
 
             <form id="quizForm" action="{{ route('quiz.result', ['quizKey' => $quizKey]) }}" method="POST">
+            <!-- Sisa kode form ke bawah tetap sama dan jangan diubah -->
                 @csrf
                 @forelse($quiz->questions as $question)
                     <div class="card my-3 shadow-sm question-card">

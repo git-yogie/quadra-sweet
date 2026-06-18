@@ -16,12 +16,14 @@
 
    <ul class="menu-inner py-1">
       @if(auth()->check() && auth()->user()->role === 'student')
-      <li class="menu-item {{ Route::is('dashboard') ? 'active' : '' }}">
-         <a href="{{ route('dashboard') }}" class="menu-link">
-            <i class="menu-icon tf-icons bx bxs-book-open"></i>
-            <div data-i18n="Basic">Fungsi Kuadrat</div>
-         </a>
-      </li>
+         @if(!Request::is('*indikator*') && !Request::is('*profil*') && !Request::is('*petunjuk*'))
+         <li class="menu-item {{ Route::is('dashboard') ? 'active' : '' }}">
+            <a href="{{ route('dashboard') }}" class="menu-link">
+               <i class="menu-icon tf-icons bx bxs-book-open"></i>
+               <div data-i18n="Basic">Fungsi Kuadrat</div>
+            </a>
+         </li>
+         @endif
       @endif
 
       @if (auth()->check() && auth()->user()->isStudent())

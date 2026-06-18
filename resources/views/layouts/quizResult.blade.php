@@ -30,7 +30,7 @@
             <div class="evaluasi" id="evaluasi">
             <div class="container">
                 <h1>Hasil Kuis</h1>
-                <p><strong>Nilai Anda:</strong> {{ $score }}/100</p>
+                <p><strong>Nilai Anda:</strong> {{ $score }}</p>
                 @if($score >= 75)
                             <div class="alert alert-success mt-2">
                                 🎉 Selamat! Anda telah memahami materi dengan baik.

@@ -35,7 +35,7 @@
                                 <tr>
                                     <td><strong>Email</strong></td>
                                     <td>:</td>
-                                    <td>2010131320004@mhs.ulm.ac.id</td>
+                                    <td>nurfitriy0201@gmail.com</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Nomor Handphone</strong></td>
@@ -53,7 +53,7 @@
                                     <td>Delsika Pramata Sari, M.Pd</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Program Studi</strong></td>
+                                    <td><strong>Jurusan</strong></td>
                                     <td>:</td>
                                     <td>S1 Pendidikan Komputer</td>
                                 </tr>
