@@ -1,6 +1,6 @@
 <div align="center">
     <p>
-        <img src="https://avatars.githubusercontent.com/u/87377917?s=200&v=4" width="200" alt="QuadraLearn Logo">
+        <img src="https://raw.githubusercontent.com/NurFitriYanti02/quadra-sweet/main/public/fk.png" width="200" alt="fk.PNG">
     </p>
 
 ![GitHub Stars](https://img.shields.io/github/stars/NurFitriYanti02/quadra-sweet)
@@ -11,7 +11,7 @@
 # QuadraLearn
 
 **QuadraLearn** is a web-based interactive learning media designed for teaching quadratic functions in grade X using the tutorial learning method
-(*Media Pembelajaran Interaktif Berbasis Web Pada Materi Fungsi Kuadrat Kelas X Dengan Metode Tutorial*).
+(*Media Pembelajaran Interaktif Berbasis Web Pada Materi Fungsi Kuadrat Kelas X Dengan Model Tutorial*).
 
 ---
 
