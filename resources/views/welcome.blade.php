@@ -7,7 +7,7 @@
 
     <title>QuadraLearn</title>
 
-    <meta name="description" content="Media Pembelajaran Interaktif Berbasis Web pada Materi Fungsi Kuadrat Kelas X dengan Metode Tutorial" />
+    <meta name="description" content="Media Pembelajaran Interaktif Berbasis Web pada Materi Fungsi Kuadrat Kelas X dengan Model Tutorial" />
     <meta name="keywords" content="quadralearn, fungsi kuadrat, media pembelajaran interaktif, 404 Not Found Indonesia">
 
     <!-- Favicon -->
