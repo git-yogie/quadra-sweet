@@ -86,6 +86,13 @@
                             @method('PATCH')
                             <button class="dropdown-item" type="submit"><i class="bx bx-reset me-1"></i> Reset Password</button>
                         </form>
+                        
+                        <form action="{{ route('students.reset-quiz', $item->nis) }}" method="post" onsubmit="return confirmSubmit(event, this)">
+                            @csrf
+                            @method('DELETE')
+                            <button class="dropdown-item" type="submit"><i class="bx bx-refresh me-1"></i> Reset Nilai Kuis</button>
+                        </form>
+                        
                         <form action="{{ route('students.destroy', $item->nis) }}" method="post" onsubmit="return confirmSubmit(event, this)">
                             @csrf
                             @method('DELETE')
