@@ -80,6 +80,7 @@ Route::middleware(['auth', 'check.progress'])->group(function() {
         // Kode bawaan asli Anda tetap biarkan berada di bawahnya:
         Route::get('/students', [StudentController::class, 'index'])->name('students.index');
         Route::patch('/students/{nis}/reset-password', [StudentController::class, 'resetPassword'])->name('students.reset-password');
+        Route::delete('/students/{nis}/reset-quiz', [StudentController::class, 'resetQuiz'])->name('students.reset-quiz');
         Route::delete('/students/{nis}', [StudentController::class, 'destroy'])->name('students.destroy');
     });
 

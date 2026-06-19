@@ -15,7 +15,7 @@
                         <p style="text-align: justify; line-height: 1.6;">
                             Media pembelajaran ini membahas tentang <strong>fungsi kuadrat</strong>. Materi ini diajarkan di tingkat SMA/SMK. Fitur-fitur yang terdapat pada media pembelajaran ini yakni terdapat materi, contoh soal, soal latihan, kuis, evaluasi, dan <i>embedded</i> aplikasi GeoGebra. Tujuan pembuatan media ini adalah untuk memenuhi persyaratan dalam menyelesaikan Program Strata-1 (S1) Pendidikan Komputer dengan judul: 
                             <br>
-                            <strong>"Media pembelajaran Interaktif Berbasis WEB Pada Materi Fungsi Kuadrat Kelas X Dengan Metode Tutorial"</strong>.
+                            <strong>"Media pembelajaran Interaktif Berbasis WEB Pada Materi Fungsi Kuadrat Kelas X Dengan Model Tutorial"</strong>.
                         </p>
                     </div>
 

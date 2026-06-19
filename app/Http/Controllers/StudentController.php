@@ -117,4 +117,23 @@ class StudentController extends Controller
 
         return back()->with($this->flashMessageKey, $this->successToast("NIS. {$student->nis} telah dihapus!"));
     }
+
+    // =========================================================================
+    // TAMBAHAN BARU: FUNGSI UNTUK MERESET NILAI KUIS DAN PROGRESS SISWA
+    // =========================================================================
+    public function resetQuiz(Request $request, string $nis): RedirectResponse {
+        $student = User::student()->where('nis', $nis)->first();
+        
+        if (is_null($student)) {
+            return back()->with($this->flashMessageKey, $this->errorToast('Siswa tidak ditemukan'));
+        }
+
+        // 1. Hapus semua rekaman nilai kuis milik siswa tersebut di database
+        \App\Models\StudentQuiz::where('user_id', $student->id)->delete();
+
+        // 2. Kembalikan progress belajarnya ke angka 0
+        \App\Models\Progress::where('user_id', $student->id)->update(['progress' => 0]);
+
+        return back()->with($this->flashMessageKey, $this->successToast("NIS. {$student->nis} telah mereset nilai kuis dan progres belajar!"));
+    }
 }

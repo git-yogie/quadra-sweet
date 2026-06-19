@@ -33,6 +33,45 @@ class QuizController extends Controller
             ->sortBy('question_number')
             ->values();
 
+        // =========================================================
+        // PENGATURAN TAMPILAN: JIKA SUDAH LULUS KKM (>= 75)
+        // =========================================================
+        $existingQuiz = \App\Models\StudentQuiz::where('user_id', auth()->id())
+            ->where('quiz_key', $quizKey)
+            ->first();
+
+        if ($existingQuiz && $existingQuiz->score >= 75) {
+            
+            // Siapkan review jawaban siswa default (disamakan dengan struktur fungsi result)
+            $results = [];
+            foreach ($quiz->questions as $question) {
+                $results[] = [
+                    'question' => $question->question,
+                    'options' => [
+                        'a' => $question->option_a,
+                        'b' => $question->option_b,
+                        'c' => $question->option_c,
+                        'd' => $question->option_d,
+                    ],
+                    'user_answer' => null, // Set default null karena detail pilihan siswa per nomor tidak disimpan di database
+                    'correct_answer' => $question->correct_answer,
+                    'is_correct' => false,
+                ];
+            }
+
+            // Langsung tampilkan halaman HASIL KUIS jika sudah lulus
+            return view('layouts.quizResult', [
+                'quiz' => $quiz,
+                'score' => $existingQuiz->score,
+                'results' => $results,
+                'quizKey' => $quizKey,
+                'menus' => $this->menus,
+                'progress' => $progress,
+            ]);
+        }
+        // =========================================================
+
+        // JIKA BELUM LULUS / BELUM PERNAH KERJA, TAMPILKAN SOAL KOSONG
         return view('layouts.quiz', [
             'progress' => $progress,
             'menus' => $this->menus,
@@ -110,8 +149,6 @@ class QuizController extends Controller
         $score = round(($correct / $total) * 100);
 
         // 🚀 Update progress
-        // 🚀 Update progress
-        // 🚀 Hitung tingkatan progress berdasarkan kuis yang diselesaikan
         $menuKeys = array_column($this->menus, 'key');
         $currentProgress = array_search($quizKey, $menuKeys) + 1;
 
@@ -178,6 +215,41 @@ class QuizController extends Controller
                 $q->orderBy('question_number');
             }])
             ->firstOrFail();
+
+        // =========================================================
+        // PROTEKSI TAMBAHAN JIKA EVALUASI JUGA INGIN DI-LOCK SETELAH LULUS
+        // =========================================================
+        $existingQuiz = \App\Models\StudentQuiz::where('user_id', auth()->id())
+            ->where('quiz_key', 'evaluasi')
+            ->first();
+
+        if ($existingQuiz && $existingQuiz->score >= 75) {
+            $results = [];
+            foreach ($quiz->questions as $question) {
+                $results[] = [
+                    'question' => $question->question,
+                    'options' => [
+                        'a' => $question->option_a,
+                        'b' => $question->option_b,
+                        'c' => $question->option_c,
+                        'd' => $question->option_d,
+                    ],
+                    'user_answer' => null,
+                    'correct_answer' => $question->correct_answer,
+                    'is_correct' => false,
+                ];
+            }
+
+            return view('layouts.quizResult', [
+                'quiz' => $quiz,
+                'score' => $existingQuiz->score,
+                'results' => $results,
+                'quizKey' => 'evaluasi',
+                'menus' => $this->menus,
+                'progress' => $progress,
+            ]);
+        }
+        // =========================================================
 
         return view('layouts.quiz', [
             'progress' => $progress,
