@@ -60,9 +60,9 @@
       <!-- Tujuan Pembelajaran -->
         <div class="card mb-3">
           <div class="card-body">
-            <h5 class="card-title">Apersepsi</h5>
+            <h5 class="card-title">Pendahuluan</h5>
             <div class="konten-justify">
-              <p style="text-align: justify !important;">Sebelum mulai pelajaran hari ini, pernahkan kalian membayangkan seperti apa
+              <p style="text-align: justify !important;">Sebelum mulai pelajaran hari ini, pernahkah kalian membayangkan seperti apa
                 lintasan saat melemparkan bola ke udara. Apa yang dapat diperhatikan tentang
                 gerakan bola tersebut? Benar, bola ketika dilemparkan ke udara akan bergerak naik
                 sampai mencapai titik tertinggi, lalu kembali turun. Lintasan gerakan ini sebenarnya
@@ -70,17 +70,17 @@
                 sebagai fungsi kuadrat. Fungsi kuadrat sangat penting dalam banyak aspek
                 kehidupan, mulai dari olahraga hingga teknik. Hari ini, kita akan mempelajari
                 bagaimana menentukan karakteristik, mengkonstruksi serta menyelesaikan
-                masalah dalam fungsi kuadrat. Siapakah disini yang pernah menggunakan atau
+                masalah dalam fungsi kuadrat. Siapakah di sini yang pernah menggunakan atau
                 mengetahui fungsi kuadrat yang berkaitan dalam kehidupan sehari-hari, selain
                 lintasan saat melemparkan bola ke udara tadi?</p>
               <p style="text-align: justify !important;">Pernahkah kalian mengamati gerakan seorang yang mengikuti olahraga lompat
                 jauh? Ketika kita memulai lompat jauh yang diawali dengan melompat
                 menggunakan teknik dan mencapai jarak sejauh mungkin. Maka lintasan gerakan
-                lompat jauh tersebut berbentuk parabola. Seperti pada gambar dibawah ini:</p>
+                lompat jauh tersebut berbentuk parabola. Seperti pada gambar di bawah ini:</p>
                 <img src="{{ asset('assets/img/lompat_jauh.jpg') }}" alt="Deskripsi Gambar" style="display: block; margin: 0 auto; width: 30%; max-width: 100%;">
                 
               <p style="text-align: justify !important;">Selain lompat jauh, penerapan fungsi kuadrat dalam kehidupan sehari-hari
-                sangat banyak, diantaranya: lintasan bola basket, lintasan sepakbola, gerakan lompat tinggi, air yang keluar dari selang, 
+                sangat banyak, di antaranya: lintasan bola basket, lintasan sepakbola, gerakan lompat tinggi, air yang keluar dari selang, 
                 lalu bentuk bangunan, dan jembatan. Semua hal ini membentuk kurva parabola.</p>
               <p style="text-align: justify !important;">Parabola merupakan bentuk fungsi kuadrat dalam grafik. Fungsi kuadrat adalah
                 fungsi polinom (suku banyak) dengan pangkat tertinggi variabelnya adalah 2. Fungsi kuadrat adalah sebuah fungsi matematika, 

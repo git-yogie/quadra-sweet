@@ -15,17 +15,22 @@ class StudentController extends Controller
     use \App\Trait\Toast;
 
     // 1. Menampilkan Halaman Utama Guru (Menggunakan studentQuizzes asli)
-    public function index(Request $request): View {
-        $students = User::student()
-            ->with(['progress', 'studentQuizzes']) // Memanggil relasi tabel baru Anda
-            ->search($request->query('q'))
-            ->render($this->pageSize);
+    public function index(Request $request): View
+    {
+        $query = User::student()
+            ->with(['progress', 'studentQuizzes']);
 
-        $data = [
+        // Filter kelas
+        if ($request->filled('kelas')) {
+            $query->where('kelas', $request->kelas);
+        }
+
+        $students = $query->get();
+
+        return view('pages.students.index', [
             'items' => $students,
-        ];
-
-        return view('pages.students.index', $data);
+            'kelas' => $request->kelas,
+        ]);
     }
 
     // 2. Fitur Ekspor ke Excel Menggunakan Format Spreadsheet Asli
@@ -33,7 +38,7 @@ class StudentController extends Controller
         $students = User::student()->with(['progress', 'studentQuizzes'])->get();
 
         // Nama file diatur menggunakan ekstensi .xls
-        $filename = "Laporan_Nilai_Siswa_QuadraLearn.xls";
+        $filename = "Laporan_Nilai_Siswa_Learn.xls";
 
         // Atur Header agar browser mendownloadnya sebagai file Excel resmi
         header("Content-Type: application/vnd.ms-excel; charset=utf-8");
@@ -135,5 +140,22 @@ class StudentController extends Controller
         \App\Models\Progress::where('user_id', $student->id)->update(['progress' => 0]);
 
         return back()->with($this->flashMessageKey, $this->successToast("NIS. {$student->nis} telah mereset nilai kuis dan progres belajar!"));
+    }
+    public function updateClass(Request $request, $nis)
+    {
+        $request->validate([
+            'kelas' => 'required'
+        ]);
+
+        $student = User::where('nis', $nis)->firstOrFail();
+
+        $student->update([
+            'kelas' => $request->kelas
+        ]);
+
+        return back()->with(
+            $this->flashMessageKey,
+            $this->successToast('Kelas berhasil diperbarui.')
+        );
     }
 }

@@ -1,5 +1,22 @@
 @extends('layouts.dashboard')
 
+<style>
+    /* 1. Hilangkan elemen sidebar pembungkus utama template Sneat */
+    .layout-menu, #layout-menu {
+        display: none !important;
+    }
+
+    /* 2. Geser area konten utama ke kiri luar agar memenuhi layar */
+    .layout-page {
+        padding-left: 0 !important;
+    }
+
+    /* 3. Maksimalkan container utama jika diperlukan */
+    .content-wrapper {
+        width: 100% !important;
+    }
+</style>
+
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
@@ -55,7 +72,7 @@
                                     <h6 class="fw-bold mb-1">Pendahuluan Fungsi Kuadrat</h6>
                                     <p class="text-muted mb-3">Berisi CP, TP, Peta Konsep, Apersepsi, dan menu Ayo Mengingat Kembali.</p>
                                     <div class="text-center">
-                                        <img src="{{ asset('assets/img/app/pendahuluan.png') }}" class="img-fluid rounded shadow-sm border" style="max-width: 70%;" alt="Pendahuluan">
+                                        <img src="{{ asset('assets/img/app/awal.png') }}" class="img-fluid rounded shadow-sm border" style="max-width: 70%;" alt="Pendahuluan">
                                     </div>
                                 </div>
                             </div>

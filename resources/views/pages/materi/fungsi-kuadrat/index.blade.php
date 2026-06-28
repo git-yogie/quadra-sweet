@@ -103,7 +103,7 @@
                     aria-controls="collapse4"
                 >
                     <img
-                        src="{{ asset('assets/img/app/apersepsi.png') }}"
+                        src="{{ asset('assets/img/app/pendahuluan.png') }}"
                         alt="icon"
                         class="icon"
                         width="200"

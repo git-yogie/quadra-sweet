@@ -4,7 +4,9 @@
 @php
     $menus = $menus ?? [];
     $progress = $progress ?? null;
-    $isQuiz = request()->routeIs('quiz.show');
+    
+    // Perbarui baris ini: tambahkan pengecekan untuk 'dashboard.evaluasi'
+    $isQuiz = request()->routeIs('quiz.show') || request()->routeIs('dashboard.evaluasi');
 @endphp
 
 <div class="layout-wrapper layout-content-navbar">

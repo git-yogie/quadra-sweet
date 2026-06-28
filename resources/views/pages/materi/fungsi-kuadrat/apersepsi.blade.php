@@ -1,23 +1,18 @@
 <p style="text-align: justify">
-    &nbsp;&nbsp;&nbsp;&nbsp; Sebelum mulai pelajaran hari ini, pernahkan kalian
-    membayangkan seperti apa lintasan saat melemparkan bola ke udara. Apa yang
-    dapat diperhatikan tentang gerakan bola tersebut? Benar, bola ketika
-    dilemparkan ke udara akan bergerak naik sampai mencapai titik tertinggi,
-    lalu kembali turun. Lintasan gerakan ini sebenarnya bisa kita gambarkan
+    &nbsp;&nbsp;&nbsp;&nbsp; Sebelum mulai pelajaran hari ini, bayangkan lintasan saat melemparkan bola ke udara. Perhatikan gerakan bola tersebut.
+    Apakah bola akan bergerak naik sampai mencapai titik tertinggi? Lalu kembali turun?. Lintasan gerakan ini sebenarnya bisa digambarkan
     menggunakan sebuah persamaan matematika yang disebut sebagai fungsi kuadrat.
     Fungsi kuadrat sangat penting dalam banyak aspek kehidupan, mulai dari
-    olahraga hingga teknik. Hari ini, kita akan mempelajari bagaimana menentukan
+    olahraga hingga teknik. Mari, pelajari bagaimana menentukan
     karakteristik, mengkonstruksi serta menyelesaikan masalah dalam fungsi
-    kuadrat. Siapakah disini yang pernah menggunakan atau mengetahui fungsi
-    kuadrat yang berkaitan dalam kehidupan sehari-hari, selain lintasan saat
-    melemparkan bola ke udara tadi?
+    kuadrat. Selain lintasan bola saat dilempar ke udara, apakah ada fungsi kuadrat yang berkaitan dalam kehidupan sehari-hari?
 </p>
 <p>
-    &nbsp;&nbsp;&nbsp;&nbsp; Pernahkah kalian mengamati gerakan seorang yang
-    mengikuti olahraga lompat jauh? Ketika kita memulai lompat jauh yang diawali
+    &nbsp;&nbsp;&nbsp;&nbsp; Pernahkah mengamati gerakan seorang yang
+    mengikuti olahraga lompat jauh? memulai lompat jauh yang diawali
     dengan melompat menggunakan teknik dan mencapai jarak sejauh mungkin. Maka
     lintasan gerakan lompat jauh tersebut berbentuk parabola. Seperti pada
-    gambar dibawah ini:
+    gambar di bawah ini:
 </p>
 <div style="text-align: center">
     <img
@@ -26,11 +21,11 @@
         style="text-align: center"
         width="70%"
     />
-    <p style="text-align: center">Gambar 2. Lintasan Lompat Jauh</p>
+    <p style="text-align: center">Gambar 2. Lintasan Lompat Jauh (Sumber: Canva.com)</p>
 </div>
 <p>
     &nbsp;&nbsp;&nbsp;&nbsp; Selain lompat jauh, penerapan fungsi kuadrat dalam
-    kehidupan sehari-hari sangat banyak, diantaranya: lintasan bola basket,
+    kehidupan sehari-hari sangat banyak, di antaranya: lintasan bola basket,
     lintasan sepakbola, gerakan lompat tinggi, air yang keluar dari selang, lalu
     bentuk bangunan, dan jembatan. Semua hal ini membentuk kurva parabola.
 </p>
@@ -51,7 +46,7 @@
         style="text-align: center"
         width="40%"
     />
-    <p style="text-align: center">Gambar 3. Grafik Fungsi Kudrat</p>
+    <p style="text-align: center">Gambar 3. Grafik Fungsi Kudrat (Sumber: Dibuat Mandiri Via Geogebra)</p>
 </div>
 
 <p style="text-align: center; margin-bottom: 5px;">
@@ -74,10 +69,9 @@
                 sumbu, dan diskriminan.
             </td>
             <td>
-                1. Apa yang termasuk dalam fungsi kuadrat?<br />
-                2. Bagaimana mengkonstruksi fungsi kuadrat?<br />
-                3. Bagaimana penerapan fungsi kuadrat untuk menyelesaikan
-                masalah dalam kehidupan sehari-hari?
+                1. Apa ciri utama fungsi kuadrat?<br />
+                2. Informasi apa saja yang diperlukan untuk membentuk fungsi kuadrat?<br />
+                3. Bagaimana fungsi kuadrat digunakan untuk menentukan nilai maksimum atau minimum dalam menyelesaikan masalah sehari-hari? <br />
             </td>
         </tr>
     </tbody>

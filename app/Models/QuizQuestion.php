@@ -19,6 +19,8 @@ class QuizQuestion extends Model
         'option_d',
         'correct_answer',
         'image',
+        'explanation',
+        'reinforcement',
     ];
 
     public function quiz()

@@ -6,7 +6,7 @@
         <p style="text-align: justify !important; font-size: 15px;">Menemukan titik puncak.</p>
     </li>
     <li>
-        <p style="text-align: justify !important; font-size: 15px;">Menentukan sumbu simteri.</p>
+        <p style="text-align: justify !important; font-size: 15px;">Menentukan sumbu simetri.</p>
     </li>
     <li>
         <p style="text-align: justify !important; font-size: 15px;">Menemukan akar-akar fungsi kuadrat.</p>

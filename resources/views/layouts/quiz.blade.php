@@ -177,7 +177,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-let timeLeft = 3600; // 60 menit
+let timeLeft = 3600; // Default cadangan (60 menit)
+    
+    // Ambil key kuis dari Laravel variable
+    let quizType = "{{ $quizKey }}"; 
+
+    if (quizType === 'karakteristik') {
+        timeLeft = 20 * 60; // 20 menit untuk sub-bab 1
+    } else if (quizType === 'rekonstruksi') {
+        timeLeft = 30 * 60; // 30 menit untuk sub-bab 2
+    } else if (quizType === 'masalah') {
+        timeLeft = 45 * 60; // 45 menit untuk sub-bab 3
+    } else if (quizType === 'evaluasi') {
+        timeLeft = 60 * 60; // 60 menit untuk evaluasi akhir
+    }
 
     const timerElement = document.getElementById("timer");
 

@@ -1,7 +1,83 @@
 <div style="padding: 60px 30px 0 30px;" class="mb-5">
     <span class="border border-primary p-2 rounded">Contoh Soal: </span>
+        <p class="mt-3">
+        1. Carilah persamaan fungsi kuadratnya yang grafiknya melalui titik \( A(2,3), B(3,5) \) dan \( C(4,9) \).
+    </p>
+    </div>
+    <div style="padding: 0 30px;">
+    <span class="border border-primary p-2 rounded">Penyelesaian: </span>
+    <ul class="mt-3">
+        <li>
+            Substitusi koordinat \( A(2,3), B(3,4) \) dan \( C(4,9) \) ke dalam fungsi, didapat
+            persamaan berikut: 
+            $$ 3 = a(2)^2 + b(2) + c $$
+            $$ 5 = a(3)^2 + b(3) + c $$
+            $$ 9 = a(4)^2 + b(4) + c $$
+        </li>
+        <li>
+            Kemudian dari tiga persamaan ini didapatkan sistem persamaan linear yaitu: 
+        <div class="d-flex flex-row justify-content-center">
+            <span style="font-size: 6.5rem" class="me-1">{</span>
+            <div class="flex-col fs-5 mt-3">
+                <p> \( 4a + 2b + c = 3 \) </p>
+                <p> \( 9a + 3b + c = 5 \) </p>
+                <p> \( 16a + 4b + c = 9 \) </p>
+            </div>
+        </div>
+        </li>
+        <li>
+            Kemudian eliminasi salah satu variabel.
+            Misal kita eliminasi variabel \(c\) dengan mengurangkan persamaan kedua dengan persamaan pertama maka:
+            <p> \( 9a + 3b + c - 4a + 2b + c = 5-3 \)</p>
+            <p> \( 5a + b + c = 2\)</p>
+            Selanjutnya, kurangi persamaan ketiga dengan persamaan kedua maka:
+            <p> \( 16a + 4b + c - 9a + 3b + c = 9-5 \)</p>
+            <p> \( 7a + b + c = 4 \)</p>
+        </li>
+        <li>
+            Setelah mengeliminasi, maka kita akan mendapatkan persamaan baru yaitu:
+        <div class="d-flex flex-row justify-content-center">
+            <span style="font-size: 4rem" class="me-1">{</span>
+            <div class="flex-col fs-5 mt-1">
+                <p> \( 5a + b + c = 2 \) → Persamaan 1 </p>
+                <p> \( 7a + b + c = 4 \) → Persamaan 2 </p>
+            </div>
+        </div>
+            Kemudian, kurangi kedua persamaan tersebut dengan mengurangkan
+            persamaan 2 ke persamaan 1, maka hasilnya adalah:
+            <p> \( 7a + b + c - 5a + b + c = 4 - 2 \) </p>
+            <p> \( 2a = 2\) </p>
+            
+            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                <span>\( a =  1 \) </span>
+            </div>
+        </li>
+
+        <li> Selanjutnya substitusi nilai \(a\) ke salah satu persamaan untuk menemukan \(b\).
+            <p> \( 5a + b + = 2\)</p>
+            <p> \( 5(1) + b + = 2\)</p>
+            <p> \( 5 + b + = 2\)</p>
+            <p> \( b = 2 - 5 \)</p>
+            <p> \( b = -3 \)</p>
+        </li>
+
+        <li>
+            Kemudian menemukan nilai \(c\) dengan mensubstitusi nilai \(a\) dan \(b\) ke salah
+            satu persamaan awal, maka:
+            <p> \( 4a + 2b + c = 3 \) </p>
+            <p> \( 4(1) + 2(-3) + c = 3 \) </p>
+            <p> \( 4 - 6 + c = 3 \) </p>
+            <p> \( -2 + c = 3 \) </p>
+            <p> \( c = 5 \) </p>
+            
+        </li>
+        <li>
+            Setelah menemukan nilai \(a, b\) dan \(c\), maka di dapat fungsi kuadrat yaitu:
+            <p> \( x^2 - 3x + 5 \) </p>
+        </li>
+    </ul>
     <p class="mt-3">
-        Carilah persamaan fungsi kuadratnya yang grafiknya melalui titik \( 𝐾(1,2), L(2,3) \)dan \( M(3,5) \).
+        2. Carilah persamaan fungsi kuadratnya yang grafiknya melalui titik \( 𝐾(1,2), L(2,3) \)dan \( M(3,5) \).
     </p>
     </div>
     <div style="padding: 0 30px;">
@@ -26,8 +102,8 @@
         </div>
         </li>
         <li>
-            Kemudian eleminasi salah satu variabel.
-            Misal kita eleminasi variabel \(c\) dengan mengurangkan persamaan kedua dengan persamaan pertama maka:
+            Kemudian eliminasi salah satu variabel.
+            Misal kita eliminasi variabel \(c\) dengan mengurangkan persamaan kedua dengan persamaan pertama maka:
             <p> (<input type="text" placeholder="" name="isi7" style="width: 30px;"> \( a \) + <input type="text" placeholder="" name="isi8" style="width: 30px;"> \( b \) + \( c \)) - \((a + b + c)\) = <input type="text" placeholder="" name="isi9" style="width: 30px;"> - 2 </p>
             <p> <input type="text" placeholder="" name="isi10" style="width: 30px;"> \( a \) + \( b \) = <input type="text" placeholder="" name="isi11" style="width: 30px;"> </p>
             Selanjutnya, kurangi persamaan ketiga dengan persamaan kedua maka:
@@ -156,132 +232,3 @@
         </li>
     </ul>
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // 🎯 Kunci jawaban benar
-  const correctAnswers = {
-    // 🔹 Tabel peran nilai a
-    "isi1": "4",
-    "isi2": "2",
-    "isi3": "3",
-    "isi4": "9",
-    "isi5": "3",
-    "isi6": "5",
-    "isi7": "4",
-    "isi8": "2",
-    "isi9": "3",
-    "isi10": "3",
-    "isi11": "1",
-    "isi12": "9",
-    "isi13": "3",
-    "isi14": "4",
-    "isi15": "2",
-    "isi16": "5",
-    "isi17": "3",
-    "isi18": "5",
-    "isi19": "2",
-    "isi20": "3",
-    "isi21": "1",
-    "isi22": "5",
-    "isi23": "2",
-    "isi24": "5",
-    "isi25": "3",
-    "isi26": "2",
-    "isi27": "1",
-    "isi28": "2",
-    "isi29": "1",
-    "isi30": "1",
-    "isi31": "2",
-    "isi32": "3",
-    "isi33": "1",
-    "isi34": "2",
-    "isi35": "1",
-    "isi36": "3",
-    "isi37": "2",
-    "isi38": "1",
-    "isi39": "1",
-    "isi40": "3",
-    "isi41": "2",
-    "isi42": "1",
-    "isi43": "2",
-    "isi44": "1",
-    "isi45": "2",
-    "isi46": "1",
-    "isi47": "2",
-    "isi48": "2",
-    "isi49": "1",
-    "isi50": "2",
-    "isi51": "1",
-    "isi52": "2",
-    "isi53": "2",
-
-
-
-   
-  };
-
-  // 🌱 Tambahkan event listener untuk semua input yang ada di kunci jawaban
-  Object.keys(correctAnswers).forEach(name => {
-    const input = document.querySelector(`[name="${name}"]`);
-    if (!input) return; // skip jika tidak ditemukan
-    
-    input.addEventListener("input", function() {
-      const userAnswer = input.value.trim().toLowerCase();
-      const correct = correctAnswers[name].toLowerCase();
-
-      // reset styling dulu
-      input.style.borderColor = "";
-      input.style.backgroundColor = "";
-
-      // jika benar
-      if (userAnswer === correct) {
-        input.style.borderColor = "green";
-        input.style.backgroundColor = "#e8ffe8";
-      } 
-      // jika salah tapi belum kosong
-      else if (userAnswer.length > 0) {
-        input.style.borderColor = "red";
-        input.style.backgroundColor = "#ffe8e8";
-      } 
-      // jika kosong
-      else {
-        input.style.borderColor = "";
-        input.style.backgroundColor = "";
-      }
-    });
-  });
-
-  // 🌟 Optional: pesan sukses jika semua benar
-  const form = document.querySelector('form[action="{{route('quiz.evaluate')}}"]');
-  if (form) {
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      let allCorrect = true;
-      Object.keys(correctAnswers).forEach(name => {
-        const input = document.querySelector(`[name="${name}"]`);
-        if (input && input.value.trim().toLowerCase() !== correctAnswers[name].toLowerCase()) {
-          allCorrect = false;
-        }
-      });
-
-      if (allCorrect) {
-        Swal.fire({
-          icon: 'success',
-          title: 'Hebat! 🎉',
-          text: 'Semua jawaban kamu benar.',
-          confirmButtonText: 'Lanjut'
-        });
-      } else {
-        Swal.fire({
-          icon: 'info',
-          title: 'Masih ada yang salah 😅',
-          text: 'Periksa lagi kolom yang berwarna merah.',
-          confirmButtonText: 'Oke'
-        });
-      }
-    });
-  }
-});
-</script>

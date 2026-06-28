@@ -11,11 +11,11 @@
             <div class="app-brand justify-content-center">
               <a href="{{ route('welcome') }}" class="app-brand-link gap-2">
                 <span class="app-brand-logo demo"><img src="{{ asset('fk.PNG') }}" alt="404 Not Found Indonesia" width="30" style="border-radius: 150px" srcset=""></span>
-                <span class="app-brand-text text-body fw-bold fs-3">QuadraLearn</span>
+                <span class="app-brand-text text-body fw-bold fs-3">BelajarKuadrat</span>
               </a>
             </div>
             <!-- /Logo -->
-            <h4 class="mb-2">Welcome to QuadraLearn! 👋</h4>
+            <h4 class="mb-2">Selamat Datang di BelajarKuadrat! 👋</h4>
             <p class="mb-4">Silakan masuk ke akunmu dan kita lanjutkan perjalanan.</p>
 
             <form id="formAuthentication" class="mb-3" action="{{ route('auth.sign-in') }}" method="POST">

@@ -1,6 +1,6 @@
 <!-- Pengantar -->
 <p>
-  Sebelum memulai pembelajaran <strong>"Ayo kita ingat kembali"</strong> materi persamaan kuadrat. 
+  Sebelum memulai pembelajaran <strong>"Ayo ingat kembali"</strong> materi persamaan kuadrat. 
   Persamaan kuadrat dengan rumus \( ax^2 + bx + c = 0 \) dapat diselesaikan dengan berbagai cara antara lain dengan:
   <strong>Faktorisasi</strong>, <strong>Kuadrat Sempurna</strong>, dan <strong>Rumus ABC</strong>.
 </p>
@@ -52,7 +52,8 @@
       <p>\( x^2+6x+9=-5+9 \)</p> 
       <p>\( x^2+6x+9=4 \)</p> 
       <p>\( (x+3)^2=4 \)</p> 
-      <p>\( (x+3)^2=\sqrt{4} \)</p> 
+      <p>\( (x+3)^2=\sqrt{4} \)</p>
+      <p>\( x+3=\pm \sqrt{4} \)</p>  
       <p>\( x+3=\pm 2 \)</p> 
       <P>Kemudian, untuk \( x+3=2 \), maka: \( x=2-3=-1 \)</p> 
       <p>Untuk \( x+3=-2 \), maka: \( x=-2-3=-5 \)</p>

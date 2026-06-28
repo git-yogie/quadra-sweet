@@ -5,12 +5,10 @@
   <div class="w-100">
    
 
-      <!-- Konten Utama: Mulai -->
       <main role="main" class="">
         
 
-      <!-- Tujuan Pembelajaran -->
-        <div class="card mb-3">
+      <div class="card mb-3">
           <div class="card-body">
             <h5 class="card-title">Menyelesaikan Masalah Dengan Fungsi Kuadrat</h5>
             <div class="konten-justify">
@@ -43,8 +41,7 @@
           </div>
         </div>
 
-            <!-- Accordion untuk aktivitas -->
-        <div class="accordion" id="accordionAktivitas">
+            <div class="accordion" id="accordionAktivitas">
           <div class="card">
           <div class="px-3">
             <div class="card-header">
@@ -55,7 +52,7 @@
                 Menyelesaikan masalah dengan fungsi kuadrat artinya menggunakan fungsi
                 kuadrat untuk memodelkan, menganalisis, dan menemukan solusi untuk
                 berbagai jenis masalah dalam konteks matematika atau aplikasi dunia nyata.
-                Berikut ini adalah beberapa contoh bagaimana penggunaaan fungsi kuadrat
+                Berikut ini adalah beberapa contoh bagaimana penggunaan fungsi kuadrat
                 untuk menyelesaikan masalah yaitu:
               </p>
               <ol type="a">
@@ -73,8 +70,8 @@
                   yang dilempar atau bentuk kabel jembatan yang menyerupai parabola.
                 </li>
                 <li>
-                  Analisis keuangan, ini berkaitain dengan memodelkan dan memprediksi
-                  kinerja investasi, seperti harga saham atau hasil inventasi.
+                  Analisis keuangan, ini berkaitan dengan memodelkan dan memprediksi
+                  kinerja investasi, seperti harga saham atau hasil investasi.
                 </li>
                 <li>
                   Geometris, berkaitan dengan menemukan area maksimum atau minimum
@@ -95,52 +92,48 @@
                   </ol>
                 </div>
               </div>
-              @include('pages.materi.masalah.contoh')
-              @include('pages.materi.masalah.latihan')
-            </div>
-          </div>
 
-          <!-- <div class="accordion-item">
-            <h2 class="accordion-header" id="kuisHead">
-              <button
-                class="accordion-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#kuisBody"
-                aria-expanded="true"
-                aria-controls="kuisBody"
-              >
-                <img
-                  src="{{ asset('assets/img/app/kuis-3.png') }}"
-                  alt="kuis 3"
-                  class="icon"
-                  width="200"
-                />
-              </button>
-            </h2>
-            <div 
-              id="kuisBody" 
-              class="accordion-collapse collapse"
-              aria-labelledby="kuisHead"
-              data-bs-parent="#content"
-            >
-              <div class="accordion-body">
-                @include('pages.materi.masalah.kuis')
+              <div id="wrapper-contoh" class="mb-4">
+                @include('pages.materi.masalah.contoh')
+                <div class="d-flex justify-content-center my-3">
+                  <button type="button" class="btn text-white px-4 py-2" id="btnCekContoh" 
+                    style="background-color: #696cff; border-color: #696cff; border-radius: 6px; font-size: 0.9rem; font-weight: 500;"
+                    onmouseover="this.style.backgroundColor='#5f61e6'; this.style.borderColor='#5f61e6';" 
+                    onmouseout="this.style.backgroundColor='#696cff'; this.style.borderColor='#696cff';">
+                    Cek Jawaban Contoh
+                  </button>
+                </div>
+              </div>
+
+              <div id="wrapper-latihan" class="mb-4">
+                @include('pages.materi.masalah.latihan')
+                <div class="d-flex justify-content-center my-3">
+                  <button type="button" class="btn text-white px-4 py-2" id="btnCekLatihan" 
+                    style="background-color: #696cff; border-color: #696cff; border-radius: 6px; font-size: 0.9rem; font-weight: 500;"
+                    onmouseover="this.style.backgroundColor='#5f61e6'; this.style.borderColor='#5f61e6';" 
+                    onmouseout="this.style.backgroundColor='#696cff'; this.style.borderColor='#696cff';">
+                    Cek Jawaban Latihan
+                  </button>
+                </div>
               </div>
 
             </div>
-          </div> -->
-                <!-- Tambah aktivitas lain sesuai kebutuhan -->
-        </div>
+          </div>
+
+          </div>
         </div>
 
         </main>
-        <!-- Konten Utama: Akhir -->
-    </div>
+        </div>
 </div>
 @endsection
 
 @push('script')
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
     window.MathJax = {
@@ -152,5 +145,175 @@
     if (window.MathJax && window.MathJax.typeset) {
       window.MathJax.typeset();
     }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      // DAFTAR KUNCI JAWABAN SUB-BAB 3
+      const jawabanContoh = {
+        "sol1": "15", "sol2": "-4.9", "sol3": "-15", "sol4": "-9.8", "sol5": "1.53", "sol6": "1.53"
+      };
+
+      const jawabanLatihan = {
+        // --- Soal 1: Bengkel Mobil ---
+        "latih1": "-5", "latih2": "100", "latih3": "20", "latih4": "200", "latih5": "-5", 
+        "latih6": "100", "latih7": "20", "latih8": "200", "latih9": "-5", "latih10": "80", 
+        "latih11": "200", "latih12": "-5", "latih13": "80", "latih14": "200", "latih15": "80", 
+        "latih16": "(-5)", "latih17": "80", "latih18": "10", "latih19": "8", "latih20": "8", 
+        "latih21": "-5", "latih22": "8", "latih23": "80", "latih24": "8", "latih25": "200", 
+        "latih26": "-320", "latih27": "640", "latih28": "200", "latih29": "120", "latih30": "120", "latih31": "8",
+
+        // --- Soal 2: Pagar Petani ---
+        "latih32": "-0.5", "latih33": "60", "latih34": "60", "latih35": "(-0.5)", "latih36": "-60", 
+        "latih37": "-1", "latih38": "60", "latih39": "60", "latih40": "2", "latih41": "30", 
+        "latih42": "60", "latih43": "30"
+      };
+
+      // LOGIKA WARNA BORDER LIVE & PENYIMPANAN LOCALSTORAGE
+      function initInputLogic(answersObj) {
+        Object.keys(answersObj).forEach(name => {
+          const input = document.querySelector(`[name="${name}"]`);
+          if (input) {
+            // 1. Ambil data lama saat halaman direload
+            const savedValue = localStorage.getItem('masalah_' + name);
+            if (savedValue !== null) {
+              input.value = savedValue;
+              let uAns = savedValue.trim().replace(',', '.').toLowerCase();
+              if (uAns === answersObj[name].toLowerCase()) {
+                input.style.borderColor = "green";
+                input.style.backgroundColor = "#e8ffe8";
+              } else if (uAns.length > 0) {
+                input.style.borderColor = "red";
+                input.style.backgroundColor = "#ffe8e8";
+              }
+            }
+
+            // 2. Berikan respon perubahan warna border live saat mengetik
+            input.addEventListener("input", function() {
+              localStorage.setItem('masalah_' + name, this.value);
+              let currentVal = this.value.trim().replace(',', '.').toLowerCase();
+              if (currentVal === answersObj[name].toLowerCase()) {
+                this.style.borderColor = "green";
+                this.style.backgroundColor = "#e8ffe8";
+              } else if (currentVal.length > 0) {
+                this.style.borderColor = "red";
+                this.style.backgroundColor = "#ffe8e8";
+              } else {
+                this.style.borderColor = "";
+                this.style.backgroundColor = "";
+              }
+            });
+          }
+        });
+      }
+
+      // Aktifkan logika untuk kedua bagian include
+      initInputLogic(jawabanContoh);
+      initInputLogic(jawabanLatihan);
+
+
+      // --- LOGIKA TOMBOL CEK CONTOH ---
+      const btnContoh = document.getElementById('btnCekContoh');
+      if (btnContoh) {
+        btnContoh.addEventListener("click", function() {
+          let allCorrect = true;
+          let firstError = null;
+
+          Object.keys(jawabanContoh).forEach(name => {
+            const input = document.querySelector(`[name="${name}"]`);
+            if (input) {
+              let val = input.value.trim().replace(',', '.').toLowerCase();
+              if (val !== jawabanContoh[name].toLowerCase()) {
+                allCorrect = false;
+                input.style.borderColor = "red";
+                input.style.backgroundColor = "#ffe8e8";
+                if (!firstError) firstError = input;
+              } else {
+                input.style.borderColor = "green";
+                input.style.backgroundColor = "#e8ffe8";
+              }
+            }
+          });
+
+          if (allCorrect) {
+            Swal.fire({
+              title: 'Hebat! 🎉',
+              text: 'Semua jawaban contoh kamu benar.',
+              icon: 'success',
+              iconColor: '#71dd37',
+              confirmButtonText: 'Lanjut',
+              confirmButtonColor: '#696cff',
+              customClass: { popup: 'rounded-4 shadow', confirmButton: 'px-5' }
+            });
+          } else {
+            Swal.fire({
+              icon: 'info',
+              title: 'Masih ada yang salah 😅',
+              text: 'Periksa lagi kolom yang berwarna merah...',
+              confirmButtonText: 'Siap!',
+              confirmButtonColor: '#8592a3',
+              customClass: { popup: 'rounded-4' }
+            });
+            if (firstError) {
+              firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              firstError.focus();
+            }
+          }
+        });
+      }
+
+
+      // --- LOGIKA TOMBOL CEK LATIHAN ---
+      const btnLatihan = document.getElementById('btnCekLatihan');
+      if (btnLatihan) {
+        btnLatihan.addEventListener("click", function() {
+          let allCorrect = true;
+          let firstError = null;
+
+          Object.keys(jawabanLatihan).forEach(name => {
+            const input = document.querySelector(`[name="${name}"]`);
+            if (input) {
+              let val = input.value.trim().replace(',', '.').toLowerCase();
+              if (val !== jawabanLatihan[name].toLowerCase()) {
+                allCorrect = false;
+                input.style.borderColor = "red";
+                input.style.backgroundColor = "#ffe8e8";
+                if (!firstError) firstError = input;
+              } else {
+                input.style.borderColor = "green";
+                input.style.backgroundColor = "#e8ffe8";
+              }
+            }
+          });
+
+          if (allCorrect) {
+            Swal.fire({
+              title: 'Luar Biasa! 🎉',
+              text: 'Semua jawaban benar. Materi Sub-bab 3 Selesai!',
+              icon: 'success',
+              iconColor: '#71dd37',
+              confirmButtonText: 'Buka Kuis',
+              confirmButtonColor: '#696cff',
+              customClass: { popup: 'rounded-4 shadow', confirmButton: 'px-5' }
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.location.href = "{{ route('quiz.show', ['quizKey' => 'masalah']) }}"; 
+              }
+            });
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Belum Selesai...',
+              text: 'Masih ada jawaban yang kosong atau salah. Periksa kotak merah ya!',
+              confirmButtonText: 'Siap!',
+              confirmButtonColor: '#8592a3',
+              customClass: { popup: 'rounded-4' }
+            });
+            if (firstError) {
+              firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              firstError.focus();
+            }
+          }
+        });
+      }
+    });
   </script>
 @endpush

@@ -51,7 +51,7 @@
             </div>
         </li>
         <li>
-            Seorang petani ingin membuat pagar pesegi panjang di sepanjang perkebunan miliknya, menggunakan 120 meter pagar untuk ketiga sisinya
+            Seorang petani ingin membuat pagar persegi panjang di sepanjang perkebunan miliknya, menggunakan 120 meter pagar untuk ketiga sisinya
             (sisi keempat adalah kebun). Tentukan dimensi maksimum dari petak tanah yang dapat dibuat!
             <div style="padding: 0 30px;" class="mt-3">
                 <span class="border border-primary p-2 rounded">Penyelesaian: </span>
@@ -115,99 +115,3 @@
         </li>
     </ol>
 </div>
-<div class="mt-4 mb-5 text-center">
-    <button type="button" id="btnSelesaikanMateri" class="btn btn-primary shadow">
-        <i class="bx bx-send me-1"></i> Kirim Jawaban
-    </button>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    // 🎯 KUNCI JAWABAN (Tetap sesuai data kamu)
-    const correctAnswers = {
-        // --- Contoh Soal (sol) ---
-        "sol1": "15", "sol2": "-4.9", "sol3": "-15", "sol4": "-9.8", "sol5": "1.53", "sol6": "1.53",
-
-        // --- Soal 1: Bengkel Mobil ---
-        "latih1": "-5", "latih2": "100", "latih3": "20", "latih4": "200", "latih5": "-5", 
-        "latih6": "100", "latih7": "20", "latih8": "200", "latih9": "-5", "latih10": "80", 
-        "latih11": "200", "latih12": "-5", "latih13": "80", "latih14": "200", "latih15": "80", 
-        "latih16": "(-5)", "latih17": "80", "latih18": "10", "latih19": "8", "latih20": "8", 
-        "latih21": "-5", "latih22": "8", "latih23": "80", "latih24": "8", "latih25": "200", 
-        "latih26": "-320", "latih27": "640", "latih28": "200", "latih29": "120", "latih30": "120", "latih31": "8",
-
-        // --- Soal 2: Pagar Petani ---
-        "latih32": "-0.5", "latih33": "60", "latih34": "60", "latih35": "(-0.5)", "latih36": "-60", 
-        "latih37": "-1", "latih38": "60", "latih39": "60", "latih40": "2", "latih41": "30", 
-        "latih42": "60", "latih43": "30"
-    };
-
-    // 1. ⚙️ VALIDASI WARNA REAL-TIME
-    Object.keys(correctAnswers).forEach(name => {
-        const input = document.querySelector(`[name="${name}"]`);
-        if (input) {
-            input.addEventListener("input", function() {
-                const userAnswer = input.value.trim().replace(',', '.').toLowerCase();
-                const correct = correctAnswers[name].toLowerCase();
-
-                if (userAnswer === "") {
-                    input.style.backgroundColor = "";
-                    input.style.borderColor = "";
-                } else if (userAnswer === correct) {
-                    input.style.backgroundColor = "#e8ffe8";
-                    input.style.borderColor = "green";
-                } else {
-                    input.style.backgroundColor = "#ffe8e8";
-                    input.style.borderColor = "red";
-                }
-            });
-        }
-    });
-
-    // 2. 🚀 LOGIKA TOMBOL SELESAI
-    const btnSelesai = document.getElementById('btnSelesaikanMateri');
-    if (btnSelesai) {
-        btnSelesai.addEventListener("click", function() {
-            let allCorrect = true;
-            let firstIncorrect = null;
-
-            Object.keys(correctAnswers).forEach(name => {
-                const input = document.querySelector(`[name="${name}"]`);
-                if (input) {
-                    const val = input.value.trim().replace(',', '.').toLowerCase();
-                    if (val !== correctAnswers[name].toLowerCase()) {
-                        allCorrect = false;
-                        input.style.borderColor = "red";
-                        if (!firstIncorrect) firstIncorrect = input;
-                    }
-                }
-            });
-
-            if (allCorrect) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Mantap! 🎉',
-                    text: 'Semua jawaban benar. Materi Sub-bab 3 Selesai!',
-                    confirmButtonText: 'Lanjut ke Evaluasi',
-                    confirmButtonColor: '#696cff'
-                }).then(() => {
-                    // Gunakan URL manual agar tidak error Route Laravel
-                    window.location.href = "/dashboard/evaluasi"; 
-                });
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Belum Sesuai',
-                    text: 'Masih ada jawaban yang kosong atau salah. Cek kotak merah ya!',
-                    confirmButtonText: 'Oke',
-                    confirmButtonColor: '#8592a3'
-                });
-
-                if (firstIncorrect) {
-                    firstIncorrect.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    firstIncorrect.focus();
-                }
-            }
-        });
-    }
-});
-</script>

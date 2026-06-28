@@ -49,6 +49,7 @@
                             <img src="{{ asset($result['image']) }}" alt="Gambar Soal" class="img-fluid">
                         </div>
                         @endif
+                        
                         <strong>Jawaban Anda:</strong> 
                         {{ isset($result['options'][$result['user_answer']]) 
                             ? strtoupper($result['user_answer']) . '. ' . $result['options'][$result['user_answer']] 
@@ -58,6 +59,23 @@
                         {{ isset($result['options'][$result['correct_answer']]) 
                             ? strtoupper($result['correct_answer']) . '. ' . $result['options'][$result['correct_answer']] 
                             : '-' }} <br>
+
+                        @if(!empty($result['explanation']))
+                            <!-- Ubah bagian penjelasan menjadi seperti ini -->
+                            <div class="mt-2 p-3 bg-info bg-opacity-10 rounded">
+                                <strong>Penjelasan:</strong>
+                                <div>{!! str_replace('Penjelasan:', '', $result['explanation']) !!}</div>
+                            </div>
+                        @endif
+
+                        @if(!empty($result['reinforcement']))
+                            <div class="mt-3 p-3 bg-success bg-opacity-10 rounded border-start border-success border-4">
+                                <strong>💡 Penguatan Konsep</strong>
+                                <div class="mt-2">
+                                    {!! $result['reinforcement'] !!}
+                                </div>
+                            </div>
+                        @endif
 
                         <strong>Status:</strong> 
                         {!! $result['is_correct'] ? '<span class="text-success">Benar</span>' : '<span class="text-danger">Salah</span>' !!}
@@ -83,17 +101,30 @@
                             </a>
                         @endif
 
-                        <!-- Tombol Mengulang Kuis Saat Ini -->
-                        <a href="{{ route('quiz.show', ['quizKey' => $quizKey]) }}" class="btn btn-warning mt-3 text-white ms-2">
+                        <!-- Cari kode Tombol Mengulang Kuis Saat Ini yang lama, lalu ganti menjadi ini: -->
+                    <form action="{{ route('quiz.reset', ['quizKey' => $quizKey]) }}" method="POST" class="d-inline">
+                        @csrf
+                        <button type="submit" class="btn btn-warning mt-3 text-white ms-2">
                             🔄 Mengulang Kuis
-                        </a>
+                        </button>
+                    </form>
 
                     <!-- JIKA NILAI LULUS KKM (LANGSUNG KE MATERI SELANJUTNYA) -->
                     @else
-                        <a href="{{ isset($menus[array_search($quizKey, array_column($menus, 'key')) + 1]['route']) ? route($menus[array_search($quizKey, array_column($menus, 'key')) + 1]['route']) : '#' }}" 
-                            class="btn btn-success mt-3">
-                            ➡️ Lanjutkan ke Materi Selanjutnya
-                        </a>
+                        @if($quizKey == 'evaluasi')
+                            <a href="{{ route('dashboard') }}" class="btn btn-primary mt-3">
+                                🏠 Selesai & Kembali ke Beranda
+                            </a>
+                        @else
+                            <a href="{{ isset($menus[array_search($quizKey, array_column($menus, 'key')) + 1]['route']) ? route($menus[array_search($quizKey, array_column($menus, 'key')) + 1]['route']) : '#' }}" 
+                                class="btn btn-success mt-3">
+                                @if($quizKey == 'masalah')
+                                    ➡️ Lanjutkan ke Evaluasi Akhir
+                                @else
+                                    ➡️ Lanjutkan ke Materi Selanjutnya
+                                @endif
+                            </a>
+                        @endif
                     @endif
 
                 </div>
