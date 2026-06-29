@@ -19,9 +19,9 @@
                 <tr>
                     <td>Fungsi kuadrat, parabola, persamaan kuadrat, minimum dan maksimum, titik puncak, sumbu simetri, titik potong dengan sumbu, dan diskriminan.</td>
                     <td>
-                        1. Apa yang termasuk dalam fungsi kuadrat?<br>
-                        2. Bagaimana mengkonstruksi fungsi kuadrat?<br>
-                        3. Bagaimana penerapan fungsi kuadrat untuk menyelesaikan masalah dalam kehidupan sehari-hari?
+                        1. Apa ciri utama fungsi kuadrat?<br />
+                2. Informasi apa saja yang diperlukan untuk membentuk fungsi kuadrat?<br />
+                3. Bagaimana fungsi kuadrat digunakan untuk menentukan nilai maksimum atau minimum dalam menyelesaikan masalah sehari-hari? <br />
                     </td>
                 </tr>
             </tbody>

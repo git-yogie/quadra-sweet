@@ -5,21 +5,15 @@
 
 <div class="card">
     <div class="card-body">
-        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
-            <form action="" class="flex-grow-1" style="max-width: 600px;">
-                <div class="row g-2">
-                    <div class="col-9 col-sm-10">
-                        <div class="input-group input-group-merge">
-                            <span class="input-group-text" id="basic-addon-search31"><i class="bx bx-search"></i></span>
-                            <input value="{{ request()->query('q') ?? '' }}" type="text" class="form-control" placeholder="Cari..." aria-label="Cari..." name="q" aria-describedby="basic-addon-search31">
-                        </div>
-                    </div>
-                    <div class="col-3 col-sm-2 d-grid">
-                        <button type="submit" class="btn btn-primary">Cari</button>
-                    </div>
-                </div>
-            </form>
-
+        <div class="d-flex flex-wrap justify-content-end align-items-center gap-3 mb-3">
+            <div>
+                <select id="filterKelas" class="form-select">
+                    <option value="">Semua Kelas</option>
+                    <option value="XA">XA</option>
+                    <option value="XB">XB</option>
+                    <option value="XC">XC</option>
+                </select>
+            </div>
             <div class="d-flex gap-2">
                 <a href="{{ route('students.export.excel') }}" class="btn btn-success">
                     <i class="bx bx-spreadsheet me-1"></i> Excel
@@ -31,11 +25,12 @@
         </div>
     </div>
 
-    <div class="table-responsive text-nowrap">
-      <table class="table table-hover align-middle">
+    <div class="table-responsive text-nowrap px-4 pb-4">
+      <table id="tabelSiswa" class="table table-hover align-middle" style="width:100%">
         <thead>
           <tr>
-            <th>Nama</th>
+            <th>Nama / NIS</th>
+            <th class="text-center">Kelas</th>
             <th class="text-center">Progres Belajar</th>
             <th class="text-center">Kuis 1<br><small>(Karakteristik)</small></th>
             <th class="text-center">Kuis 2<br><small>(Rekonstruksi)</small></th>
@@ -47,12 +42,10 @@
         <tbody class="table-border-bottom-0">
             @foreach ($items as $item)
             @php
-                // Mengambil data progress pertama untuk persentase bar
                 $progressData = $item->progress->first();
                 $progressPct = $progressData ? ($progressData->progress * 25) : 0;
                 if($progressPct > 100) $progressPct = 100;
 
-                // Membaca skor nilai kuis langsung dari koleksi tabel progress siswa
                 $kuis1 = $item->studentQuizzes->where('quiz_key', 'karakteristik')->first()->score ?? '-';
                 $kuis2 = $item->studentQuizzes->where('quiz_key', 'rekonstruksi')->first()->score ?? '-';
                 $kuis3 = $item->studentQuizzes->where('quiz_key', 'masalah')->first()->score ?? '-';
@@ -62,6 +55,11 @@
                 <td>
                     <b>{{ $item->name }}</b>
                     <div><small class="text-muted">NIS. {{ $item->nis }}</small></div>
+                </td>
+                <td class="text-center">
+                    <span class="badge bg-label-primary">
+                        {{ $item->kelas ?? '-' }}
+                    </span>
                 </td>
                 <td>
                     <div class="d-flex align-items-center gap-2" style="min-width: 150px;">
@@ -93,6 +91,14 @@
                             <button class="dropdown-item" type="submit"><i class="bx bx-refresh me-1"></i> Reset Nilai Kuis</button>
                         </form>
                         
+                        <button
+                            type="button"
+                            class="dropdown-item"
+                            data-bs-toggle="modal"
+                            data-bs-target="#kelasModal{{ $item->id }}">
+                            <i class="bx bx-book me-1"></i> Ubah Kelas
+                        </button>
+
                         <form action="{{ route('students.destroy', $item->nis) }}" method="post" onsubmit="return confirmSubmit(event, this)">
                             @csrf
                             @method('DELETE')
@@ -106,8 +112,168 @@
         </tbody>
       </table>
     </div>
-    <div class="card-footer pb-0">
-        {!! $items->links() !!}
+</div>
+@foreach($items as $item)
+<div class="modal fade" id="kelasModal{{ $item->id }}" tabindex="-1">
+    <div class="modal-dialog">
+        <form action="{{ route('students.update-class', $item->nis) }}" method="POST">
+            @csrf
+            @method('PATCH')
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        Ubah Kelas
+                    </h5>
+
+                    <button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Nama Siswa
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            value="{{ $item->name }}"
+                            readonly>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            NIS
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            value="{{ $item->nis }}"
+                            readonly>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Kelas
+                        </label>
+
+                        <select
+                            class="form-select"
+                            name="kelas"
+                            required>
+
+                            <option value="XA"
+                                {{ $item->kelas=='XA' ? 'selected' : '' }}>
+                                XA
+                            </option>
+
+                            <option value="XB"
+                                {{ $item->kelas=='XB' ? 'selected' : '' }}>
+                                XB
+                            </option>
+
+                            <option value="XC"
+                                {{ $item->kelas=='XC' ? 'selected' : '' }}>
+                                XC
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                        Batal
+                    </button>
+
+                    <button
+                        class="btn btn-primary"
+                        type="submit">
+                        Simpan
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
     </div>
 </div>
+@endforeach
 @endsection
+
+@push('style')
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <style>
+        /* Mengatur tata letak komponen: Searching ke KIRI, Tampilkan Entri ke KANAN */
+        .dataTables_wrapper .dataTables_filter {
+            margin-bottom: 20px;
+            float: left !important;
+            text-align: left;
+        }
+        .dataTables_wrapper .dataTables_length {
+            margin-bottom: 20px;
+            float: right !important;
+            text-align: right;
+        }
+        .dataTables_wrapper .dataTables_info {
+            padding-top: 15px;
+            float: left;
+        }
+        .dataTables_wrapper .dataTables_paginate {
+            padding-top: 15px;
+            float: right;
+        }
+        .page-item.active .page-link {
+            background-color: #696cff !important; 
+            border-color: #696cff !important;
+            color: #fff !important;
+        }
+    </style>
+@endpush
+
+@push('script')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var table = $('#tabelSiswa').DataTable({
+                "language": {
+                    "url": "https://cdn.datatables.net/plug-ins/1.13.6/i18n/id.json"
+                },
+                // f (filter/searching) diposisikan di kiri, l (length menu) diposisikan di kanan
+                "dom": "<'row'<'col-sm-12 col-md-6'f><'col-sm-12 col-md-6'l>>" +
+                       "<'row'<'col-sm-12'tr>>" +
+                       "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+                
+                "pageLength": 5, // Mengunci tampilan data default dimulai dari 5 baris
+                "lengthMenu": [5, 10, 25, 50, 100], // Menampilkan pilihan menu dropdown dari angka 5
+                "order": [],
+                "ordering": true,   
+                "searching": true,  
+                "columnDefs": [
+                    { "orderable": false, "targets": 7 } 
+                ]
+            });
+            $('#filterKelas').on('change', function () {
+
+                table.column(1).search($(this).val()).draw();
+
+            });
+        });
+        
+    </script>
+@endpush

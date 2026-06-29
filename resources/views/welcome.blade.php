@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>QuadraLearn</title>
+    <title>BelajarKuadrat</title>
 
     <meta name="description" content="Media Pembelajaran Interaktif Berbasis Web pada Materi Fungsi Kuadrat Kelas X dengan Model Tutorial" />
     <meta name="keywords" content="quadralearn, fungsi kuadrat, media pembelajaran interaktif, 404 Not Found Indonesia">
@@ -78,7 +78,7 @@
 
       .formula-left {
         top: 25%;
-        left: 8%;
+        left:3%;
         font-size: 3.5rem;
         animation: floatAnimation 6s ease-in-out infinite;
       }
@@ -106,7 +106,7 @@
 
       .parabola-decor-right {
         right: 5%;
-        top: 15%;
+        top: 18%;
         animation: floatAnimation 8s ease-in-out infinite;
       }
 
@@ -139,7 +139,7 @@
           <span class="app-brand-logo demo">
             <img src="{{ asset('fk.PNG') }}" alt="QuadraLearn Logo" width="30" style="border-radius: 150px" srcset="">
           </span>
-          <span class="app-brand-text menu-text fw-bold ms-2 ps-1">QuadraLearn</span>
+          <span class="app-brand-text menu-text fw-bold ms-2 ps-1">BelajarKuadrat</span>
         </a>
       </div>
       <!-- Menu logo wrapper: End -->
@@ -151,16 +151,13 @@
         </button>
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link fw-medium" aria-current="page" href="#landingHero">Dashboard</a>
+            <a class="nav-link fw-medium" aria-current="page" href="#landingHero">Beranda</a>
           </li>
     
-          <li class="nav-item dropdown">
-            <a href="javascript:void(0)" class="nav-link dropdown-toggle" id="kompetensiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <li class="nav-item">
+            <a href="{{ route('indikator') }}" class="nav-link fw-medium {{ Request::is('*indikator*') ? 'active' : '' }}">
               Kompetensi
             </a>
-            <ul class="dropdown-menu" aria-labelledby="kompetensiDropdown">
-              <li><a class="dropdown-item" href="{{ route('indikator') }}">Indikator Capaian</a></li>
-            </ul>
           </li>
 
           <li class="nav-item dropdown">

@@ -122,7 +122,7 @@
             Nilai \( b \) disebut koefisien linier. Nilai \( b \) mempengaruhi letak sumbu simetri dan posisi puncak parabola.
             Nilai \( b \) juga menggeser puncak parabola ke kiri dan ke kanan.
             Sumbu simetri dari parabola adalah garis vertikal yang melewati titik puncak, sehingga membagi parabola menjadi dua bagian yang simetris.
-            Persamaan dari sumbu simteri adalah <mark> \( x=-\frac{b}{2a} \) </mark>. Sumbu simetri selalu melalui titik puncak, x = 1.
+            Persamaan dari sumbu simetri adalah <mark> \( x=-\frac{b}{2a} \) </mark>. Sumbu simetri selalu melalui titik puncak, x = 1.
             Titik puncak (vertex) dari sebuah parabola yang berbentuk <mark> \( y=ax^2+bx+c \) </mark> terletak di koordinat (𝑥, 𝑦) di mana:
           </p>
           <p>- Titik puncak fungsi kuadrat yaitu (𝑥𝑝 , 𝑦𝑝 ) dengan \( x_p=-\frac{b}{2a} \) dan \( y_p=-\frac{D}{4a} \) </p>
@@ -142,7 +142,7 @@
           </li>
           <li>
             Menentukan sumbu simetri:
-            <p>- Sumbu simetri adalah garis vertical 𝑥 = 1</p>
+            <p>- Sumbu simetri adalah garis vertikal 𝑥 = 1</p>
           </li>
           <li>
             Menentukan apakah titik puncak adalah maksimum atau minimum:
@@ -199,11 +199,11 @@
                         </li>
                         <li>
                         Menentukan sumbu simetri:
-                        <p>- Sumbu simteri adalah garis vertical 𝑥 = <input type="text" placeholder="" style="width: 50px;"></p>
+                        <p>- Sumbu simetri adalah garis vertikal 𝑥 = <input type="text" placeholder="" style="width: 50px;"></p>
                         </li>
                         <li>
                         Menentukan apakah titik puncak adalah maksimum atau minimum:
-                        <p>- Karena 𝑎 = <input type="text" placeholder="" style="width: 50px;">, parabola tebuka ke <input type="text" placeholder="" style="width: 50px;">, sehingga titik puncak
+                        <p>- Karena 𝑎 = <input type="text" placeholder="" style="width: 50px;">, parabola terbuka ke <input type="text" placeholder="" style="width: 50px;">, sehingga titik puncak
                           (<input type="text" placeholder="" style="width: 50px;">, <input type="text" placeholder="" style="width: 50px;">) adalah titik <input type="text" placeholder="" style="width: 50px;"></p>
                         </li>
                     </div>
@@ -252,11 +252,11 @@
                       </li>
                       <li>
                       Menentukan sumbu simetri:
-                      <p>- Sumbu simteri adalah garis vertical 𝑥 = <input type="text" placeholder="" style="width: 50px;"></p>
+                      <p>- Sumbu simetri adalah garis vertikal 𝑥 = <input type="text" placeholder="" style="width: 50px;"></p>
                       </li>
                       <li>
                       Menentukan apakah titik puncak adalah maksimum atau minimum:
-                      <p>- Karena 𝑎 = <input type="text" placeholder="" style="width: 50px;">, parabola tebuka ke <input type="text" placeholder="" style="width: 50px;">, sehingga titik puncak
+                      <p>- Karena 𝑎 = <input type="text" placeholder="" style="width: 50px;">, parabola terbuka ke <input type="text" placeholder="" style="width: 50px;">, sehingga titik puncak
                         (<input type="text" placeholder="" style="width: 50px;">, <input type="text" placeholder="" style="width: 50px;">) adalah titik <input type="text" placeholder="" style="width: 50px;">
                       </p>
                       </li>
@@ -270,7 +270,7 @@
           <div>
             <h5> Nilai diskriminan dalam fungsi kuadrat </h5>
             <p> Diskriminan adalah nilai <mark> \( D = b^2 - 4ac \) </mark> untuk persamaan kuadrat <mark> \( ax^2 + bx + c = 0 \). </mark>
-              Diskriminan digunakan untuk menentukan jenis dan banyaknya akar persamaan kuadrat. Contohnya seperti pada gambar dibawah ini:
+              Diskriminan digunakan untuk menentukan jenis dan banyaknya akar persamaan kuadrat. Contohnya seperti pada gambar di bawah ini:
             </p>
             <div class="text-center">
               <img src="{{ asset('assets/img/app/karakteristik11.png') }}" 

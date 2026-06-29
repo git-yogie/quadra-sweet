@@ -5,7 +5,9 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\QuizQuestionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MateriController;
 // use App\Http\Controllers\KompetensiController;
@@ -54,8 +56,9 @@ Route::middleware(['auth', 'check.progress'])->group(function() {
         Route::post('/evaluasi/result', [DashboardController::class, 'resultEval'])->name('dashboard.evaluasi.result.post');
         Route::get('/quiz/{quizKey}', [QuizController::class, 'show'])->name('quiz.show');
         Route::post('/quiz/{quizKey}/result', [QuizController::class, 'result'])->name('quiz.result');
+        Route::post('/quiz/{quizKey}/reset', [QuizController::class, 'reset'])->name('quiz.reset');
         Route::get('/karakteristik', [DashboardController::class, 'karakteristik'])->name('dashboard.karakteristik');
-        Route::get('/karakteristik2', [DashboardController::class, 'karakteristik2'])->name('dashboard.karakteristik2');
+        //Route::get('/karakteristik2', [DashboardController::class, 'karakteristik2'])->name('dashboard.karakteristik2');
     });
 
     // Rute '/karakteristik' yang lain bisa Anda biarkan jika memang dibutuhkan,
@@ -77,14 +80,34 @@ Route::middleware(['auth', 'check.progress'])->group(function() {
         Route::get('/students/export/excel', [StudentController::class, 'exportExcel'])->name('students.export.excel');
         Route::get('/students/export/pdf', [StudentController::class, 'exportPdf'])->name('students.export.pdf');
 
+        Route::get('/kkm', [SettingController::class, 'index'])->name('kkm.index');
+        Route::patch('/kkm', [SettingController::class, 'update'])->name('kkm.update');
+
+        Route::get('/bank-soal', [QuizQuestionController::class, 'index'])->name('bank-soal.index');
+        Route::get('/bank-soal/create', [QuizQuestionController::class, 'create'])->name('bank-soal.create');
+        Route::post('/bank-soal', [QuizQuestionController::class, 'store'])->name('bank-soal.store');
+        Route::get('/bank-soal/{question}/edit', [QuizQuestionController::class, 'edit'])->name('bank-soal.edit');
+        Route::put('/bank-soal/{question}', [QuizQuestionController::class, 'update'])->name('bank-soal.update');
+        Route::delete('/bank-soal/{question}', [QuizQuestionController::class, 'destroy'])->name('bank-soal.destroy');
+
         // Kode bawaan asli Anda tetap biarkan berada di bawahnya:
         Route::get('/students', [StudentController::class, 'index'])->name('students.index');
         Route::patch('/students/{nis}/reset-password', [StudentController::class, 'resetPassword'])->name('students.reset-password');
         Route::delete('/students/{nis}/reset-quiz', [StudentController::class, 'resetQuiz'])->name('students.reset-quiz');
+        Route::patch('/students/{nis}/update-class', [StudentController::class, 'updateClass'])->name('students.update-class');
         Route::delete('/students/{nis}', [StudentController::class, 'destroy'])->name('students.destroy');
+        
     });
 
     // Rute untuk evaluasi kuis
     Route::post('/evaluasi-jawaban', [QuizController::class, 'evaluasi'])->name('quiz.evaluate');
+
+    // Route 1: Untuk memuat halaman karakteristik materi (sekaligus membawa jawaban lama)
+    Route::get('/materi/karakteristik', [QuizController::class, 'showKarakteristik'])->name('quiz.karakteristik');
+    Route::get('/materi/rekonstruksi', [QuizController::class, 'showRekonstruksi'])->name('quiz.rekonstruksi');
+    Route::get('/materi/masalah', [QuizController::class, 'showMasalah'])->name('quiz.masalah');
+    
+    // Route 2: Route khusus AJAX untuk menyimpan jawaban per bagian secara background
+    Route::post('/quiz/evaluate', [QuizController::class, 'evaluate'])->name('quiz.evaluate');
 
 });

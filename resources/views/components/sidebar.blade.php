@@ -4,7 +4,7 @@
          <span class="app-brand-logo demo">
             <img src="{{ asset('fk.PNG') }}" alt="Fungsi Kuadrat" width="30" style="border-radius: 150px" />
          </span>
-         <span class="app-brand-text menu-text fw-bold ms-2 fs-5">QuadraLearn</span>
+         <span class="app-brand-text menu-text fw-bold ms-2 fs-5">BelajarKuadrat</span>
       </a>
 
       <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -96,15 +96,30 @@
       @else
          @if(auth()->check())
             <li class="menu-header small text-uppercase">
-               <span class="menu-header-text">Data Master</span>
+               <span class="menu-header-text">Guru</span>
             </li>
 
             <li class="menu-item {{ Route::is('students.*') ? 'active' : '' }}">
                <a href="{{ route('students.index') }}" class="menu-link">
                   <i class="menu-icon tf-icons bx bx-user"></i>
-                  <div data-i18n="Siswa">Siswa</div>
+                  <div data-i18n="Siswa"> Data Siswa</div>
                </a>
             </li>
+
+            <li class="menu-item {{ Route::is('kkm.*') ? 'active' : '' }}">
+               <a href="{{ route('kkm.index') }}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bx-slider-alt"></i>
+                  <div>Pengaturan KKM</div>
+               </a>
+            </li>
+
+            <li class="menu-item {{ request()->routeIs('bank-soal.*') ? 'active' : '' }}">
+               <a href="{{ route('bank-soal.index') }}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bx-book-open"></i>
+                  <div>Bank Soal</div>
+               </a>
+            </li>
+
          @endif
       @endif
    </ul>

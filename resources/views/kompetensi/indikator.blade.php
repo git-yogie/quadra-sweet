@@ -1,5 +1,22 @@
 @extends('layouts.dashboard')
 
+<style>
+    /* 1. Hilangkan elemen sidebar pembungkus utama template Sneat */
+    .layout-menu, #layout-menu {
+        display: none !important;
+    }
+
+    /* 2. Geser area konten utama ke kiri luar agar memenuhi layar */
+    .layout-page {
+        padding-left: 0 !important;
+    }
+
+    /* 3. Maksimalkan container utama jika diperlukan */
+    .content-wrapper {
+        width: 100% !important;
+    }
+</style>
+
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
