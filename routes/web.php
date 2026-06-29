@@ -53,7 +53,7 @@ Route::middleware(['auth', 'check.progress'])->group(function() {
         Route::get('/masalah', [DashboardController::class, 'masalah'])->name('dashboard.masalah');
         Route::get('/evaluasi', [QuizController::class, 'evaluasiView'])->name('dashboard.evaluasi');
         Route::get('/evaluasi/result', [DashboardController::class, 'evaluasi'])->name('dashboard.evaluasi.result');
-        Route::post('/evaluasi/result', [DashboardController::class, 'resultEval'])->name('dashboard.evaluasi.result');
+        Route::post('/evaluasi/result', [DashboardController::class, 'resultEval'])->name('dashboard.evaluasi.result.first');
         Route::get('/quiz/{quizKey}', [QuizController::class, 'show'])->name('quiz.show');
         Route::post('/quiz/{quizKey}/result', [QuizController::class, 'result'])->name('quiz.result');
         Route::post('/quiz/{quizKey}/reset', [QuizController::class, 'reset'])->name('quiz.reset');
@@ -108,6 +108,6 @@ Route::middleware(['auth', 'check.progress'])->group(function() {
     Route::get('/materi/masalah', [QuizController::class, 'showMasalah'])->name('quiz.masalah');
     
     // Route 2: Route khusus AJAX untuk menyimpan jawaban per bagian secara background
-    Route::post('/quiz/evaluate', [QuizController::class, 'evaluate'])->name('quiz.evaluate');
+    Route::post('/quiz/evaluate', [QuizController::class, 'evaluate'])->name('quiz.evaluasi');
 
 });
