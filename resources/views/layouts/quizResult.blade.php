@@ -43,7 +43,15 @@
                 <ul class="list-group">
                     @foreach ($results as $result)
                     <li class="list-group-item">
-                        <strong>Soal:</strong> {!! $result['question'] !!} <br>
+
+                        <h5 class="fw-bold mb-3">
+                            Soal {{ $loop->iteration }}
+                        </h5>
+
+                        <div class="mb-2">
+                            {!! $result['question'] !!}
+                        </div>
+
                         @if (isset($result['image']))
                         <div class="my-2">
                             <img src="{{ asset($result['image']) }}" alt="Gambar Soal" class="img-fluid">
@@ -55,10 +63,13 @@
                             ? strtoupper($result['user_answer']) . '. ' . $result['options'][$result['user_answer']] 
                             : 'Tidak Dijawab' }} <br>
 
-                        <strong>Jawaban Benar:</strong> 
-                        {{ isset($result['options'][$result['correct_answer']]) 
-                            ? strtoupper($result['correct_answer']) . '. ' . $result['options'][$result['correct_answer']] 
-                            : '-' }} <br>
+                        @if($score >= 75)
+                            <strong>Jawaban Benar:</strong>
+                            {{ isset($result['options'][$result['correct_answer']])
+                                ? strtoupper($result['correct_answer']) . '. ' . $result['options'][$result['correct_answer']]
+                                : '-' }}
+                            <br>
+                        @endif
 
                         @if(!empty($result['explanation']))
                             <!-- Ubah bagian penjelasan menjadi seperti ini -->

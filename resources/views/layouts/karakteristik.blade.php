@@ -795,6 +795,27 @@ window.periksaJawabanBagian = function(buttonElement) {
     }
 };
 
+function halamanSudahBenar(stepElement) {
+    let allCorrect = true;
+
+    const inputs = stepElement.querySelectorAll('input[name], select[name]');
+
+    inputs.forEach(input => {
+        const name = input.getAttribute('name');
+
+        if (!correctAnswers[name]) return;
+
+        const userAnswer = input.value.trim().toLowerCase();
+        const correct = correctAnswers[name].toLowerCase();
+
+        if (userAnswer === "" || userAnswer !== correct) {
+            allCorrect = false;
+        }
+    });
+
+    return allCorrect;
+}
+
 // ==========================================
 // 3. LOGIKA NAVIGASI FIX & AUTO-RESTORE LOCALSTORAGE
 // ==========================================
@@ -874,29 +895,65 @@ document.addEventListener("DOMContentLoaded", function() {
         window.scrollTo(0,0);
     }
 
-   nextBtn?.addEventListener('click', () => {
-        if (currentStep < totalSteps) { 
-            currentStep++; 
-            showStep(currentStep); 
-        } else { 
-            // Tampilkan konfirmasi SweetAlert2 sebelum pindah kuis
-            Swal.fire({
-                title: 'Luar Biasa! 🎉',
-                text: 'Kamu sudah menyelesaikan seluruh rangkaian materi karakteristik fungsi kuadrat. Mari kita mulai kuisnya!',
-                icon: 'success',
-                showCancelButton: true,
-                confirmButtonColor: '#198754',
-                cancelButtonColor: '#6c757d',
-                confirmButtonText: 'Mulai Kuis 🚀',
-                cancelButtonText: 'Tutup',
-                reverseButtons: true
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Tampilkan loading screen singkat
-                    Swal.fire({
-                        title: 'Menghubungkan ke Kuis...',
-                        allowOutsideClick: false,
-                        didOpen: () => { Swal.showLoading(); }
+  nextBtn?.addEventListener('click', () => {
+
+    // 1. Ambil halaman yang sedang aktif
+    const currentPage = steps[currentStep - 1];
+
+    // 2. Cek apakah semua jawaban pada halaman tersebut sudah benar
+    if (!halamanSudahBenar(currentPage)) {
+
+        Swal.fire({
+            icon: "warning",
+            title: "Isilah kolom yang rumpang terlebih dahulu",
+            text: currentStep === totalSteps
+                ? "Semua jawaban pada halaman ini harus benar sebelum menyelesaikan materi."
+                : "Semua jawaban pada halaman ini harus benar sebelum lanjut."
+        });
+
+        return;
+    }
+
+    // 3. Jika BELUM halaman terakhir → lanjut ke halaman berikutnya
+    if (currentStep < totalSteps) {
+
+        currentStep++;
+        showStep(currentStep);
+
+    } else {
+
+        // 4. Jika SUDAH halaman terakhir → tampilkan popup selesai
+        Swal.fire({
+            title: 'Luar Biasa! 🎉',
+            text: 'Kamu sudah menyelesaikan seluruh rangkaian materi karakteristik fungsi kuadrat. Mari kita mulai kuisnya!',
+            icon: 'success',
+            showCancelButton: true,
+            confirmButtonColor: '#198754',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Mulai Kuis 🚀',
+            cancelButtonText: 'Tutup',
+            reverseButtons: true
+        }).then(async (result) => {
+
+            if (result.isConfirmed) {
+
+                Swal.fire({
+                    title: 'Menghubungkan ke Kuis...',
+                    allowOutsideClick: false,
+                    didOpen: () => Swal.showLoading()
+                });
+
+                // ↓↓↓ seluruh kode fetch() milikmu tetap diletakkan di sini ↓↓↓
+                    // Simpan bahwa materi karakteristik sudah selesai
+                    await fetch("{{ route('student.activity.store') }}", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                        },
+                        body: JSON.stringify({
+                            menu_key: "karakteristik"
+                        })
                     });
 
                     // 1. Ambil data jawaban dari localStorage

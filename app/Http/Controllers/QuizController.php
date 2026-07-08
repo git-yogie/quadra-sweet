@@ -6,6 +6,7 @@ use App\Models\AnswerKey;
 use App\Models\Progress;
 use App\Models\Quiz;
 use App\Models\StudentAnswer;
+use App\Models\StudentActivity;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
@@ -21,6 +22,40 @@ class QuizController extends Controller
     public function show($quizKey)
     {
         $progress = Progress::where('user_id', auth()->id())->first();
+        $currentProgress = $progress ? $progress->progress : 0;
+
+        // ===========================================
+        // CEK APAKAH MATERI SUDAH DISELESAIKAN
+        // ===========================================
+
+        if ($quizKey !== 'evaluasi') {
+
+            $materiSelesai = StudentActivity::where('user_id', auth()->id())
+                ->where('menu_key', $quizKey)
+                ->where('completed', true)
+                ->exists();
+
+            if (!$materiSelesai) {
+                return redirect()->route('dashboard')->with('notification', [
+                    'icon' => 'warning',
+                    'title' => 'Materi Belum Selesai',
+                    'message' => 'Silakan selesaikan seluruh materi sebelum mengerjakan kuis.'
+                ]);
+            }
+        }
+
+        // Tambahkan array pemetaan progress
+        $menuKeys = array_column($this->menus, 'key'); // ['karakteristik', 'rekonstruksi', ...]
+        $quizIndex = array_search($quizKey, $menuKeys);
+
+        // LOGIKA PENGUNCIAN: Jika index kuis > progress saat ini, tolak akses
+        if ($quizIndex !== false && $quizIndex > $currentProgress) {
+            return redirect()->route('dashboard')->with('notification', [
+                'icon' => 'error',
+                'title' => 'Akses Ditolak',
+                'message' => 'Anda harus menyelesaikan materi sebelumnya terlebih dahulu!'
+            ]);
+        }
 
         $quiz = Quiz::where('key', $quizKey)
             ->with(['questions' => function ($q) {
@@ -184,14 +219,21 @@ class QuizController extends Controller
         $menuKeys = array_column($this->menus, 'key');
         $currentProgress = array_search($quizKey, $menuKeys) + 1;
 
-        $progress = \App\Models\Progress::updateOrCreate(
-            [
-                'user_id'  => auth()->id(),
-            ],
-            [
-                'progress' => max(($progress->progress ?? 0), $currentProgress)
-            ]
-        );
+        // Hanya buka materi berikutnya jika nilai mencapai KKM
+        if ($score >= 75) {
+
+            $menuKeys = array_column($this->menus, 'key');
+            $currentProgress = array_search($quizKey, $menuKeys) + 1;
+
+            $progress = \App\Models\Progress::updateOrCreate(
+                [
+                    'user_id' => auth()->id(),
+                ],
+                [
+                    'progress' => max(($progress->progress ?? 0), $currentProgress)
+                ]
+            );
+        }
 
         // Auto-save nilai ke database
         \App\Models\StudentQuiz::updateOrCreate(

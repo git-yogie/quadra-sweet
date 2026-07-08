@@ -8,6 +8,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\QuizQuestionController;
+use App\Http\Controllers\StudentActivityController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MateriController;
 // use App\Http\Controllers\KompetensiController;
@@ -61,6 +62,7 @@ Route::middleware(['auth', 'check.progress'])->group(function() {
         //Route::get('/karakteristik2', [DashboardController::class, 'karakteristik2'])->name('dashboard.karakteristik2');
     });
 
+    Route::post('/student-activity', [StudentActivityController::class, 'store'])->name('student.activity.store');
     // Rute '/karakteristik' yang lain bisa Anda biarkan jika memang dibutuhkan,
     // atau dihapus jika tidak lagi relevan.
     Route::get('/karakteristik', function () {

@@ -27,15 +27,25 @@
       @endif
 
       @if (auth()->check() && auth()->user()->isStudent())
-         @foreach($menus as $menu)
-            @php
-               // Jika progres kosong (null), kita anggap nilainya adalah 0
-               $currentProgress = $progress ? $progress->progress : 0;
 
-               // Bandingkan dengan syarat angka progres milik sub-menu tersebut
-               $isLocked = $currentProgress < $menu['progress'];
-               $isActive = Route::is($menu['route']) || 
-                           (Route::is('quiz.show') && request()->route('quizKey') === $menu['key']);
+         @php
+            $completedMenus = \App\Models\StudentActivity::where('user_id', auth()->id())
+               ->where('completed', true)
+               ->pluck('menu_key')
+               ->toArray();
+         @endphp
+
+         @foreach($menus as $menu)
+
+            @php
+                  $currentProgress = $progress ? $progress->progress : 0;
+
+                  $isLocked = $currentProgress < $menu['progress'];
+
+                  $quizLocked = !in_array($menu['key'], $completedMenus);
+
+                  $isActive = Route::is($menu['route']) ||
+                              (Route::is('quiz.show') && request()->route('quizKey') === $menu['key']);
             @endphp
 
             <li class="menu-item {{ $isActive ? 'active open' : '' }}">
@@ -77,7 +87,7 @@
 
                      <!-- Quiz -->
                      <li class="menu-item {{ Route::is('quiz.show') && request()->route('quizKey') === $menu['key'] ? 'active' : '' }}">
-                        @if ($isLocked)
+                        @if ($isLocked || $quizLocked)
                            <div class="menu-link text-muted" style="cursor: not-allowed;">
                               <i class="bx bx-lock-alt me-2"></i>
                               <div data-i18n="Quiz">Kuis (Terkunci)</div>

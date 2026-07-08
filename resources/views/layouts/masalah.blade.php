@@ -295,7 +295,22 @@
               customClass: { popup: 'rounded-4 shadow', confirmButton: 'px-5' }
             }).then((result) => {
               if (result.isConfirmed) {
-                window.location.href = "{{ route('quiz.show', ['quizKey' => 'masalah']) }}"; 
+
+                  fetch("{{ route('student.activity.store') }}", {
+                      method: "POST",
+                      headers: {
+                          "Content-Type": "application/json",
+                          "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                      },
+                      body: JSON.stringify({
+                          menu_key: "masalah"
+                      })
+                  })
+                  .then(response => response.json())
+                  .then(() => {
+                      window.location.href = "{{ route('quiz.show', ['quizKey' => 'masalah']) }}";
+                  });
+
               }
             });
           } else {

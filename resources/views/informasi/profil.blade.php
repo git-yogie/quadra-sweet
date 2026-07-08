@@ -22,7 +22,23 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card mb-4">
-                <h5 class="card-header">Profil Pengembang</h5>
+                <div class="card-header d-flex align-items-center">
+
+                    @if(auth()->check())
+                        <a href="{{ route('dashboard') }}"
+                        class="btn btn-primary rounded-pill me-3">
+                            <i class="bx bx-arrow-back"></i>
+                        </a>
+                    @else
+                        <a href="{{ route('welcome') }}"
+                        class="btn btn-primary rounded-pill me-3">
+                            <i class="bx bx-arrow-back"></i>
+                        </a>
+                    @endif
+
+                    <h5 class="mb-0">Profil Pengembang</h5>
+
+                </div>
                 <hr class="my-0" />
                 <div class="card-body">
                     <div class="p-3 mb-4" style="background-color: #696cff; border-radius: 8px;">
