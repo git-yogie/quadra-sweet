@@ -60,7 +60,7 @@
                         </div>
 
                         <p class="mt-4" style="text-align: justify; line-height: 1.8;">
-                            Melalui media pembelajaran <strong>QuadraLearn</strong> ini, fokus utama pencapaian diarahkan pada materi Fungsi Kuadrat. Peserta didik diharapkan tidak hanya sekadar menghitung, namun juga mampu:
+                            Melalui media pembelajaran <strong>BelajarKuadrat</strong> ini, fokus utama pencapaian diarahkan pada materi Fungsi Kuadrat. Peserta didik diharapkan tidak hanya sekadar menghitung, namun juga mampu:
                         </p>
                         
                         <ul class="list-group list-group-flush">
@@ -91,7 +91,7 @@
 
                     <div class="px-2">
                         <p style="text-align: justify; line-height: 1.8;">
-                            Tujuan pembelajaran pada media <strong>QuadraLearn</strong> disusun secara sistematis menggunakan metode tutorial untuk memastikan peserta didik dapat menguasai konsep fungsi kuadrat secara mendalam dan mandiri. Berikut adalah alur tujuan pembelajaran yang diharapkan:
+                            Tujuan pembelajaran pada media <strong>BelajarKuadrat</strong> disusun secara sistematis menggunakan metode tutorial untuk memastikan peserta didik dapat menguasai konsep fungsi kuadrat secara mendalam dan mandiri. Berikut adalah alur tujuan pembelajaran yang diharapkan:
                         </p>
 
                         <div class="mt-4">

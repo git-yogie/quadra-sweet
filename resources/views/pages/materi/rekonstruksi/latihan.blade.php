@@ -198,8 +198,8 @@
 
                     <p> Menggunakan rumus titik potong dengan sumbu \(x \) </p>
                     <p> Diketahui : </p>
-                    <p> Titik potong sumbu-x = (<input type="text" name="lat78" placeholder="" style="width: 30px;">,<input type="text" name="lat79" placeholder="" style="width: 30px;">)(<input type="text" name="lat80" placeholder="" style="width: 30px;">,<input type="text" name="lat81" placeholder="" style="width: 30px;">) </p>
-                    <p> Titik potong sumbu-p = (<input type="text" name="lat82" placeholder="" style="width: 30px;">,<input type="text" name="lat83" placeholder="" style="width: 30px;">)
+                    <p> Titik potong sumbu \(x \) = (<input type="text" name="lat78" placeholder="" style="width: 30px;">,<input type="text" name="lat79" placeholder="" style="width: 30px;">)(<input type="text" name="lat80" placeholder="" style="width: 30px;">,<input type="text" name="lat81" placeholder="" style="width: 30px;">) </p>
+                    <p> Titik potong sumbu \(y \) = (<input type="text" name="lat82" placeholder="" style="width: 30px;">,<input type="text" name="lat83" placeholder="" style="width: 30px;">)
                     <p> \(y = a(x - x_{1})(x - x_{2})\) </p>
                     <p> <input type="text" name="lat86" placeholder="" style="width: 30px;"> = \(a\)(0 -<input type="text" name="lat87" placeholder="" style="width: 30px;">)(0 - <input type="text" name="lat88" placeholder="" style="width: 30px;">)</p>
                     <p> <input type="text" name="lat89" placeholder="" style="width: 30px;"> = \(a\)(<input type="text" name="lat90" placeholder="" style="width: 30px;">)(<input type="text" name="lat91" placeholder="" style="width: 30px;">) </p>

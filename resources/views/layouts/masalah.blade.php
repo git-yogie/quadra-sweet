@@ -82,6 +82,7 @@
                 <div class="card-body">
                   <p class="mb-2 fw-semibold">📌 Petunjuk Kegiatan:</p>
                   <ol class="mb-0">
+                    <p>Ikutilah langkah-langkah berikut secara berurutan</p>
                     <li>Pahamilah konsep pemodelan fungsi kuadrat dan rumus mencari nilai optimum (maksimum/minimum) di atas dengan teliti.</li>
                     <li>Amati langkah-langkah pemecahan masalah kontekstual pada bagian contoh soal cerita yang disediakan.</li>
                     <li>Lengkapi bagian yang rumpang (kolom kosong) pada contoh soal untuk memahami alur penerapan rumusnya.</li>

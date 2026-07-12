@@ -109,6 +109,29 @@ class QuizController extends Controller
                 ];
             }
 
+            $setting = \App\Models\Setting::first();
+
+            switch ($quizKey) {
+                case 'karakteristik':
+                    $kkm = $setting->kkm_quiz1;
+                    break;
+
+                case 'rekonstruksi':
+                    $kkm = $setting->kkm_quiz2;
+                    break;
+
+                case 'masalah':
+                    $kkm = $setting->kkm_quiz3;
+                    break;
+
+                case 'evaluasi':
+                    $kkm = $setting->kkm_evaluasi;
+                    break;
+
+                default:
+                    $kkm = 75;
+            }
+
             // Tampilkan halaman HASIL KUIS dengan riwayat jawaban asli siswa
             return view('layouts.quizResult', [
                 'quiz' => $quiz,
@@ -117,6 +140,7 @@ class QuizController extends Controller
                 'quizKey' => $quizKey,
                 'menus' => $this->menus,
                 'progress' => $progress,
+                'kkm' => $kkm,
             ]);
         }
         // =========================================================
@@ -215,12 +239,36 @@ class QuizController extends Controller
         $total = count($quiz->questions);
         $score = round(($correct / $total) * 100);
 
+        // Ambil nilai KKM dari database
+        $setting = \App\Models\Setting::first();
+
+        switch ($quizKey) {
+            case 'karakteristik':
+                $kkm = $setting->kkm_quiz1;
+                break;
+
+            case 'rekonstruksi':
+                $kkm = $setting->kkm_quiz2;
+                break;
+
+            case 'masalah':
+                $kkm = $setting->kkm_quiz3;
+                break;
+
+            case 'evaluasi':
+                $kkm = $setting->kkm_evaluasi;
+                break;
+
+            default:
+                $kkm = 75;
+        }
+
         // 🚀 Update progress
         $menuKeys = array_column($this->menus, 'key');
         $currentProgress = array_search($quizKey, $menuKeys) + 1;
 
         // Hanya buka materi berikutnya jika nilai mencapai KKM
-        if ($score >= 75) {
+        if ($score >= $kkm) {
 
             $menuKeys = array_column($this->menus, 'key');
             $currentProgress = array_search($quizKey, $menuKeys) + 1;
@@ -253,6 +301,7 @@ class QuizController extends Controller
             'quizKey' => $quizKey,
             'menus' => $this->menus,
             'progress' => $progress,
+            'kkm' => $kkm,
         ]);
     }
 
@@ -302,6 +351,9 @@ class QuizController extends Controller
                 ];
             }
 
+            $setting = \App\Models\Setting::first();
+            $kkm = $setting->kkm_evaluasi;
+
             return view('layouts.quizResult', [
                 'quiz' => $quiz,
                 'score' => $existingQuiz->score,
@@ -309,6 +361,7 @@ class QuizController extends Controller
                 'quizKey' => $quizKey,
                 'menus' => $this->menus,
                 'progress' => $progress,
+                'kkm' => $kkm,
             ]);
         }
 

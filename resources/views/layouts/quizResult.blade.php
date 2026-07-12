@@ -31,7 +31,7 @@
             <div class="container">
                 <h1>Hasil Kuis</h1>
                 <p><strong>Nilai Anda:</strong> {{ $score }}</p>
-                @if($score >= 75)
+                @if($score >= $kkm)
                             <div class="alert alert-success mt-2">
                                 🎉 Selamat! Anda telah memahami materi dengan baik.
                             </div>
@@ -63,7 +63,7 @@
                             ? strtoupper($result['user_answer']) . '. ' . $result['options'][$result['user_answer']] 
                             : 'Tidak Dijawab' }} <br>
 
-                        @if($score >= 75)
+                        @if($score >= $kkm)
                             <strong>Jawaban Benar:</strong>
                             {{ isset($result['options'][$result['correct_answer']])
                                 ? strtoupper($result['correct_answer']) . '. ' . $result['options'][$result['correct_answer']]
@@ -96,7 +96,7 @@
                 <div class="mb-5">
 
                     <!-- JIKA NILAI DI BAWAH KKM (REMEDIAL) -->
-                    @if($score < 75)
+                    @if($score < $kkm)
                         <!-- Tombol Kembali ke Materi Saat Ini -->
                         @if($quizKey == 'karakteristik')
                             <a href="{{ route('dashboard.karakteristik') }}" class="btn btn-primary mt-3">
