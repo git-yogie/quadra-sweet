@@ -82,6 +82,7 @@
                 <div class="card-body">
                   <p class="mb-2 fw-semibold">📌 Petunjuk Kegiatan:</p>
                   <ol class="mb-0">
+                    <p>Ikutilah langkah-langkah berikut secara berurutan</p>
                     <li>Pahamilah konsep pemodelan fungsi kuadrat dan rumus mencari nilai optimum (maksimum/minimum) di atas dengan teliti.</li>
                     <li>Amati langkah-langkah pemecahan masalah kontekstual pada bagian contoh soal cerita yang disediakan.</li>
                     <li>Lengkapi bagian yang rumpang (kolom kosong) pada contoh soal untuk memahami alur penerapan rumusnya.</li>
@@ -295,7 +296,22 @@
               customClass: { popup: 'rounded-4 shadow', confirmButton: 'px-5' }
             }).then((result) => {
               if (result.isConfirmed) {
-                window.location.href = "{{ route('quiz.show', ['quizKey' => 'masalah']) }}"; 
+
+                  fetch("{{ route('student.activity.store') }}", {
+                      method: "POST",
+                      headers: {
+                          "Content-Type": "application/json",
+                          "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                      },
+                      body: JSON.stringify({
+                          menu_key: "masalah"
+                      })
+                  })
+                  .then(response => response.json())
+                  .then(() => {
+                      window.location.href = "{{ route('quiz.show', ['quizKey' => 'masalah']) }}";
+                  });
+
               }
             });
           } else {

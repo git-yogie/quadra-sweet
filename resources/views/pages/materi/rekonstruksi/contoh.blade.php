@@ -1,7 +1,7 @@
 <div style="padding: 60px 30px 0 30px;" class="mb-5">
     <span class="border border-primary p-2 rounded">Contoh Soal: </span>
         <p class="mt-3">
-        1. Carilah persamaan fungsi kuadratnya yang grafiknya melalui titik \( A(2,3), B(3,5) \) dan \( C(4,9) \).
+        1. Carilah persamaan fungsi kuadrat yang grafiknya melalui titik \( A(2,3), B(3,5) \) dan \( C(4,9) \).
     </p>
     </div>
     <div style="padding: 0 30px;">
@@ -54,9 +54,9 @@
         </li>
 
         <li> Selanjutnya substitusi nilai \(a\) ke salah satu persamaan untuk menemukan \(b\).
-            <p> \( 5a + b + = 2\)</p>
-            <p> \( 5(1) + b + = 2\)</p>
-            <p> \( 5 + b + = 2\)</p>
+            <p> \( 5a + b = 2\)</p>
+            <p> \( 5(1) + b = 2\)</p>
+            <p> \( 5 + b = 2\)</p>
             <p> \( b = 2 - 5 \)</p>
             <p> \( b = -3 \)</p>
         </li>
@@ -77,7 +77,7 @@
         </li>
     </ul>
     <p class="mt-3">
-        2. Carilah persamaan fungsi kuadratnya yang grafiknya melalui titik \( 𝐾(1,2), L(2,3) \)dan \( M(3,5) \).
+        2. Carilah persamaan fungsi kuadrat yang grafiknya melalui titik \( 𝐾(1,2), L(2,3) \)dan \( M(3,5) \).
     </p>
     </div>
     <div style="padding: 0 30px;">

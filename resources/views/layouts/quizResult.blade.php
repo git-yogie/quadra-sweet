@@ -31,7 +31,7 @@
             <div class="container">
                 <h1>Hasil Kuis</h1>
                 <p><strong>Nilai Anda:</strong> {{ $score }}</p>
-                @if($score >= 75)
+                @if($score >= $kkm)
                             <div class="alert alert-success mt-2">
                                 🎉 Selamat! Anda telah memahami materi dengan baik.
                             </div>
@@ -43,7 +43,15 @@
                 <ul class="list-group">
                     @foreach ($results as $result)
                     <li class="list-group-item">
-                        <strong>Soal:</strong> {!! $result['question'] !!} <br>
+
+                        <h5 class="fw-bold mb-3">
+                            Soal {{ $loop->iteration }}
+                        </h5>
+
+                        <div class="mb-2">
+                            {!! $result['question'] !!}
+                        </div>
+
                         @if (isset($result['image']))
                         <div class="my-2">
                             <img src="{{ asset($result['image']) }}" alt="Gambar Soal" class="img-fluid">
@@ -55,10 +63,13 @@
                             ? strtoupper($result['user_answer']) . '. ' . $result['options'][$result['user_answer']] 
                             : 'Tidak Dijawab' }} <br>
 
-                        <strong>Jawaban Benar:</strong> 
-                        {{ isset($result['options'][$result['correct_answer']]) 
-                            ? strtoupper($result['correct_answer']) . '. ' . $result['options'][$result['correct_answer']] 
-                            : '-' }} <br>
+                        @if($score >= $kkm)
+                            <strong>Jawaban Benar:</strong>
+                            {{ isset($result['options'][$result['correct_answer']])
+                                ? strtoupper($result['correct_answer']) . '. ' . $result['options'][$result['correct_answer']]
+                                : '-' }}
+                            <br>
+                        @endif
 
                         @if(!empty($result['explanation']))
                             <!-- Ubah bagian penjelasan menjadi seperti ini -->
@@ -85,7 +96,7 @@
                 <div class="mb-5">
 
                     <!-- JIKA NILAI DI BAWAH KKM (REMEDIAL) -->
-                    @if($score < 75)
+                    @if($score < $kkm)
                         <!-- Tombol Kembali ke Materi Saat Ini -->
                         @if($quizKey == 'karakteristik')
                             <a href="{{ route('dashboard.karakteristik') }}" class="btn btn-primary mt-3">

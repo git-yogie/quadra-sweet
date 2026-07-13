@@ -351,8 +351,22 @@
               customClass: { popup: 'rounded-4 shadow', confirmButton: 'px-5' }
             }).then((result) => {
               if (result.isConfirmed) {
-                // Menggunakan URL lurus agar tidak bentrok dengan syntax tanda petik JavaScript
-                window.location.href = "{{ route('quiz.show', ['quizKey' => 'rekonstruksi']) }}"; 
+
+                  fetch("{{ route('student.activity.store') }}", {
+                      method: "POST",
+                      headers: {
+                          "Content-Type": "application/json",
+                          "X-CSRF-TOKEN": "{{ csrf_token() }}",
+                          "Accept": "application/json"
+                      },
+                      body: JSON.stringify({
+                          menu_key: "rekonstruksi"
+                      })
+                  })
+                  .then(() => {
+                      window.location.href = "{{ route('quiz.show', ['quizKey' => 'rekonstruksi']) }}";
+                  });
+
               }
             });
           } else {

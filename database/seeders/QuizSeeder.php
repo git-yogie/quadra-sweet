@@ -509,7 +509,7 @@ class QuizSeeder extends Seeder
             ],
             [
                 'id' => 10,
-                'question' => 'Persamaan grafik fungsi kuadrat yang memotong sumbu x di titik (1, 0) dan (5, 0) serta melalui titik (0, 5) adalah ....',
+                'question' => 'Persamaan grafik fungsi kuadrat yang memotong sumbu \(x\) di titik (1, 0) dan (5, 0) serta melalui titik (0, 5) adalah ....',
                 'options' => [
                     'a' => '\\(f(x) = -x^2 + 6x - 5 \\)',
                     'b' => '\\(f(x) = 2x^2 - 6x - 5 \\)',
@@ -622,8 +622,8 @@ class QuizSeeder extends Seeder
                 'question' => 'Sebuah perusahaan mencatat hubungan antara jumlah barang yang diproduksi \\(x\\) dan keuntungan yang diperoleh dengan fungsi \\(P(x) = -x^2 + 40x + 100\\). Seorang manajer memberikan empat pernyataan berikut:<br><br>
                 (1) Keuntungan maksimum diperoleh saat memproduksi 10 barang.<br>
                 (2) Keuntungan maksimum diperoleh saat memproduksi 20 barang.<br>
-                (3) Keuntungan maksimum yang diperoleh adalah Rp500.<br>
-                (4) Keuntungan maksimum yang diperoleh adalah Rp300.<br><br>
+                (3) Keuntungan maksimum yang diperoleh adalah Rp. 500.<br>
+                (4) Keuntungan maksimum yang diperoleh adalah Rp. 300.<br><br>
                 Pernyataan yang benar adalah ....',
                 'options' => [
                     'a' => '(1) dan (3)',

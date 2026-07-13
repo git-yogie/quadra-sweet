@@ -1,7 +1,32 @@
 <div style="padding: 60px 30px 0 30px;" class="mb-5">
     <span class="border border-primary p-2 rounded">Contoh Soal: </span>
     <p class="mt-3">
-        Aisyah sedang mengamati gerak sebuah bola yang dilempar ke atas. Ia menemukan bahwa ketinggian bola setiap detiknya dapat dinyatakan dengan rumus: \( h(t) = -4,9t^2 + 15t + 2.\)
+        1. Seorang atlet melempar bola basket ke arah ring. Tinggi bola setiap detiknya dinyatakan dengan persamaan: \( h(t) = -5t^2 + 20t + 1.\)
+        Berdasarkan persamaan tersebut pada detik ke berapakah bola mencapai ketinggian maksimum?
+    </p>
+    <p>Jawab:</p>
+    <ul>
+        <li>
+            <p>Identifikasi variabel, maka di dapat:</p>
+            <p>\( t \) adalah waktu dalam detik, dan \( h(t) \) adalah tinggi bola dalam meter</p>
+        </li>
+        <li>
+            Membentuk persamaan kuadrat yaitu: \( h(t) = -5t^2 + 20t + 1 \)
+        </li>
+        <li>
+            Menentukan waktu saat bola mencapai titik maksimum menggunakan rumus:
+            <p class="mt-2">\(t=-\frac{b}{2a}\)</p>
+        </li>
+        <li>
+            Kemudian hitung puncak dari parabola:
+            <p class="mt-2">\(t=-\frac{b}{2a}=-\frac{20}{2(-5)}=\frac{-20}{-10}=2\)</p>
+        </li>
+    <li>
+        Jadi, bola mencapai ketinggian maksimum pada detik ke 2 setelah dilempar.
+    </li>
+    </ul>
+    <p class="mt-3">
+        2. Aisyah sedang mengamati gerak sebuah bola yang dilempar ke atas. Ia menemukan bahwa ketinggian bola setiap detiknya dapat dinyatakan dengan rumus: \( h(t) = -4,9t^2 + 15t + 2.\)
         Berdasarkan rumus tersebut pada detik ke berapakah bola akan mencapai ketinggian maksimumnya?
     </p>
     <p>Jawab:</p>

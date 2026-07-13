@@ -217,7 +217,7 @@
                     Nilai \( b \) disebut koefisien linier. Nilai \( b \) mempengaruhi letak sumbu simetri dan posisi puncak parabola.
                     Nilai \( b \) juga menggeser puncak parabola ke kiri dan ke kanan.
                     Sumbu simetri dari parabola adalah garis vertikal yang melewati titik puncak, sehingga membagi parabola menjadi dua bagian yang simetris.
-                    Persamaan dari sumbu simetri adalah <mark> \( x=-\frac{b}{2a} \) </mark>. Sumbu simetri \(x = -\frac{b}{2a}\) melalui titik puncak.
+                    Persamaan dari sumbu simetri adalah <mark> \( x=-\frac{b}{2a} \) </mark>. Sumbu simetri <mark> \(x = -\frac{b}{2a}\) </mark> melalui titik puncak.
                     Titik puncak (vertex) dari sebuah parabola yang berbentuk <mark> \( y=ax^2+bx+c \) </mark> terletak di koordinat (𝑥, 𝑦) dimana:
                   </p>
                   <p>- Titik puncak fungsi kuadrat yaitu \(x_p , y_p \) dengan \( x_p=-\frac{b}{2a} \) dan \( y_p=-\frac{D}{4a} \) </p>
@@ -246,7 +246,7 @@
                     <ol type="a" class="mt-3">
                       <li>
                         Menentukan titik puncak:
-                        <p>- Nilai 𝑎 = 2, 𝑏 = −4, dan 𝑐 = 1</p>
+                        <p>- Nilai 𝑎 = 2, 𝑏 = −8, dan 𝑐 = 1</p>
                         <p>- Koordinat 𝑥 dari titik puncak: \( 𝑥 = -\frac{b}{2a} = -\frac{(-8)}{2(2)} = \frac{8}{4} = 2 \)</p>
                         <p>- Koordinat 𝑦 dari titik puncak: \( y = 2(2)^2-4(2)+1 = 8 − 16 + 2 = -6 \)</p>
                         <p>- Jadi, titik puncak adalah (\(2, -6 \)).</p>
@@ -445,8 +445,6 @@
                     <div class="py-2 mt-2">
                       <p>1. \( f(x)=x^2-2x-2 \). Tentukan titik potong dengan sumbu 𝑦 dan nilai 𝑐.</p>
                       <p>Titik potong dengan sumbu \( y \) adalah \( (0, -2)\) dan nilai \( c \) adalah \( -2 \)</p>
-                    </div>
-                    <div class="py-2 mt-2">
                       <p>2. \( f(x)=2x^2-2x+3 \). Tentukan titik potong dengan sumbu 𝑦 dan nilai 𝑐.</p>
                       <p>Titik potong dengan sumbu \( y \) adalah \( (0, 3)\) dan nilai \( c \) adalah <input type="text" name="contoh" style="width: 50px;"></p>
                     </div>
@@ -512,10 +510,10 @@
                   </div>
 
                   <p>
-                    Pada fungsi kuadrat berbentuk \( y=f(x)=ax^2+bx+c \), diskriminan diberikan oleh nilai \( D = b^2-4ac \) untuk menentukan jumlah titik potong dengan sumbu x.
-                    <br>𝐷 > 0 maka ada dua titik potong pada sumbu x.
-                    <br>𝐷 = 0 maka ada satu titik potong pada sumbu x.
-                    <br>𝐷 < 0 maka tidak ada titik potong pada sumbu x.
+                    Pada fungsi kuadrat berbentuk <mark>\( y=f(x)=ax^2+bx+c \)</mark>, diskriminan diberikan oleh nilai <mark>\( D = b^2-4ac \)</mark> untuk menentukan jumlah titik potong dengan sumbu x.
+                    <br>𝐷 > 0 maka ada dua titik potong pada sumbu \(x\).
+                    <br>𝐷 = 0 maka ada satu titik potong pada sumbu \(x\).
+                    <br>𝐷 < 0 maka tidak ada titik potong pada sumbu \(x\).
                   </p>
 
                   <div class="card border-0 shadow-sm mb-4" style="background: #f8f9ff;">
@@ -635,7 +633,7 @@
                       </li>
 
                       <li class="mt-4">
-                        Buatlah grafik \( f(x) = -2x^2 - 2x + 6 \)
+                        Buatlah grafik \( f(x) = -2x^2 - 2x + 6 \)!
                         <div style="display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap;" class="mt-2">
                           <div style="flex:1; min-width:250px;">
                             <table class="table table-bordered table-hover text-center">
@@ -795,6 +793,27 @@ window.periksaJawabanBagian = function(buttonElement) {
     }
 };
 
+function halamanSudahBenar(stepElement) {
+    let allCorrect = true;
+
+    const inputs = stepElement.querySelectorAll('input[name], select[name]');
+
+    inputs.forEach(input => {
+        const name = input.getAttribute('name');
+
+        if (!correctAnswers[name]) return;
+
+        const userAnswer = input.value.trim().toLowerCase();
+        const correct = correctAnswers[name].toLowerCase();
+
+        if (userAnswer === "" || userAnswer !== correct) {
+            allCorrect = false;
+        }
+    });
+
+    return allCorrect;
+}
+
 // ==========================================
 // 3. LOGIKA NAVIGASI FIX & AUTO-RESTORE LOCALSTORAGE
 // ==========================================
@@ -874,29 +893,65 @@ document.addEventListener("DOMContentLoaded", function() {
         window.scrollTo(0,0);
     }
 
-   nextBtn?.addEventListener('click', () => {
-        if (currentStep < totalSteps) { 
-            currentStep++; 
-            showStep(currentStep); 
-        } else { 
-            // Tampilkan konfirmasi SweetAlert2 sebelum pindah kuis
-            Swal.fire({
-                title: 'Luar Biasa! 🎉',
-                text: 'Kamu sudah menyelesaikan seluruh rangkaian materi karakteristik fungsi kuadrat. Mari kita mulai kuisnya!',
-                icon: 'success',
-                showCancelButton: true,
-                confirmButtonColor: '#198754',
-                cancelButtonColor: '#6c757d',
-                confirmButtonText: 'Mulai Kuis 🚀',
-                cancelButtonText: 'Tutup',
-                reverseButtons: true
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Tampilkan loading screen singkat
-                    Swal.fire({
-                        title: 'Menghubungkan ke Kuis...',
-                        allowOutsideClick: false,
-                        didOpen: () => { Swal.showLoading(); }
+  nextBtn?.addEventListener('click', () => {
+
+    // 1. Ambil halaman yang sedang aktif
+    const currentPage = steps[currentStep - 1];
+
+    // 2. Cek apakah semua jawaban pada halaman tersebut sudah benar
+    if (!halamanSudahBenar(currentPage)) {
+
+        Swal.fire({
+            icon: "warning",
+            title: "Isilah kolom yang rumpang terlebih dahulu",
+            text: currentStep === totalSteps
+                ? "Semua jawaban pada halaman ini harus benar sebelum menyelesaikan materi."
+                : "Semua jawaban pada halaman ini harus benar sebelum lanjut."
+        });
+
+        return;
+    }
+
+    // 3. Jika BELUM halaman terakhir → lanjut ke halaman berikutnya
+    if (currentStep < totalSteps) {
+
+        currentStep++;
+        showStep(currentStep);
+
+    } else {
+
+        // 4. Jika SUDAH halaman terakhir → tampilkan popup selesai
+        Swal.fire({
+            title: 'Luar Biasa! 🎉',
+            text: 'Kamu sudah menyelesaikan seluruh rangkaian materi karakteristik fungsi kuadrat. Mari kita mulai kuisnya!',
+            icon: 'success',
+            showCancelButton: true,
+            confirmButtonColor: '#198754',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Mulai Kuis 🚀',
+            cancelButtonText: 'Tutup',
+            reverseButtons: true
+        }).then(async (result) => {
+
+            if (result.isConfirmed) {
+
+                Swal.fire({
+                    title: 'Menghubungkan ke Kuis...',
+                    allowOutsideClick: false,
+                    didOpen: () => Swal.showLoading()
+                });
+
+                // ↓↓↓ seluruh kode fetch() milikmu tetap diletakkan di sini ↓↓↓
+                    // Simpan bahwa materi karakteristik sudah selesai
+                    await fetch("{{ route('student.activity.store') }}", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                        },
+                        body: JSON.stringify({
+                            menu_key: "karakteristik"
+                        })
                     });
 
                     // 1. Ambil data jawaban dari localStorage
@@ -927,16 +982,12 @@ document.addEventListener("DOMContentLoaded", function() {
                         return response.json();
                     })
                     .then(data => {
-                        // Hapus penyimpanan lokal materi karena sesi materi ini sudah selesai
-                        localStorage.removeItem(STORAGE_KEY);
-                        
                         // LANGSUNG DIALIKKAN KE URL KUIS DENGAN PARAMETER 'karakteristik'
                         window.location.href = "{{ route('quiz.show', ['quizKey' => 'karakteristik']) }}";
                     })
                     .catch(error => {
                         console.error('Error:', error);
                         // JIKA SERVER TIMEOUT/DOWN, TETAP PAKSA ALIKAN KE KUIS AGAR SISWA TIDAK STUCK
-                        localStorage.removeItem(STORAGE_KEY);
                         window.location.href = "{{ route('quiz.show', ['quizKey' => 'karakteristik']) }}";
                     });
                 }
